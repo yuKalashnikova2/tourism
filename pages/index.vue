@@ -1,3 +1,5 @@
 <template>
-    tourism
+   <div class="container">
+        <Header />
+   </div>
 </template>
