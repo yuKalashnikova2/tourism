@@ -32,7 +32,6 @@ import { Button } from '#build/components';
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 20px;
-
     position: relative;
     width: 100%;
     z-index: 1;
@@ -50,12 +49,7 @@ import { Button } from '#build/components';
         width: 100%;
         height: 100%;
         z-index: -1;
-        background-color: rgba(
-            255,
-            255,
-            255,
-            0.5
-        ); /* Полупрозрачный белый слой */
+        background-color: rgba(255,255,255,0.5); 
     }
 
     @media (max-width: 1200px) {
@@ -96,7 +90,7 @@ import { Button } from '#build/components';
         }
     }
     &__form {
-        padding: 40px;
+        padding: 40px 28px;
         background: linear-gradient(
                 287.56deg,
                 rgba(86, 241, 206, 0) 50%,
@@ -138,6 +132,7 @@ import { Button } from '#build/components';
             background-color: $white;
             border-radius: 120px;
             padding: 60px 60px 60px 40px;
+  
         }
     }
     &__labels {

@@ -1,8 +1,10 @@
+
 <template>
-   <div class="container">
-      <div class="wrapper">
-         <Header />
-        <Banner />
-      </div>
-   </div>
+    <div class="container">
+        <div class="wrapper">
+            <Header />
+            <Banner />
+            <Services />
+        </div>
+    </div>
 </template>
