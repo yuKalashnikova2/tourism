@@ -5,6 +5,7 @@
             <Header />
             <Banner />
             <Services />
+            <About />
         </div>
     </div>
 </template>

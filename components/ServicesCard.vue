@@ -25,21 +25,17 @@ const props = defineProps({
 <style lang="scss" scoped>
 .services-card {
     max-width: 405px;
-
     display: flex;
-    // gap: 20px;
     flex-direction: column;
     align-items: center;
     margin: 20px;
     border-radius: 120px;
     position: relative;
     width: 100%;
-    // height: 300px;
     z-index: 2;
     color: $white;
-    // background-image: url('/p-1.jpeg');
     background-size: cover;
-    background-position: bottom;
+    background-position: left;
     background-repeat: no-repeat;
     padding: 40px 20px 60px 40px;
     &::before {
