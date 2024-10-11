@@ -1,4 +1,3 @@
-
 <template>
     <div class="container">
         <div class="wrapper">
@@ -6,6 +5,7 @@
             <Banner />
             <Services />
             <About />
+            <StagesTreatment />
         </div>
     </div>
 </template>
