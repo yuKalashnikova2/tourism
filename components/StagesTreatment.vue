@@ -43,7 +43,7 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         margin-top: 40px;
-        @media (max-width: 1400px) {
+        @media (max-width: 1550px) {
             grid-template-columns: repeat(2, 1fr);
         }
         @media (max-width: 992px) {

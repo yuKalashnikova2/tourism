@@ -35,6 +35,9 @@ img {
 }
 .container {
     padding: 0 7.5rem;
+    @media (max-width: 1550px) {
+        padding: 0 4rem;
+    }
     @media (max-width: 1420px) {
         padding: 0 2rem;
     }

@@ -6,6 +6,7 @@
             <Services />
             <About />
             <StagesTreatment />
+            <Social />
         </div>
     </div>
 </template>
