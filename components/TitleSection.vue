@@ -10,6 +10,9 @@
     font-size: 60px;
     line-height: 60px;
     text-align: left;
+    @media (max-width: 992px) {
+        text-align: center;
+    }
     @media (max-width: 768px) {
         font-size: 40px;
         line-height: 50px;

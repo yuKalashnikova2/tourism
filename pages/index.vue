@@ -7,6 +7,7 @@
             <About />
             <StagesTreatment />
             <Social />
+            <Blog />
         </div>
     </div>
 </template>
