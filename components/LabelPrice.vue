@@ -33,7 +33,7 @@ const labelColor = computed(() => {
     }
     &__price {
         font-weight: 700;
-        font-size: 54px;
+        font-size: 51px;
         line-height: 84px;
 
         @media (max-width: 1520px) {

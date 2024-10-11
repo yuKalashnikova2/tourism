@@ -129,7 +129,7 @@ const isVisible = ref(false)
         position: relative;
     }
     &__nav {
-        background-color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.9);
         position: absolute;
         top: 6rem;
         left: 1rem;
@@ -150,6 +150,7 @@ const isVisible = ref(false)
         list-style: none;
         flex-direction: column;
         width: 100%;
+        gap: 10px;
     }
     &__item {
         cursor: pointer;
@@ -157,13 +158,18 @@ const isVisible = ref(false)
         line-height: 1.5;
         font-weight: 400;
         padding: 16px;
+        background-color: #f8f9fa;
+        box-shadow: 2px 8px 16px 0px rgba(188, 188, 188, 1);
+        border-radius: 15px;
         & a {
             color: $text-black;
         }
         &:hover {
             background-color: #f8f9fa;
+            border-bottom: 1px solid $gray;
             border-radius: 15px;
             cursor: pointer;
+            transition: 0.3s;
         }
     }
     &__button {
