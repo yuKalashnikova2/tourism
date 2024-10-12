@@ -1,5 +1,5 @@
 <template>
-    <div class="stages">
+    <div class="stages" id="stages">
         <TitleSection>Этапы лечения в Турции</TitleSection>
 
         <div class="mt-20">

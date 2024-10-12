@@ -1,5 +1,5 @@
 <template>
-    <div class="contacts">
+    <div class="contacts" id="contacts">
         <div class="contacts__message">
             <h5 class="contacts__title">Остались вопросы? Напишите нам!</h5>
             <span class="contacts__subtitle"

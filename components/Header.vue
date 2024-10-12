@@ -34,22 +34,22 @@ const isVisible = ref(false)
         </div>
         <ul class="header__menu d-none">
             <li class="header__menu-item">
-                <NuxtLink to="#team">О нас</NuxtLink>
+                <NuxtLink to="#about">О нас</NuxtLink>
             </li>
             <li class="header__menu-item">
-                <NuxtLink to="#price">Услуги</NuxtLink>
+                <NuxtLink to="#services">Услуги</NuxtLink>
             </li>
             <li class="header__menu-item">
-                <NuxtLink to="#lastnews">Этапы</NuxtLink>
+                <NuxtLink to="#stages">Этапы</NuxtLink>
             </li>
             <li class="header__menu-item">
-                <NuxtLink to="#team">Блог</NuxtLink>
+                <NuxtLink to="#blog">Блог</NuxtLink>
             </li>
             <li class="header__menu-item">
                 <NuxtLink to="#contacts">Контакты</NuxtLink>
             </li>
             <li class="header__menu-item">
-                <NuxtLink to="#contacts">FAQ</NuxtLink>
+                <NuxtLink to="#faq">FAQ</NuxtLink>
             </li>
         </ul>
 

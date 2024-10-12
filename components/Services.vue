@@ -1,5 +1,5 @@
 <template>
-    <div class="services">
+    <div class="services" id="services">
         <TitleSection>Наши услуги</TitleSection>
         <div class="mt-20">
             <p class="services__text">
@@ -42,10 +42,18 @@
 .services {
     &__wrapper {
         margin-top: 40px;
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        // display: flex;
+        // flex-wrap: wrap;
         // justify-content: space-between;
         gap: 20px;
+        @media (max-width: 1500px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 992px) {
+            grid-template-columns: 1fr;
+        }
     }
 }
 </style>

@@ -24,7 +24,6 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .services-card {
-    max-width: 405px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,6 +37,7 @@ const props = defineProps({
     background-position: left;
     background-repeat: no-repeat;
     padding: 40px 20px 60px 40px;
+    height: 365px;
     &::before {
         content: '';
         position: absolute;
@@ -51,14 +51,21 @@ const props = defineProps({
         border-radius: 120px;
         background-color: rgba(32, 32, 32, 0.56);
     }
+    @media (max-width: 1500px) {
+        // height: 302px;
+        }
+    @media (max-width: 992px) {
+        padding: 90px 23px 50px 15px;
+    }
     &__title {
         font-weight: 600;
-        font-size: 43px;
-        line-height: 56px;
+        font-size: 38px;
+        line-height: 40px;
         margin-bottom: 8px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: wrap;
+        margin-bottom: 8px;
     }
     &__desc {
         font-weight: 400;
@@ -66,7 +73,7 @@ const props = defineProps({
         line-height: 33.6px;
         margin-bottom: 20px;
         overflow: hidden;
-        text-overflow: ellipsis;
+        // text-overflow: ellipsis;
     }
     &__button {
         background-color: $white;
@@ -80,8 +87,18 @@ const props = defineProps({
         }
     }
     &_border {
+        min-width: 405px;
+     
         border-radius: 120px;
         overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 2px 2px 20px 0px #BCBCBC;
+
+        @media (max-width: 1550px) {
+            max-width: 100%;
+        }
     }
     &_border-4 {
         background: linear-gradient(180deg, #d742bc00 0%, #d742bc1f 12%);

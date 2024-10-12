@@ -24,7 +24,7 @@ const questions = ref([
 ])
 </script>
 <template>
-    <div class="faq">
+    <div class="faq" id="faq">
         <TitleSection>Популярные вопросы</TitleSection>
         <div class="faq__wrapper">
             <FAQCard

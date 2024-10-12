@@ -1,5 +1,5 @@
 <template>
-    <div class="about">
+    <div class="about" id="about">
         <TitleSection>Почему мы?</TitleSection>
 
         <div class="mt-20">

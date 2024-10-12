@@ -1,5 +1,5 @@
 <template>
-    <div class="blog">
+    <div class="blog" id="blog">
         <TitleSection>Наш блог</TitleSection>
         <div class="blog__wrapper">
             <BlogVideoCard
