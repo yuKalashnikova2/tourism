@@ -101,6 +101,18 @@ const isVisible = ref(false)
             justify-content: center;
             align-items: center;
             padding: 20px 60px;
+            & a {
+                font-size: 28px;
+                font-weight: 500;
+                line-height: 39.2px;
+                @media (max-width: 1600px) {
+                    font-size: 20px;
+                font-weight: 500;
+                line-height: 28px;
+                text-align: left;
+                }
+
+            }
             @media (max-width: 1270px) {
                 padding: 10px 30px;
             }
