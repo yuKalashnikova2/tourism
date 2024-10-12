@@ -1,3 +1,4 @@
+
 <template>
     <div class="container">
         <div class="wrapper">
@@ -9,6 +10,7 @@
             <Social />
             <Blog />
             <FAQ />
+            <Contacts />
         </div>
     </div>
 </template>

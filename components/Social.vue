@@ -22,7 +22,7 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .social {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
