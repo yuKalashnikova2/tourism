@@ -102,7 +102,7 @@
         position: absolute;
         right: 0;
         bottom: 0;
-        z-index: 1;
+        // z-index: 1;
         @media (max-width: 1320px) {
             z-index: -1;
         }

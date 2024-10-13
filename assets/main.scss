@@ -22,7 +22,7 @@ body {
     color: $text-black;
     overflow-x: hidden;
 }
-h1 {
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
@@ -33,6 +33,10 @@ a {
 img {
     display: block;
 }
+input {
+    all: unset;
+  }
+
 .container {
     padding: 0 7.5rem;
     @media (max-width: 1550px) {
@@ -64,4 +68,7 @@ img {
 }
 .mt-20 {
     margin-top: 20px;
+}
+.overflow-hidden {
+    overflow: hidden;
 }

@@ -31,7 +31,7 @@ const props = defineProps({
     border-radius: 120px;
     position: relative;
     width: 100%;
-    z-index: 2;
+    // z-index: 2;
     color: $white;
     background-size: cover;
     background-position: left;
