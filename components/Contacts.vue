@@ -27,9 +27,12 @@
             </div>
         </div>
         <div class="contacts__wrapper">
-            <div class="contacts__wrapper__item">
-                <img src="/whats.svg" alt="whats" />
-            </div>
+            <nuxt-link to="https://wa.me/79254994561">
+                <div class="contacts__wrapper__item">
+                    <img src="/whats.svg" alt="whats" />
+                </div>
+            </nuxt-link>
+
             <nuxt-link to="https://www.youtube.com/@zdorovyeiturizm">
                 <div class="contacts__wrapper__item">
                     <img src="/youtube.svg" alt="youtube" />
@@ -75,6 +78,11 @@
         line-height: 60px;
         text-align: left;
         margin-bottom: 20px;
+        @media (max-width: 500px) {
+            font-size: 40px;
+            line-height: 40px;
+            font-weight: 500;
+        }
     }
     &__subtitle {
         font-size: 28px;
@@ -124,6 +132,10 @@
             font-weight: 500;
             line-height: 39.2px;
             text-align: left;
+            @media (max-width: 500px) {
+                font-size: 20px;
+                line-height: 25px;
+            }
         }
     }
     &__wrapper {

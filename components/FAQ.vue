@@ -41,6 +41,7 @@ const questions = ref([
    &__wrapper {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
    }
 }
 </style>
