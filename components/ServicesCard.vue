@@ -57,6 +57,9 @@ const props = defineProps({
     @media (max-width: 992px) {
         padding: 90px 23px 50px 15px;
     }
+    @media (max-width: 768px) {
+        margin: 0;
+    }
     &__title {
         font-weight: 600;
         font-size: 38px;

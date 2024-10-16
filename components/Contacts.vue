@@ -105,7 +105,7 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        @media (max-width: 605px) {
+        @media (max-width: 1200px) {
             flex-direction: column;
             align-items: baseline;
         }
@@ -144,8 +144,7 @@
         justify-content: center;
         margin-top: 20px;
         gap: 28px;
-        @media (max-width: 992px) {
-            justify-content: left;
+        @media (max-width: 1200px) {
             margin-top: 35px;
         }
         @media (max-width: 768px) {

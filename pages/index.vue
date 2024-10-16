@@ -9,7 +9,7 @@
             <StagesTreatment />
             <Social />
             <Blog />
-            <FAQ />
+            <QuestionWrapper />
             <Contacts />
             <Footer />
         </div>

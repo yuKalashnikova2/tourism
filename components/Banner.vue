@@ -222,6 +222,7 @@ watch(modalClosed, (newmodalClosed) => {
         }
         @media (max-width: 768px) {
             max-width: 100%;
+            padding-right: 0;
         }
     }
     &__form {
@@ -238,7 +239,7 @@ watch(modalClosed, (newmodalClosed) => {
             );
         border-radius: 120px;
         @media (max-width: 768px) {
-            padding: 20px;
+            padding: 0;
         }
         &__title {
             font-weight: 600;
@@ -260,6 +261,9 @@ watch(modalClosed, (newmodalClosed) => {
             font-size: 28px;
             line-height: 33px;
             margin-bottom: 40px;
+            @media(max-width: 768px) {
+                padding:0;
+            }
         }
         &__wrapper {
             display: flex;
@@ -267,6 +271,10 @@ watch(modalClosed, (newmodalClosed) => {
             background-color: $white;
             border-radius: 120px;
             padding: 60px 60px 60px 40px;
+            @media(max-width: 768px) {
+                padding: 30px 30px 30px 20px;
+                background-repeat: 80px;
+            }
         }
     }
     &__labels {

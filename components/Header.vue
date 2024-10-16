@@ -1,14 +1,14 @@
 <script setup>
 import { ref } from 'vue'
 
-const list = ref([
-    { name: 'О нас', link: '#about' },
-    { name: 'Услуги', link: '#services' },
-    { name: 'Этапы', link: '#stages' },
-    { name: 'Блог', link: '#blog' },
-    { name: 'Контакты', link: '#contacts' },
-    { name: 'FAQ', link: '#faq' },
-])
+// const list = ref([
+//     { name: 'О нас', link: '#about' },
+//     { name: 'Услуги', link: '#services' },
+//     { name: 'Этапы', link: '#stages' },
+//     { name: 'Блог', link: '#blog' },
+//     { name: 'Контакты', link: '#contacts' },
+//     { name: 'FAQ', link: '#faq' },
+// ])
 
 const isVisible = ref(false)
 </script>
@@ -19,7 +19,7 @@ const isVisible = ref(false)
                 <img src="/logo.svg" alt="logo" />
             </NuxtLink>
         </div>
-        <div class="burger__wrapper">
+        <!-- <div class="burger__wrapper">
             <header class="burger__header">
                 <div
                     class="burger__button"
@@ -31,7 +31,7 @@ const isVisible = ref(false)
                     <span></span>
                 </div>
             </header>
-        </div>
+        </div> -->
         <ul class="header__menu d-none">
             <li class="header__menu-item">
                 <NuxtLink to="#about">О нас</NuxtLink>
@@ -53,15 +53,15 @@ const isVisible = ref(false)
             </li>
         </ul>
 
-        <Transition>
-            <nav class="burger__nav" v-if="isVisible">
+        <!-- <Transition>
+            <nav class="burger__nav" v-show="isVisible">
                 <ul class="burger__list">
                     <li class="burger__item" v-for="lis in list">
                         <NuxtLink :to="lis.link">{{ lis.name }}</NuxtLink>
                     </li>
                 </ul>
             </nav>
-        </Transition>
+        </Transition> -->
     </div>
 </template>
 
@@ -101,6 +101,8 @@ const isVisible = ref(false)
             justify-content: center;
             align-items: center;
             padding: 20px 60px;
+            pointer-events: auto;
+            z-index: 10;
             & a {
                 font-size: 28px;
                 font-weight: 500;
@@ -136,7 +138,7 @@ const isVisible = ref(false)
     }
     &__header {
         padding: 23px 34px;
-        z-index: 10;
+        z-index: 5;
         overflow-y: hidden;
         position: relative;
     }
@@ -152,7 +154,7 @@ const isVisible = ref(false)
         padding: 20px;
         height: auto;
         border-radius: 30px;
-        z-index: 5;
+        z-index: 10;
         @media (min-width: 993px) {
             display: none;
         }

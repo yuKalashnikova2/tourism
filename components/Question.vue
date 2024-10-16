@@ -10,28 +10,31 @@ const props = defineProps({
         type: String,
         default: 'Текст вопроса',
     },
+    expanded: Boolean,
 })
-
-const expanded = ref(false)
+const emit = defineEmits(['update:expanded'])
+// const expanded = ref(false)
 const contentStyle = computed(() => {
-    return { 'max-height': expanded.value ? '133px' : 0 }
+    return { 'max-height': props.expanded ? '100px' : 0 }
 })
 
 const infoStyle = computed(() => {
-    return { opacity: expanded.value ? 1 : 0 }
+    return { opacity: props.expanded ? 1 : 0 }
 })
 </script>
 <template>
-    <article class="question">
+    <article
+        class="question"
+        @click="$emit('update:expanded', !props.expanded)"
+    >
         <header>
             <div
                 class="question__arrow"
-                :class="{ 'question__arrow--open': expanded }"
-                @click="expanded = !expanded"
+                :class="{ 'question__arrow--open': props.expanded }"
             >
                 <img src="/downarrow.svg" alt="" />
             </div>
-            <h4 @click="expanded = !expanded" class="question-title">
+            <h4 class="question-title">
                 {{ title }}
             </h4>
         </header>
@@ -41,73 +44,54 @@ const infoStyle = computed(() => {
     </article>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .question {
     background-color: $white;
     padding: 1.3rem;
-    // border-radius: 2rem !important;
+    border-radius: 2rem !important;
 }
 
-.question p {
-    margin-bottom: 0;
-    margin-top: 0.6rem;
-    font-family: Montserrat;
-    font-size: 28px;
-    font-weight: 400;
-    line-height: 39.2px;
-    @media (max-width: 768px) {
-        font-size: 20px;
-        line-height: 20px;
-    }
-}
 .question header {
     display: flex;
-    // justify-content: center;
-    align-items: center;
     gap: 20px;
+    align-items: center;
 }
 
 .question-title {
     cursor: pointer;
-    color: $black;
+    color: $text-black;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
     font-size: 40px;
     font-weight: 700;
     line-height: 56px;
 
-    @media (min-width: 992px) and (max-width: 1400px) {
+    @media (max-width: 992px) {
         font-size: 30px;
         line-height: 40px;
-    }
-    @media (max-width: 768px) {
-        font-size: 20px;
-        line-height: 28px;
     }
 }
 
 .content {
     max-height: 0;
     transition: max-height 0.2s ease-out;
-    margin-left: 80px;
-    @media (max-width: 768px) {
-        margin-left: 0;
-    }
+    grid-row: 2;
+    grid-column: 1;
 }
 .info {
     z-index: -1;
     opacity: 0;
     transition: opacity 0.2s ease-out;
-    font-family: Montserrat;
     font-size: 28px;
     font-weight: 400;
     line-height: 39.2px;
     text-align: left;
 
-    @media (min-width: 992px) and (max-width: 1400px) {
-    }
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
+        font-size: 20px;
+        line-height: 20px;
     }
 }
 
@@ -116,6 +100,7 @@ const infoStyle = computed(() => {
     height: 60px;
     cursor: pointer;
     transition: transform 0.3s;
+    flex-shrink: 0;
     & img {
         width: 100%;
         height: 100%;
@@ -123,6 +108,10 @@ const infoStyle = computed(() => {
     &--open {
         transform: rotate(180deg);
         transition: transform 0.3s;
+    }
+    @media (max-width: 768px) {
+        width: 40px;
+        height: 40px;
     }
 }
 </style>
