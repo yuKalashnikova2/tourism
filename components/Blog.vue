@@ -1,5 +1,16 @@
+<script setup>
+import { ref } from 'vue'
+const windowWidth = ref('')
+
+onMounted(() => {
+    windowWidth.value = window.innerWidth
+    window.addEventListener('resize', () => {
+        windowWidth.value = window.innerWidth
+    })
+})
+</script>
 <template>
-    <div class="blog" id="blog">
+    <div class="blog" id="blog" v-if="windowWidth >= 768">
         <TitleSection>Наш блог</TitleSection>
         <div class="blog__wrapper">
             <BlogVideoCard
@@ -16,6 +27,20 @@
             />
         </div>
     </div>
+    <BlogMobile v-else>
+        <BlogVideoCard
+            video="https://www.youtube.com/embed/KRRKdk9Jf_s?autoplay=1&mute=1"
+        />
+        <BlogVideoCard
+            video="https://youtube.com/embed/-J48C26AM3I?autoplay=1&mute=1"
+        />
+        <BlogVideoCard
+            video="https://youtube.com/embed/RjtwFyucTR4?autoplay=1&mute=1"
+        />
+        <BlogVideoCard
+            video="https://youtube.com/embed/LxINvpQbYo4?autoplay=1&mute=1"
+        />
+    </BlogMobile>
 </template>
 
 <style lang="scss" scoped>
