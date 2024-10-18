@@ -187,7 +187,9 @@ watch(modalClosed, (newmodalClosed) => {
         z-index: -1;
         background-color: rgba(255, 255, 255, 0.5);
     }
-
+    // @media (max-width: 1500px) {
+    //     grid-template-columns: 1fr;
+    // }
     @media (max-width: 1200px) {
         grid-template-columns: 1fr;
     }
@@ -197,10 +199,10 @@ watch(modalClosed, (newmodalClosed) => {
         line-height: 112px;
         font-weight: 600;
         text-align: left;
-        @media (max-width: 1520px) {
-            font-size: 60px;
-            line-height: 80px;
-        }
+        // @media (max-width: 1520px) {
+        //     font-size: 60px;
+        //     line-height: 80px;
+        // }
     }
     &__block {
         max-width: 950px;
@@ -215,10 +217,10 @@ watch(modalClosed, (newmodalClosed) => {
             font-weight: 500;
             font-size: 40px;
             line-height: 56px;
-            @media (max-width: 1520px) {
-                font-size: 30px;
-                line-height: 38px;
-            }
+            // @media (max-width: 1520px) {
+            //     font-size: 30px;
+            //     line-height: 38px;
+            // }
         }
         @media (max-width: 768px) {
             max-width: 100%;
@@ -227,16 +229,9 @@ watch(modalClosed, (newmodalClosed) => {
     }
     &__form {
         padding: 40px 28px;
-        background: linear-gradient(
-                287.56deg,
-                rgba(86, 241, 206, 0) 50%,
-                rgba(86, 241, 206, 0.8) 100%
-            ),
-            linear-gradient(
-                252.44deg,
-                rgba(66, 159, 215, 0.8) 0%,
-                rgba(66, 159, 215, 0) 50%
-            );
+        background: #c7f3e8;
+        position: relative;
+        z-index: -1 !important;
         border-radius: 120px;
         @media (max-width: 768px) {
             padding: 0;
@@ -246,14 +241,14 @@ watch(modalClosed, (newmodalClosed) => {
             font-size: 56px;
             line-height: 74.4px;
             margin-bottom: 20px;
-            @media (max-width: 1520px) {
-                font-size: 36px;
-                line-height: 40px;
-            }
-            @media (max-width: 768px) {
-                font-size: 36px;
-                line-height: 40px;
-            }
+            // @media (max-width: 1520px) {
+            //     font-size: 36px;
+            //     line-height: 40px;
+            // }
+            // @media (max-width: 768px) {
+            //     font-size: 36px;
+            //     line-height: 40px;
+            // }
         }
         &__subtitle {
             display: block;
@@ -261,9 +256,9 @@ watch(modalClosed, (newmodalClosed) => {
             font-size: 28px;
             line-height: 33px;
             margin-bottom: 40px;
-            @media(max-width: 768px) {
-                padding:0;
-            }
+            // @media(max-width: 768px) {
+            //     padding:0;
+            // }
         }
         &__wrapper {
             display: flex;
@@ -271,8 +266,39 @@ watch(modalClosed, (newmodalClosed) => {
             background-color: $white;
             border-radius: 120px;
             padding: 60px 60px 60px 40px;
-            @media(max-width: 768px) {
-                padding: 30px 30px 30px 20px;
+            height: 100%;
+            justify-content: space-between;
+            max-width: 100%;
+            box-sizing: border-box;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: linear-gradient(
+                        287.56deg,
+                        rgba(86, 241, 206, 0) 50%,
+                        rgba(86, 241, 206, 0.8) 100%
+                    ),
+                    linear-gradient(
+                        252.44deg,
+                        rgba(66, 159, 215, 0.8) 0%,
+                        rgba(66, 159, 215, 0) 50%
+                    ),
+                    linear-gradient(
+                        180deg,
+                        rgba(215, 66, 188, 0) 50%,
+                        rgba(215, 66, 188, 0.12) 100%
+                    );
+
+                opacity: 0.6;
+                z-index: -1;
+                border-radius: 120px;
+            }
+            @media (max-width: 768px) {
+                // padding: 30px 30px 30px 20px;
                 background-repeat: 80px;
             }
         }

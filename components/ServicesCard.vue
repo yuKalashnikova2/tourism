@@ -8,17 +8,21 @@ const props = defineProps({
 </script>
 <template>
     <div
-        class="services-card_border"
-        :class="`services-card_border-${borderColor}`"
+        class="services-card_border-opacity_br"
+        :class="`services-card_border-opacity-${borderColor}`"
     >
-        <div
-            class="services-card"
-            :style="{ backgroundImage: `url(${props.backgroundImage})` }"
-        >
-            <div class="services-card__title">{{ title }}</div>
-            <div class="services-card__desc">{{ desc }}</div>
-            <Button class="services-card__button">Узнать</Button>
+        <div class="services-card_border services-card_border-opacity">
+            <div
+                class="services-card"
+                :style="{ backgroundImage: `url(${props.backgroundImage})` }"
+            >
+                <div class="services-card__title">{{ title }}</div>
+                <div class="services-card__desc">{{ desc }}</div>
+                <Button class="services-card__button">Узнать</Button>
+            </div>
         </div>
+
+        <!-- </div> -->
     </div>
 </template>
 
@@ -29,9 +33,10 @@ const props = defineProps({
     align-items: center;
     margin: 20px;
     border-radius: 120px;
-    position: relative;
+    position: relative !important;
     width: 100%;
-    z-index: 2;
+    // top: 100;
+    z-index: 10 !important;
     color: $white;
     background-size: cover;
     background-position: left;
@@ -53,7 +58,7 @@ const props = defineProps({
     }
     @media (max-width: 1500px) {
         // height: 302px;
-        }
+    }
     @media (max-width: 992px) {
         padding: 90px 23px 50px 15px;
     }
@@ -76,7 +81,6 @@ const props = defineProps({
         line-height: 33.6px;
         margin-bottom: 20px;
         overflow: hidden;
-        // text-overflow: ellipsis;
     }
     &__button {
         background-color: $white;
@@ -84,50 +88,68 @@ const props = defineProps({
         font-size: 28px;
         margin-top: auto;
         padding-bottom: 10px;
-        &:hover {
-            color: $white;
-            background-color: $gray;
-        }
     }
     &_border {
         min-width: 405px;
-     
         border-radius: 120px;
         overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 2px 2px 20px 0px #BCBCBC;
+        box-shadow: 2px 2px 20px 0px #bcbcbc;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(
+                    287.56deg,
+                    rgba(86, 241, 206, 0) 50%,
+                    rgba(86, 241, 206, 0.8) 100%
+                ),
+                linear-gradient(
+                    252.44deg,
+                    rgba(86, 241, 206, 0.8) 0%,
+                    rgba(66, 159, 215, 0) 50%
+                ),
+                linear-gradient(
+                    180deg,
+                    rgba(215, 66, 188, 0) 50%,
+                    rgba(215, 66, 188, 0.12) 100%
+                );
+            opacity: 0.4;
+            z-index: -1;
+            border-radius: 120px;
+        }
 
         @media (max-width: 1550px) {
-            max-width: 100%;
+            min-width: 100%;
         }
-    }
-    &_border-4 {
-        background: linear-gradient(180deg, #d742bc00 0%, #d742bc1f 12%);
-    }
-    &_border-3 {
-        background: linear-gradient(
-                287.56deg,
-                rgba(86, 241, 206, 0) 50%,
-                rgba(86, 241, 206, 0.8) 100%
-            ),
-            linear-gradient(
-                252.44deg,
-                rgba(86, 241, 206, 0.8) 0%,
-                rgba(66, 159, 215, 0) 50%
-            ),
-            linear-gradient(
-                180deg,
-                rgba(215, 66, 188, 0) 50%,
-                rgba(215, 66, 188, 0.12) 100%
-            );
-    }
-    &_border-2 {
-        background: #c7f3db;
-    }
-    &_border-1 {
-        background-color: #c7caf3;
+        &-opacity_br {
+            border-radius: 120px;
+        }
+        &-opacity-1 {
+            background: #c7caf3;
+            position: relative;
+            z-index: -1 !important;
+        }
+        &-opacity-2 {
+            background: #c7f3db;
+            position: relative;
+            z-index: -1 !important;
+        }
+        &-opacity-3 {
+            background: #c7f1f3;
+            position: relative;
+            z-index: -1 !important;
+        }
+        &-opacity-4 {
+            background: #ecc7f3;
+            position: relative;
+            z-index: -1 !important;
+        }
     }
 }
 </style>

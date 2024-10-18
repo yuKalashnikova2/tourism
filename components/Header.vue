@@ -77,12 +77,14 @@ const isVisible = ref(false)
     &-logo {
         width: 120px;
         height: 108px;
-        @media (max-width: 768px) {
-            width: 60px;
-            height: 40px;
-        }
+        // @media (max-width: 768px) {
+        //     width: 60px;
+        //     height: 40px;
+        // }
         & img {
             width: 100%;
+            object-fit: cover;
+            height: auto;
         }
     }
     &__menu {

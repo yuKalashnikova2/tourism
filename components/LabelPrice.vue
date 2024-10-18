@@ -27,19 +27,20 @@ const labelColor = computed(() => {
     color: $white;
     border-radius: 60px;
     padding: 35px;
+    white-space: nowrap;
     @media (max-width: 768px) {
         width: 100%;
-        padding: 15px;
+        // padding: 15px;
     }
     &__price {
         font-weight: 700;
         font-size: 51px;
         line-height: 84px;
 
-        @media (max-width: 1520px) {
-            font-size: 40px;
-            line-height: 56px;
-        }
+        // @media (max-width: 1520px) {
+        //     font-size: 40px;
+        //     line-height: 56px;
+        // }
 
         @media (max-width: 768px) {
             font-size: 24px;
