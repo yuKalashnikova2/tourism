@@ -66,7 +66,6 @@
         width: 527px;
         border-radius: 120px;
         overflow: hidden;
-        // border: 20px solid #67cfb899;
         flex-shrink: 1;
         &::before {
             content: '';

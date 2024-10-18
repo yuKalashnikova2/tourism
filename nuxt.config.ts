@@ -12,5 +12,11 @@ export default defineNuxtConfig({
           },
       },
   },
+  head: {
+    title: 'zdorovye i turizm',
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/logo.svg' } // Путь к фавикону
+    ]
+  }
 
 })

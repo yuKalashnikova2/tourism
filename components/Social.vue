@@ -1,24 +1,28 @@
 <template>
-    <div class="social">
-        <div class="social__block">
-            <div class="social__message">
-                <p>Следите за нами в соц сетях!</p>
-            </div>
+    <div class="social__border_opacity">
+        <div class="social__border">
+            <div class="social">
+                <div class="social__block">
+                    <div class="social__message">
+                        <p>Следите за нами в соц сетях!</p>
+                    </div>
 
-            <div class="social__wrapper">
-                <div class="social__wrapper__item">
-                    <img src="/youtube.svg" alt="youtube" />
+                    <div class="social__wrapper">
+                        <div class="social__wrapper__item">
+                            <img src="/youtube.svg" alt="youtube" />
+                        </div>
+                        <div class="social__wrapper__item">
+                            <img src="/vkontakte.svg" alt="vk" />
+                        </div>
+                        <div class="social__wrapper__item">
+                            <img src="/telegram.svg" alt="telegram" />
+                        </div>
+                    </div>
                 </div>
-                <div class="social__wrapper__item">
-                    <img src="/vkontakte.svg" alt="vk" />
-                </div>
-                <div class="social__wrapper__item">
-                    <img src="/telegram.svg" alt="telegram" />
-                </div>
+
+                <div class="social__image-background"></div>
             </div>
         </div>
-
-        <div class="social__image-background"></div>
     </div>
 </template>
 
@@ -27,15 +31,51 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     background: linear-gradient(
-        252.44deg,
-        rgba(199, 243, 219, 0.8) 0%,
-        rgba(86, 241, 206, 0) 50%
+        90deg,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0.8) 100%
     );
+
     box-shadow: 0px 8px 24px 20px rgba(192, 217, 233, 0.6);
-    border: 20px solid #c1faed;
     border-radius: 120px;
-    margin: 20px 0;
     position: relative;
+    z-index: 10;
+    &__border {
+        padding: 20px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(
+                    287.56deg,
+                    rgba(86, 241, 206, 0) 50%,
+                    rgba(86, 241, 206, 0.8) 100%
+                ),
+                linear-gradient(
+                    252.44deg,
+                    rgba(66, 159, 215, 0.8) 0%,
+                    rgba(66, 159, 215, 0) 50%
+                ),
+                linear-gradient(
+                    180deg,
+                    rgba(215, 66, 188, 0) 50%,
+                    rgba(215, 66, 188, 0.12) 100%
+                );
+
+            opacity: 0.4;
+            z-index: -1;
+            border-radius: 120px;
+        }
+        &_opacity {
+            background: #c1faed;
+            position: relative;
+            z-index: -1 !important;
+            border-radius: 120px;
+        }
+    }
     @media (max-width: 992px) {
         display: flex;
         align-items: center;
