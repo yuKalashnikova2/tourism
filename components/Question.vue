@@ -47,13 +47,15 @@ const infoStyle = computed(() => {
 <style lang="scss" scoped>
 .question {
     background-color: $white;
-    padding: 1.3rem;
-    border-radius: 2rem !important;
+    // padding: 1.3rem;
+    // border-radius: 2rem !important;
+    padding-top: 22px;
+    padding-bottom: 22px;
 }
 
 .question header {
     display: flex;
-    gap: 20px;
+    gap: 16px;
     align-items: center;
 }
 
@@ -63,14 +65,15 @@ const infoStyle = computed(() => {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-
     font-size: 40px;
     font-weight: 700;
     line-height: 56px;
+    margin-bottom: 10px;
 
-    @media (max-width: 992px) {
-        font-size: 30px;
-        line-height: 40px;
+    @media (max-width: 768px) {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 39.2px;
     }
 }
 
@@ -87,11 +90,12 @@ const infoStyle = computed(() => {
     font-size: 28px;
     font-weight: 400;
     line-height: 39.2px;
-    text-align: left;
+    padding-left: 80px;
 
-    @media (max-width: 992px) {
+    @media (max-width: 768px) {
         font-size: 20px;
-        line-height: 20px;
+        font-weight: 700;
+        line-height: 28px;
     }
 }
 

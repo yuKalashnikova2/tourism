@@ -41,9 +41,9 @@
         list-style: none;
         padding: 14px 0;
         margin: 0;
-        @media (max-width: 1270px) {
-            gap: 10px;
-        }
+        // @media (max-width: 1270px) {
+        //     gap: 10px;
+        // }
         &-item {
             display: flex;
             justify-content: center;
@@ -53,7 +53,12 @@
                 font-size: 20px;
                 font-weight: 500;
                 line-height: 28px;
-                text-align: left;
+                @media(max-width: 768px) {
+font-size: 40px;
+font-weight: 700;
+line-height: 56px;
+
+                }
             }
             @media (max-width: 1270px) {
                 padding: 10px 30px;
@@ -66,6 +71,12 @@
         line-height: 22.4px;
         text-align: center;
         padding-bottom: 40px;
+        @media(max-width: 768px) {
+font-size: 40px;
+font-weight: 700;
+line-height: 56px;
+
+                }
     }
 }
 

@@ -49,7 +49,7 @@ watch(modalClosed, (newmodalClosed) => {
         <div class="banner__block">
             <h1 class="banner__title">Лечебный отпуск в Турцию</h1>
             <span>подберём лучшую клинику</span>
-            <span> по вашим критериям</span>
+            <span>по вашим критериям</span>
 
             <div class="banner__labels">
                 <LabelPrice price="0 руб." text="Предоплаты" color="#4245D7" />
@@ -199,6 +199,16 @@ watch(modalClosed, (newmodalClosed) => {
         line-height: 112px;
         font-weight: 600;
         text-align: left;
+        @media (max-width: 768px) {
+            font-size: 60px;
+            font-weight: 700;
+            line-height: 84px;
+        }
+        @media (max-width: 360px) {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 67.2px;
+        }
         // @media (max-width: 1520px) {
         //     font-size: 60px;
         //     line-height: 80px;
@@ -217,6 +227,17 @@ watch(modalClosed, (newmodalClosed) => {
             font-weight: 500;
             font-size: 40px;
             line-height: 56px;
+
+            @media (max-width: 768px) {
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 28px;
+            }
+            @media (max-width: 330px) {
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 28px;
+            }
             // @media (max-width: 1520px) {
             //     font-size: 30px;
             //     line-height: 38px;
@@ -239,26 +260,40 @@ watch(modalClosed, (newmodalClosed) => {
         &__title {
             font-weight: 600;
             font-size: 56px;
-            line-height: 74.4px;
+            line-height: 78.4px;
             margin-bottom: 20px;
+
             // @media (max-width: 1520px) {
             //     font-size: 36px;
             //     line-height: 40px;
             // }
-            // @media (max-width: 768px) {
-            //     font-size: 36px;
-            //     line-height: 40px;
-            // }
+            @media (max-width: 768px) {
+                font-size: 40px;
+                font-weight: 700;
+                line-height: 56px;
+            }
+            @media (max-width: 360px) {
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 44.8px;
+            }
         }
         &__subtitle {
             display: block;
             font-weight: 400;
             font-size: 28px;
-            line-height: 33px;
+            line-height: 33.6px;
             margin-bottom: 40px;
-            // @media(max-width: 768px) {
-            //     padding:0;
-            // }
+            @media (max-width: 768px) {
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 28px;
+            }
+            @media (max-width: 360px) {
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 28px;
+            }
         }
         &__wrapper {
             display: flex;

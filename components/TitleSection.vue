@@ -1,7 +1,7 @@
 <template>
-    <h3 class="title-section">
+    <h2 class="title-section">
         <slot />
-    </h3>
+    </h2>
 </template>
 
 <style lang="scss" scoped>
@@ -10,12 +10,18 @@
     font-size: 60px;
     line-height: 60px;
     text-align: left;
-    @media (max-width: 992px) {
-        text-align: center;
-    }
+    // @media (max-width: 992px) {
+    //     text-align: center;
+    // }
     @media (max-width: 768px) {
         font-size: 40px;
-        line-height: 50px;
+        font-weight: 700;
+        line-height: 56px;
+    }
+    @media (max-width: 360px) {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 44.8px;
     }
 }
 </style>

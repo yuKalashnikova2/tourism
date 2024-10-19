@@ -20,7 +20,7 @@ const styleBackground = computed(() => {
 <template>
     <div class="stages-card">
         <div class="stages-card__title" :style="{ backgroundColor: color }">
-            <span>{{ title }}</span>
+            <h3>{{ title }}</h3>
         </div>
         <div class="stages-card__desc" :class="styleBackground">
             <p>{{ desc }}</p>
@@ -44,15 +44,15 @@ const styleBackground = computed(() => {
         border-top-left-radius: 60px;
         width: 100%;
         text-align: center;
-        & span {
+        & h3 {
             font-weight: 700;
             font-size: 40px;
             line-height: 56px;
             margin: 0;
-            @media (max-width: 992px) {
-                font-size: 35px;
-                line-height: 40px;
-                font-weight: 600;
+            @media (max-width: 768px) {
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 39.2px;
             }
         }
     }
@@ -65,9 +65,10 @@ const styleBackground = computed(() => {
         border-bottom-left-radius: 60px;
         border-bottom-right-radius: 60px;
         padding: 20px 20px 20px 40px;
-        @media (max-width: 992px) {
-            font-size: 25px;
-            line-height: 30px;
+        @media (max-width: 768px) {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
         }
         &_background-purple {
             background: linear-gradient(

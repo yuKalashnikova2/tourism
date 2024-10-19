@@ -3,35 +3,42 @@
         <div class="contacts__border">
             <div class="contacts" id="contacts">
                 <div class="contacts__message">
-                    <h5 class="contacts__title">
+                    <h3 class="contacts__title">
                         Остались вопросы? Напишите нам!
-                    </h5>
+                    </h3>
                     <span class="contacts__subtitle"
                         >Получите все ответы прямо сейчас!</span
                     >
                 </div>
                 <div class="contacts__form">
                     <div class="contacts__phone">
-                        <a href="tel:+79254994561">
+                        <div class="contacts__phone__wrapper">
                             <div class="contacts__phone__icon">
                                 <img src="/phone.svg" alt="phone" />
                             </div>
-                        </a>
-
-                        <span class="contacts__phone__subtitle">Телефон:</span>
-                        <span class="contacts__phone__name"
-                            >+7 925 499 45 61</span
+                        <div>
+                           
+                                <span class="contacts__phone__subtitle">Телефон:</span>
+                            </div>
+                        <a href="tel:+79254994561" class="contacts__phone__name"
+                            >+7 925 499 45 61</a
                         >
+                           
+                    
+                        </div>
+                      
                     </div>
                     <div class="contacts__phone">
-                        <div class="contacts__phone__icon">
+                        <div class="contacts__phone__wrapper">
+                            <div class="contacts__phone__icon">
                             <img src="/email.svg" alt="email" />
                         </div>
 
                         <span class="contacts__phone__subtitle">Email:</span>
-                        <span class="contacts__phone__name"
-                            >zdorovye.turizm@bk.ru</span
-                        >
+                        </div>
+                 
+                        <a href="mailto:zdorovye.turizm@bk.ru" class="contacts__phone__name"
+                            >zdorovye.turizm@bk.ru</a>
                     </div>
                 </div>
                 <div class="contacts__wrapper">
@@ -128,12 +135,11 @@
         font-size: 60px;
         font-weight: 600;
         line-height: 60px;
-        text-align: left;
         margin-bottom: 20px;
-        @media (max-width: 500px) {
-            font-size: 40px;
-            line-height: 40px;
-            font-weight: 500;
+        @media (max-width: 768px) {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 39.2px;
         }
     }
     &__subtitle {
@@ -141,13 +147,18 @@
         font-weight: 400;
         line-height: 33.6px;
         text-align: left;
+        @media (max-width: 768px) {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+        }
     }
     &__form {
         margin-top: 40px;
         display: flex;
         align-items: center;
         gap: 40px;
-        @media (max-width: 992px) {
+        @media (max-width: 1150px) {
             flex-direction: column;
             justify-content: left;
             align-items: baseline;
@@ -157,21 +168,28 @@
         display: flex;
         align-items: center;
         gap: 12px;
-        @media (max-width: 1200px) {
-            flex-direction: column;
-            align-items: baseline;
+        &__wrapper {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            justify-content: center;
         }
+        // @media (max-width: 1200px) {
+        //     flex-direction: column;
+        //     align-items: baseline;
+        // }
 
         &__icon {
-            width: 40px;
-            height: 40px;
+            // width: 40px;
+            // height: 40px;
+            flex-shrink: 0;
             & img {
                 width: 100%;
                 object-fit: cover;
             }
-            @media (max-width: 605px) {
-                display: none;
-            }
+            // @media (max-width: 605px) {
+            //     display: none;
+            // }
         }
         &__subtitle {
             font-size: 28px;
@@ -184,9 +202,10 @@
             font-weight: 500;
             line-height: 39.2px;
             text-align: left;
-            @media (max-width: 500px) {
+            @media (max-width: 768px) {
                 font-size: 20px;
-                line-height: 25px;
+                font-weight: 700;
+                line-height: 28px;
             }
         }
     }

@@ -16,7 +16,7 @@ const props = defineProps({
                 class="services-card"
                 :style="{ backgroundImage: `url(${props.backgroundImage})` }"
             >
-                <div class="services-card__title">{{ title }}</div>
+                <h3 class="services-card__title">{{ title }}</h3>
                 <div class="services-card__desc">{{ desc }}</div>
                 <Button class="services-card__button">Узнать</Button>
             </div>
@@ -60,7 +60,7 @@ const props = defineProps({
         // height: 302px;
     }
     @media (max-width: 992px) {
-        padding: 90px 23px 50px 15px;
+        // padding: 90px 23px 50px 15px;
     }
     @media (max-width: 768px) {
         margin: 0;
@@ -74,6 +74,11 @@ const props = defineProps({
         text-overflow: ellipsis;
         white-space: wrap;
         margin-bottom: 8px;
+        @media (max-width: 768px) {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 39.2px;
+        }
     }
     &__desc {
         font-weight: 400;
@@ -81,6 +86,11 @@ const props = defineProps({
         line-height: 33.6px;
         margin-bottom: 20px;
         overflow: hidden;
+        @media (max-width: 768px) {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+        }
     }
     &__button {
         background-color: $white;

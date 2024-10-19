@@ -28,8 +28,9 @@ const questions = ref([
 ])
 </script>
 <template>
-    <section class="question__wrapper">
+    <div class="question">
         <TitleSection>Популярные вопросы</TitleSection>
+        <div class="question__wrapper">
         <Question
             v-for="question in questions"
             :key="question.id"
@@ -38,14 +39,17 @@ const questions = ref([
             :expanded="question.expanded"
             @update:expanded="question.expanded = $event"
         />
-    </section>
+    </div>
+    </div>
+ 
 </template>
 
 <style scoped lang="scss">
 .question__wrapper {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 1.24rem;
+    grid-gap: 20px;
+    margin-top: 40px;
 }
 
 </style>

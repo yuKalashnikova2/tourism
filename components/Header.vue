@@ -69,7 +69,8 @@ const isVisible = ref(false)
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 140px;
+    // justify-content: space-between;
     padding: 20px 0;
     @media (max-width: 768px) {
         padding: 10px 0;
@@ -109,25 +110,34 @@ const isVisible = ref(false)
                 font-size: 28px;
                 font-weight: 500;
                 line-height: 39.2px;
-                @media (max-width: 1600px) {
-                    font-size: 20px;
-                font-weight: 500;
-                line-height: 28px;
-                text-align: left;
+                @media (max-width: 768px) {
+                    font-size: 40px;
+                    font-weight: 700;
+                    line-height: 56px;
                 }
-
+                @media (max-width: 768px) {
+                    font-size: 32px;
+                    font-weight: 700;
+                    line-height: 44.8px;
+                }
+                // @media (max-width: 1600px) {
+                //     font-size: 20px;
+                // font-weight: 500;
+                // line-height: 28px;
+                // text-align: left;
+                // }
             }
-            @media (max-width: 1270px) {
-                padding: 10px 30px;
-            }
+            // @media (max-width: 1270px) {
+            //     padding: 10px 30px;
+            // }
         }
     }
 }
-.d-none {
-    @media (max-width: 992px) {
-        display: none;
-    }
-}
+// .d-none {
+//     @media (max-width: 992px) {
+//         display: none;
+//     }
+// }
 
 .burger {
     &__wrapper {

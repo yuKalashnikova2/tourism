@@ -18,9 +18,7 @@
 
             <div class="about__text">
                 <div>
-                    <div class="about__name">
-                        Консультант — Эйюп Ахмет Уйгун
-                    </div>
+                    <h3 class="about__name">Консультант — Эйюп Ахмет Уйгун</h3>
                     <p class="about__desc">
                         Опытный специалист в сфере организации оздоровительного
                         туризма. Владеет турецким, английским, русским языками,
@@ -63,7 +61,8 @@
         }
     }
     &__image {
-        width: 527px;
+        min-width: 527px;
+        height: 100%;
         border-radius: 120px;
         overflow: hidden;
         flex-shrink: 1;
@@ -110,10 +109,10 @@
         @media (max-width: 1200px) {
             margin: 0 auto;
         }
-        @media (max-width: 768px) {
-            width: 300px;
-            height: 300px;
-        }
+        // @media (max-width: 768px) {
+        //     width: 300px;
+        //     height: 300px;
+        // }
         & img {
             width: 100%;
             height: 100%;
@@ -134,10 +133,10 @@
         line-height: 40px;
         text-align: left;
         margin-bottom: 16px;
-        @media (max-width: 1200px) {
-            font-size: 30px;
-            line-height: 30px;
-            text-align: center;
+        @media (max-width: 768px) {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 39.2px;
         }
     }
     &__desc {
@@ -146,13 +145,13 @@
         font-weight: 400;
         line-height: 33.6px;
         text-align: left;
-        @media (max-width: 1200px) {
-            text-align: center;
-        }
+        // @media (max-width: 1200px) {
+        //     text-align: center;
+        // }
         @media (max-width: 768px) {
             font-size: 20px;
-            line-height: 20px;
-            text-align: center;
+            font-weight: 700;
+            line-height: 28px;
         }
     }
 }
