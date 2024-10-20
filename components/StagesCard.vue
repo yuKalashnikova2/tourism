@@ -23,9 +23,13 @@ const styleBackground = computed(() => {
         <div class="stages-card__title" :style="{ backgroundColor: color }">
             <h3>{{ title }}<br>{{ title2 }}</h3>
         </div>
-        <div class="stages-card__desc" :class="styleBackground">
+
+        <div class="stages-card__desc__border" :style="{ backgroundColor: color }">
+            <div class="stages-card__desc" :class="styleBackground">
             <div>{{ desc }}</div>
         </div>
+        </div>
+        
     </div>
 </template>
 
@@ -35,6 +39,7 @@ const styleBackground = computed(() => {
     flex-direction: column;
     align-items: center;
     // margin: 20px 30px;
+    position: relative;
     border-radius: 60px;
     box-shadow: 2px 8px 16px 0px rgba(188, 188, 188, 1);
 
@@ -58,46 +63,65 @@ const styleBackground = computed(() => {
         }
     }
     &__desc {
+        font-family: $font-3;
         height: 100%;
         font-weight: 400;
-        font-size: 26px;
-        line-height: 39px;
+        font-size: 28px;
+        line-height: 39.2px;
         letter-spacing: 2%;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
         border-bottom-left-radius: 60px;
         border-bottom-right-radius: 60px;
-        padding: 20px 20px 20px 40px;
+        // padding: 20px 20px 20px 40px;
+        padding-top: 20px;
+        padding-right: 20px;
+        margin-bottom: 20px;
+        padding-left: 40px;
+        background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.8) 100%);
+        min-height: auto;
+        &__border {
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+
+    display: flex;
+    height: 100%;
+        }
+
+        
+        // z-index: 1;
         @media (max-width: 768px) {
             font-size: 20px;
             font-weight: 700;
             line-height: 28px;
         }
         &_background-purple {
-            background: linear-gradient(
-                252.44deg,
-                rgba(199, 202, 243, 0.8) 0%,
-                rgba(199, 202, 243, 0) 50%
-            );
+            // background: linear-gradient(
+            //     252.44deg,
+            //     rgba(199, 202, 243, 0.8) 0%,
+            //     rgba(199, 202, 243, 0) 50%
+            // );
         }
         &_background-green {
-            background: linear-gradient(
-                252.44deg,
-                rgba(199, 243, 219, 0.8) 0%,
-                rgba(86, 241, 206, 0) 50%
-            );
+            // background: linear-gradient(
+            //     252.44deg,
+            //     rgba(199, 243, 219, 0.8) 0%,
+            //     rgba(86, 241, 206, 0) 50%
+            // );
         }
         &_background-blue {
-            background: linear-gradient(
-                252.44deg,
-                rgba(199, 241, 243, 0.8) 0%,
-                rgba(66, 159, 215, 0) 50%
-            );
+            // background: linear-gradient(
+            //     252.44deg,
+            //     rgba(199, 241, 243, 0.8) 0%,
+            //     rgba(66, 159, 215, 0) 50%
+            // );
         }
         &_background-pink {
-            background: linear-gradient(
-                252.44deg,
-                rgba(236, 199, 243, 0.8) 0%,
-                rgba(215, 66, 188, 0) 50%
-            );
+            // background: linear-gradient(
+            //     252.44deg,
+            //     rgba(236, 199, 243, 0.8) 0%,
+            //     rgba(215, 66, 188, 0) 50%
+            // );
         }
     }
 }
