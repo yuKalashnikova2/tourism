@@ -14,13 +14,13 @@
                 title="Пересадка волос"
                 desc="Современные методы Саппфир FUE и DHI"
                 borderColor="1"
-                backgroundImage="/p-1.jpeg"
+                backgroundImage="/p-1.JPG"
             />
             <ServicesCard
                 title="Неврология и хирургия"
                 desc="Лечение грыжи и болей без операции"
                 borderColor="2"
-                backgroundImage="/p-2.jpeg"
+                backgroundImage="/p-2.JPG"
             />
             <ServicesCard
                 title="Лечение зубов"
@@ -32,7 +32,7 @@
                 title="Эстетическая медицина"
                 desc="Пластические операции, липосакция"
                 borderColor="4"
-                backgroundImage="/p-4.png"
+                backgroundImage="/p-4.PNG"
             />
         </div>
     </div>
@@ -48,7 +48,7 @@
         // flex-wrap: wrap;
         // justify-content: space-between;
         gap: 20px;
-        @media (max-width: 1200px) {
+        @media (max-width: 1500px) {
             grid-template-columns: 1fr 1fr;
         }
         @media (max-width: 768px) {

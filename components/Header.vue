@@ -69,15 +69,15 @@ const isVisible = ref(false)
 .header {
     display: flex;
     align-items: center;
-    gap: 140px;
+    gap: 129px;
     // justify-content: space-between;
     padding: 20px 0;
-    @media (max-width: 768px) {
-        padding: 10px 0;
-    }
+
+
     &-logo {
         width: 120px;
         height: 108px;
+        flex-shrink: 0;
         // @media (max-width: 768px) {
         //     width: 60px;
         //     height: 40px;
@@ -92,13 +92,16 @@ const isVisible = ref(false)
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
+        gap: 9px;
         list-style: none;
         padding: 14px 0;
         margin: 0;
-        @media (max-width: 1270px) {
-            gap: 10px;
-        }
+        @media (max-width: 1200px) {
+        display: none;
+    }
+        // @media (max-width: 1270px) {
+        //     gap: 10px;
+        // }
         &-item {
             display: flex;
             justify-content: center;
@@ -106,6 +109,7 @@ const isVisible = ref(false)
             padding: 20px 60px;
             pointer-events: auto;
             z-index: 10;
+            white-space: nowrap;
             & a {
                 font-size: 28px;
                 font-weight: 500;

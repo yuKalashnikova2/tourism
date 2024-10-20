@@ -37,9 +37,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 20px;
+        // gap: 20px;
         list-style: none;
-        padding: 14px 0;
         margin: 0;
         // @media (max-width: 1270px) {
         //     gap: 10px;
@@ -48,16 +47,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 16px 50px;
+            padding-top: 16px;
+            padding-left: 52px;
+            padding-right: 63px;
+            padding-bottom: 21px;
+            // padding: 16px 53px;
+            // max-width: 160px;
             & a {
                 font-size: 20px;
                 font-weight: 500;
                 line-height: 28px;
-                @media(max-width: 768px) {
-font-size: 40px;
-font-weight: 700;
-line-height: 56px;
-
+                @media (max-width: 768px) {
+                    font-size: 40px;
+                    font-weight: 700;
+                    line-height: 56px;
                 }
             }
             @media (max-width: 1270px) {
@@ -71,12 +74,11 @@ line-height: 56px;
         line-height: 22.4px;
         text-align: center;
         padding-bottom: 40px;
-        @media(max-width: 768px) {
-font-size: 40px;
-font-weight: 700;
-line-height: 56px;
-
-                }
+        @media (max-width: 768px) {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 56px;
+        }
     }
 }
 

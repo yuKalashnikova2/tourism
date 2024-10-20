@@ -72,7 +72,7 @@
         &_opacity {
             background: #c1faed;
             position: relative;
-            z-index: -1 !important;
+            z-index: 0 !important;
             border-radius: 120px;
         }
     }
@@ -95,6 +95,7 @@
         padding-top: 12px;
         padding-bottom: 12px;
         padding-left: 40px;
+        padding-right: 128px;
         @media (max-width: 992px) {
             padding-left: 10px;
         }
@@ -116,6 +117,8 @@
         justify-content: center;
         margin-left: 20px;
         gap: 40px;
+        position: relative;
+        z-index: 1;
         @media (max-width: 768px) {
             gap: 20px;
         }

@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 const props = defineProps({
     title: String,
+    title2: String,
     desc: String,
     color: String,
 })
@@ -20,10 +21,10 @@ const styleBackground = computed(() => {
 <template>
     <div class="stages-card">
         <div class="stages-card__title" :style="{ backgroundColor: color }">
-            <h3>{{ title }}</h3>
+            <h3>{{ title }}<br>{{ title2 }}</h3>
         </div>
         <div class="stages-card__desc" :class="styleBackground">
-            <p>{{ desc }}</p>
+            <div>{{ desc }}</div>
         </div>
     </div>
 </template>
@@ -59,7 +60,7 @@ const styleBackground = computed(() => {
     &__desc {
         height: 100%;
         font-weight: 400;
-        font-size: 28px;
+        font-size: 26px;
         line-height: 39px;
         letter-spacing: 2%;
         border-bottom-left-radius: 60px;

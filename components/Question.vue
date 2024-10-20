@@ -15,7 +15,7 @@ const props = defineProps({
 const emit = defineEmits(['update:expanded'])
 // const expanded = ref(false)
 const contentStyle = computed(() => {
-    return { 'max-height': props.expanded ? '100px' : 0 }
+    return { 'max-height': props.expanded ? '125px' : 0 }
 })
 
 const infoStyle = computed(() => {

@@ -50,7 +50,7 @@ onMounted(() => {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
-        @media (max-width: 992px) {
+        @media (max-width: 1500px) {
             grid-template-columns: 1fr 1fr;
         }
         @media (max-width: 768px) {

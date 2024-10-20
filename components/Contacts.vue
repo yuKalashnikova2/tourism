@@ -6,11 +6,13 @@
                     <h3 class="contacts__title">
                         Остались вопросы? Напишите нам!
                     </h3>
-                    <span class="contacts__subtitle"
-                        >Получите все ответы прямо сейчас!</span
+                    <div class="contacts__subtitle"
+                        >Получите все ответы прямо сейчас!</div
                     >
                 </div>
-                <div class="contacts__form">
+
+                <div class="try">
+                    <div class="contacts__form">
                     <div class="contacts__phone">
                         <div class="contacts__phone__wrapper">
                             <div class="contacts__phone__icon">
@@ -28,6 +30,7 @@
                         </div>
                       
                     </div>
+
                     <div class="contacts__phone">
                         <div class="contacts__phone__wrapper">
                             <div class="contacts__phone__icon">
@@ -66,6 +69,8 @@
                         </div>
                     </nuxt-link>
                 </div>
+                </div>
+            
 
                 <div class="contacts__image-background"></div>
             </div>
@@ -77,7 +82,10 @@
 .contacts {
     display: flex;
     flex-direction: column;
-    padding: 60px;
+    padding-top: 41px;
+    padding-left: 41px;
+    padding-right: 41px;
+    padding-bottom: 20px;
     box-shadow: 0px 8px 24px 20px rgba(192, 217, 233, 0.6);
     border-radius: 120px;
     position: relative;
@@ -118,9 +126,10 @@
             border-radius: 120px;
         }
         &_opacity {
-            background: #c7f3db;
+            background: #C1FAED;
+;
             position: relative;
-            z-index: -1 !important;
+            z-index: 0 !important;
             border-radius: 120px;
         }
     }
@@ -135,7 +144,7 @@
         font-size: 60px;
         font-weight: 600;
         line-height: 60px;
-        margin-bottom: 20px;
+        margin-bottom: 19px;
         @media (max-width: 768px) {
             font-size: 28px;
             font-weight: 700;
@@ -143,6 +152,7 @@
         }
     }
     &__subtitle {
+        font-family: $font-3;
         font-size: 28px;
         font-weight: 400;
         line-height: 33.6px;
@@ -154,7 +164,7 @@
         }
     }
     &__form {
-        margin-top: 40px;
+        margin-top: 50px;
         display: flex;
         align-items: center;
         gap: 40px;
@@ -170,7 +180,7 @@
         gap: 12px;
         &__wrapper {
             display: flex;
-            gap: 6px;
+            gap: 12px;
             align-items: center;
             justify-content: center;
         }
@@ -213,17 +223,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 31px;
         gap: 28px;
-        @media (max-width: 1200px) {
-            margin-top: 35px;
-        }
-        @media (max-width: 768px) {
-            gap: 15px;
-        }
-        @media (max-width: 605px) {
-            justify-content: center;
-        }
+        max-width: 1047px;
+        // @media (max-width: 1200px) {
+        //     margin-top: 35px;
+        // }
+        // @media (max-width: 768px) {
+        //     gap: 15px;
+        // }
+        // @media (max-width: 605px) {
+        //     justify-content: center;
+        // }
         &__item {
             width: 60px;
             height: 60px;
@@ -235,6 +246,10 @@
             & img {
                 width: 100%;
                 object-fit: cover;
+                position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
             }
         }
     }
@@ -253,5 +268,8 @@
             display: none;
         }
     }
+}
+.try {
+    
 }
 </style>

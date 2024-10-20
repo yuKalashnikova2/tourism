@@ -22,7 +22,6 @@ const props = defineProps({
             </div>
         </div>
 
-        <!-- </div> -->
     </div>
 </template>
 
@@ -35,7 +34,6 @@ const props = defineProps({
     border-radius: 120px;
     position: relative !important;
     width: 100%;
-    // top: 100;
     z-index: 10 !important;
     color: $white;
     background-size: cover;
@@ -55,6 +53,7 @@ const props = defineProps({
         z-index: -1;
         border-radius: 120px;
         background-color: rgba(32, 32, 32, 0.56);
+        pointer-events: none;
     }
     @media (max-width: 1500px) {
         // height: 302px;
@@ -64,6 +63,7 @@ const props = defineProps({
     }
     @media (max-width: 768px) {
         margin: 0;
+        height: auto;
     }
     &__title {
         font-weight: 600;
@@ -97,7 +97,15 @@ const props = defineProps({
         color: $gray;
         font-size: 28px;
         margin-top: auto;
-        padding-bottom: 10px;
+        // padding-bottom: 10px;
+        min-width: 283px;
+        z-index: 100 !important;
+        padding: 0.625rem 5.656rem;
+       &:hover {
+        cursor: pointer;
+        background-color: $button-color;
+        color:$white;
+       }
     }
     &_border {
         min-width: 405px;
@@ -143,22 +151,22 @@ const props = defineProps({
         &-opacity-1 {
             background: #c7caf3;
             position: relative;
-            z-index: -1 !important;
+            z-index: 0 !important;
         }
         &-opacity-2 {
             background: #c7f3db;
-            position: relative;
-            z-index: -1 !important;
+             position: relative;
+            z-index: 0 !important;
         }
         &-opacity-3 {
             background: #c7f1f3;
             position: relative;
-            z-index: -1 !important;
+            z-index: 0 !important;
         }
         &-opacity-4 {
             background: #ecc7f3;
             position: relative;
-            z-index: -1 !important;
+            z-index: 0 !important;
         }
     }
 }

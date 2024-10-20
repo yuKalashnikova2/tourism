@@ -4,6 +4,7 @@ const props = defineProps({
     price: String,
     text: String,
     color: String,
+    small: Boolean
 })
 
 const labelColor = computed(() => {
@@ -13,7 +14,8 @@ const labelColor = computed(() => {
 
 <template>
     <div class="label" :style="{ backgroundColor: labelColor }">
-        <span class="label__price">{{ price }}</span>
+        <span class="label__price"
+        :class="[small ? 'label__price_small-size' : '']">{{ price }}</span>
         <span class="label__text">{{ text }}</span>
     </div>
 </template>
@@ -24,33 +26,48 @@ const labelColor = computed(() => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1px;
     color: $white;
     border-radius: 60px;
-    padding: 35px;
+    padding-top: 25px;
+    padding-right: 35px;
+    padding-bottom: 45px;
+    padding-left: 35px;
+    max-width: 263px;
+    // padding: 35px;
     white-space: nowrap;
     @media (max-width: 768px) {
-        width: 100%;
-        // padding: 15px;
+        max-width: 100%;
+        padding: 15px;
     }
     &__price {
+        font-size: 60px;
         font-weight: 700;
-        font-size: 51px;
         line-height: 84px;
 
-        // @media (max-width: 1520px) {
-        //     font-size: 40px;
-        //     line-height: 56px;
-        // }
-
+        &_small-size {
+            font-size: 52px;
+            font-weight: 700;
+            line-height: 72.8px;
+            @media (max-width: 768px) {
+            font-size: 24px;
+            line-height: 28px;
+        }
+        }
         @media (max-width: 768px) {
             font-size: 24px;
             line-height: 28px;
         }
     }
     &__text {
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 39.2px;
+        @media(max-width: 768px) {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+        }
     }
 }
 </style>

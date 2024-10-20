@@ -47,13 +47,12 @@ watch(modalClosed, (newmodalClosed) => {
 <template>
     <div class="banner">
         <div class="banner__block">
-            <h1 class="banner__title">Лечебный отпуск в Турцию</h1>
-            <span>подберём лучшую клинику</span>
-            <span>по вашим критериям</span>
+            <h1 class="banner__title">Лечебный отпуск<br />в Турцию</h1>
+            <div class="banner__block__subtitle">подберём лучшую клинику по вашим критериям</div>
 
             <div class="banner__labels">
                 <LabelPrice price="0 руб." text="Предоплаты" color="#4245D7" />
-                <LabelPrice price="Онлайн" text="Поддержка" color="#429FD7" />
+                <LabelPrice price="Онлайн" text="Поддержка" color="#429FD7" small />
                 <LabelPrice price="100%" text="Гарантия" color="#67CFB8" />
             </div>
         </div>
@@ -187,6 +186,7 @@ watch(modalClosed, (newmodalClosed) => {
         z-index: -1;
         background-color: rgba(255, 255, 255, 0.5);
     }
+ 
     // @media (max-width: 1500px) {
     //     grid-template-columns: 1fr;
     // }
@@ -196,9 +196,10 @@ watch(modalClosed, (newmodalClosed) => {
     &__title {
         font-family: 'Montserrat Alternates', sans-serif;
         font-size: 80px;
-        line-height: 112px;
+        line-height: 101px;
         font-weight: 600;
         text-align: left;
+        letter-spacing: -4px;
         @media (max-width: 768px) {
             font-size: 60px;
             font-weight: 700;
@@ -216,22 +217,30 @@ watch(modalClosed, (newmodalClosed) => {
     }
     &__block {
         max-width: 950px;
-        padding-right: 120px;
+        // padding-right: 120px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        @media (max-width: 768px) {
+            // align-items: center;
+            justify-content: center;
+        }
         & > * {
             margin-bottom: 40px;
         }
-        & span {
+        &__subtitle {
+            display: block;
             font-weight: 500;
             font-size: 40px;
-            line-height: 56px;
-
+            line-height: 52px;
+            font-family: $font-3;
+            letter-spacing: -2px;
+            max-width: 518px;
             @media (max-width: 768px) {
                 font-size: 20px;
                 font-weight: 700;
                 line-height: 28px;
+                letter-spacing: 0px;
             }
             @media (max-width: 330px) {
                 font-size: 20px;
@@ -259,7 +268,7 @@ watch(modalClosed, (newmodalClosed) => {
         }
         &__title {
             font-weight: 600;
-            font-size: 56px;
+            font-size: 55px;
             line-height: 78.4px;
             margin-bottom: 20px;
 
@@ -284,6 +293,7 @@ watch(modalClosed, (newmodalClosed) => {
             font-size: 28px;
             line-height: 33.6px;
             margin-bottom: 40px;
+
             @media (max-width: 768px) {
                 font-size: 20px;
                 font-weight: 700;
@@ -300,7 +310,7 @@ watch(modalClosed, (newmodalClosed) => {
             flex-direction: column;
             background-color: $white;
             border-radius: 120px;
-            padding: 60px 60px 60px 40px;
+            padding: 61px 62px 52px 60px;
             height: 100%;
             justify-content: space-between;
             max-width: 100%;
@@ -333,7 +343,7 @@ watch(modalClosed, (newmodalClosed) => {
                 border-radius: 120px;
             }
             @media (max-width: 768px) {
-                // padding: 30px 30px 30px 20px;
+                padding: 0;
                 background-repeat: 80px;
             }
         }
@@ -342,10 +352,9 @@ watch(modalClosed, (newmodalClosed) => {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
-        padding: 24px 0;
+        padding: 47px 0;
         @media (max-width: 768px) {
-            display: flex;
-            flex-direction: column;
+            grid-template-columns: 1fr;
             width: 100%;
         }
     }

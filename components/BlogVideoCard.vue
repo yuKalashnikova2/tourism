@@ -24,7 +24,9 @@ const props = defineProps({
     display: flex;
     justify-content: center;
     align-items: center;
-
     min-width: 405px;
+    & iframe {
+        width: 100%;
+    }
 }
 </style>
