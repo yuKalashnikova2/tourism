@@ -76,7 +76,7 @@
             border-radius: 120px;
         }
     }
-    @media (max-width: 992px) {
+    @media (max-width: 1150px) {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -98,6 +98,8 @@
         padding-right: 128px;
         @media (max-width: 992px) {
             padding-left: 10px;
+            text-align: center;
+            padding-right: 0;
         }
         & p {
             font-family: Montserrat;
@@ -149,7 +151,7 @@
         @media (max-width: 1320px) {
             z-index: -1;
         }
-        @media (max-width: 992px) {
+        @media (max-width: 550px) {
             display: none;
         }
     }

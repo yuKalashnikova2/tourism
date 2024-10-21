@@ -13,8 +13,8 @@
 
                 <div class="try">
                     <div class="contacts__form">
-                    <div class="contacts__phone">
-                        <div class="contacts__phone__wrapper">
+                    <!-- <div class="contacts__phone"> -->
+                        <!-- <div class="contacts__phone__wrapper">
                             <div class="contacts__phone__icon">
                                 <img src="/phone.svg" alt="phone" />
                             </div>
@@ -28,9 +28,20 @@
                            
                     
                         </div>
-                      
-                    </div>
+                       -->
+                    <!-- </div> -->
+                    <div class="contacts__phone">
+                        <div class="contacts__phone__wrapper">
+                            <div class="contacts__phone__icon">
+                            <img src="/phone.svg" alt="phone" />
+                        </div>
 
+                        <span class="contacts__phone__subtitle">Телефон:</span>
+                        </div>
+                 
+                        <a href="tel:+79254994561" class="contacts__phone__name"
+                            >+7 925 499 45 61</a>
+                    </div>
                     <div class="contacts__phone">
                         <div class="contacts__phone__wrapper">
                             <div class="contacts__phone__icon">
@@ -184,10 +195,10 @@
             align-items: center;
             justify-content: center;
         }
-        // @media (max-width: 1200px) {
-        //     flex-direction: column;
-        //     align-items: baseline;
-        // }
+        @media (max-width: 505px) {
+            flex-direction: column;
+            align-items: baseline;
+        }
 
         &__icon {
             // width: 40px;
