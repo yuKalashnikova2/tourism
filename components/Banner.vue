@@ -25,7 +25,7 @@ const submitForm = async (name, email, phone) => {
         return
     }
     try {
-        const response = await axios.post('http://localhost:3030/', {
+        const response = await axios.post('https://api.zdorovyeiturizm.ru', {
             name: name,
             email: email,
             phone: phone,
