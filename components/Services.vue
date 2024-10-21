@@ -32,7 +32,7 @@
                 title="Эстетическая медицина"
                 desc="Пластические операции, липосакция"
                 borderColor="4"
-                backgroundImage="/p-4.PNG"
+                backgroundImage="/p-4.png"
             />
         </div>
     </div>
