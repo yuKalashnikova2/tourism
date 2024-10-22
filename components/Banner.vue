@@ -126,13 +126,13 @@ watch(modalClosed, (newmodalClosed) => {
                                             @click="
                                                 submitForm(name, email, phone)
                                             "
-                                            >Записаться</Button
+                                            >Отправить</Button
                                         >
                                         <div class="modal__agree">
                                             <span
                                                 >Нажимая на кнопку, я соглашаюсь
-                                                на обработку персональных
-                                                данных.</span
+                                                на <span class="modal__agree_underline">обработку персональных
+                                                данных.</span></span
                                             >
                                         </div>
 
@@ -233,7 +233,7 @@ watch(modalClosed, (newmodalClosed) => {
     &__title {
         font-family: 'Montserrat Alternates', sans-serif;
         font-size: 80px;
-        line-height: 101px;
+        line-height: 112px;
         font-weight: 600;
         text-align: left;
         letter-spacing: -4px;
@@ -264,12 +264,16 @@ watch(modalClosed, (newmodalClosed) => {
         }
         & > * {
             margin-bottom: 40px;
+            @media(max-width: 360px) {
+                margin-bottom: 0;
+            }
         }
+
         &__subtitle {
             display: block;
             font-weight: 500;
             font-size: 40px;
-            line-height: 52px;
+            line-height: 56px;
             font-family: $font-3;
             letter-spacing: -2px;
             max-width: 518px;
@@ -390,10 +394,16 @@ watch(modalClosed, (newmodalClosed) => {
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
         padding: 47px 0;
+    
         @media (max-width: 768px) {
             grid-template-columns: 1fr;
             width: 100%;
+            padding: 0 !important;
         }
+        @media (max-width: 400px) {
+            padding: 0 ;
+        }
+       
     }
 }
 
@@ -536,6 +546,9 @@ watch(modalClosed, (newmodalClosed) => {
             font-weight: 400;
             line-height: 16.8px;
             text-align: center;
+        }
+        &_underline {
+            text-decoration: underline;
         }
     }
     &__thanks {

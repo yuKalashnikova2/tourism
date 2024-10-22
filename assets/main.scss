@@ -75,6 +75,9 @@ input {
     @media (max-width: 992px) {
         gap: 50px;
     }
+    @media (max-width: 400px) {
+        gap: 40px;
+    }
 }
 .services__text {
     font-weight: 400;

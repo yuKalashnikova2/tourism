@@ -73,15 +73,14 @@ const isVisible = ref(false)
     // justify-content: space-between;
     padding: 20px 0;
 
-
     &-logo {
         width: 120px;
         height: 108px;
         flex-shrink: 0;
-        // @media (max-width: 768px) {
-        //     width: 60px;
-        //     height: 40px;
-        // }
+        @media (max-width: 400px) {
+            width: 97px;
+            height: 53px;
+        }
         & img {
             width: 100%;
             object-fit: cover;
@@ -97,8 +96,8 @@ const isVisible = ref(false)
         padding: 14px 0;
         margin: 0;
         @media (max-width: 1200px) {
-        display: none;
-    }
+            display: none;
+        }
         // @media (max-width: 1270px) {
         //     gap: 10px;
         // }
