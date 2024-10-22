@@ -149,7 +149,7 @@
         padding: 50px;
     }
     @media (max-width: 605px) {
-        padding: 30px;
+        padding: 45px;
     }
     &__title {
         font-size: 60px;
@@ -195,7 +195,7 @@
             align-items: center;
             justify-content: center;
         }
-        @media (max-width: 505px) {
+        @media (max-width: 535px) {
             flex-direction: column;
             align-items: baseline;
         }
@@ -240,9 +240,9 @@
         // @media (max-width: 1200px) {
         //     margin-top: 35px;
         // }
-        // @media (max-width: 768px) {
-        //     gap: 15px;
-        // }
+        @media (max-width: 768px) {
+            gap: 13px;
+        }
         // @media (max-width: 605px) {
         //     justify-content: center;
         // }
