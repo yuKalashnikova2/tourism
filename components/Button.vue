@@ -6,6 +6,7 @@
 
 <style lang="scss" scoped>
 .button {
+    font-family: $font-1;
     background-color: $button-color;
     color: $white;
     border-radius: 40px;

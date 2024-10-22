@@ -21,11 +21,12 @@ const props = defineProps({
     align-items: center;
     gap: 20px;
     &__image {
-        width: 60px;
-        height: 60px;
         border-radius: 50%;
-        box-shadow: 1px 2px 12px 0px #7388a966;
-        padding: 18px 13px;
+    box-shadow: 1px 2px 12px #7388a966;
+    height: 60px;
+    padding: 18px 13px;
+    width: 60px;
+    flex-shrink: 0;
         & img {
             width: 100%;
         }
