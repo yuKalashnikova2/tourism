@@ -49,7 +49,8 @@
             left: 0;
             bottom: 0;
             right: 0;
-            background: linear-gradient(
+            background: 
+            linear-gradient(
                     287.56deg,
                     rgba(86, 241, 206, 0) 50%,
                     rgba(86, 241, 206, 0.8) 100%
@@ -84,7 +85,7 @@
     &__block {
         padding: 20px;
         display: flex;
-        @media (max-width: 992px) {
+        @media (max-width: 1150px) {
             flex-direction: column;
             align-items: center;
             justify-content: center;
