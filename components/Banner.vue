@@ -227,6 +227,9 @@ watch(modalClosed, (newmodalClosed) => {
     @media (max-width: 1200px) {
         grid-template-columns: 1fr;
     }
+    @media(max-width: 768px) {
+        background-image: none;
+    }
     &__title {
         font-family: 'Montserrat Alternates', sans-serif;
         font-size: 80px;

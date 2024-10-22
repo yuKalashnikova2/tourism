@@ -13,9 +13,16 @@ export default defineNuxtConfig({
       },
   },
   head: {
-    title: 'zdorovye i turizm',
+    title: 'Лечение в Турции в 2024 году. Бесплатная консультация!',
+    meta: [
+      { name: 'description', content: 'Подберём лучшую клинику в Турции по вашим критериям. Пересадка волос FUE, DHI, лечение зубов, пластические операции, нейрохирургия. Клиники в Стамбул, Измир, Анталья.' },
+      { property: 'og:title', content: 'Лечение в Турции в 2024 году' },
+      { property: 'og:description', content: 'Подберём лучшую клинику в Турции по вашим критериям. Пересадка волос FUE, DHI, лечение зубов, пластические операции, нейрохирургия. Клиники в Стамбул, Измир, Анталья.' },
+      { property: 'og:image', content: '/image-meta.png' },
+      { property: 'og:site_name', content: 'Лечение в Турции в 2024 году.' }
+    ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/logo.svg' } // Путь к фавикону
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
         {

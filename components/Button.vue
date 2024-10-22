@@ -37,6 +37,7 @@
         font-size: 28px;
         font-weight: 700;
         line-height: 33.6px;
+        padding: 1.2rem 2.7rem;
     }
     &:hover {
         background: linear-gradient(

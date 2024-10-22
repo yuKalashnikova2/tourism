@@ -150,7 +150,11 @@
     }
     @media (max-width: 605px) {
         padding: 45px;
+       
     }
+    // @media (max-width: 400px) {
+    //     padding-left: 30px;
+    // }
     &__title {
         font-size: 60px;
         font-weight: 600;
