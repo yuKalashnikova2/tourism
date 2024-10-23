@@ -64,7 +64,7 @@
     }
     &__image {
         // min-width: 527px;
-        max-height: 580px;
+        // max-height: 580px;
         height: 100%;
         border-radius: 120px;
         overflow: hidden;

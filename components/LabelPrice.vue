@@ -36,6 +36,8 @@ const labelColor = computed(() => {
     max-width: 263px;
     // padding: 35px;
     white-space: nowrap;
+    box-shadow: 2px 2px 20px 12px rgba(192, 217, 233, 0.6);
+
     @media (max-width: 768px) {
         max-width: 100%;
         padding: 15px;
