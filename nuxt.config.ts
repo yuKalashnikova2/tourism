@@ -8,6 +8,7 @@ export default defineNuxtConfig({
           preprocessorOptions: {
               scss: {
                   additionalData: '@use "~/assets/_variables.scss" as *;',
+                  api: 'modern-compiler'
               },
           },
       },
