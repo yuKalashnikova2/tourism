@@ -8,15 +8,25 @@
                     </div>
 
                     <div class="social__wrapper">
-                        <div class="social__wrapper__item">
-                            <img src="/youtube.svg" alt="youtube" />
-                        </div>
-                        <div class="social__wrapper__item">
-                            <img src="/vkontakte.svg" alt="vk" />
-                        </div>
-                        <div class="social__wrapper__item">
-                            <img src="/telegram.svg" alt="telegram" />
-                        </div>
+                        <nuxt-link
+                            to="https://www.youtube.com/@zdorovyeiturizm"
+                        >
+                            <div class="social__wrapper__item">
+                                <img src="/youtube.svg" alt="youtube" />
+                            </div>
+                        </nuxt-link>
+
+                        <nuxt-link to="https://vk.com/zdorovekrasotaiturizm">
+                            <div class="social__wrapper__item">
+                                <img src="/vkontakte.svg" alt="vk" />
+                            </div>
+                        </nuxt-link>
+
+                        <nuxt-link to="https://t.me/zdorovekrasotaiturizm">
+                            <div class="social__wrapper__item">
+                                <img src="/telegram.svg" alt="telegram" />
+                            </div>
+                        </nuxt-link>
                     </div>
                 </div>
 
@@ -49,8 +59,7 @@
             left: 0;
             bottom: 0;
             right: 0;
-            background: 
-            linear-gradient(
+            background: linear-gradient(
                     287.56deg,
                     rgba(86, 241, 206, 0) 50%,
                     rgba(86, 241, 206, 0.8) 100%

@@ -18,7 +18,7 @@ const props = defineProps({
             >
                 <h3 class="services-card__title">{{ title }}</h3>
                 <div class="services-card__desc">{{ desc }}</div>
-                <Button class="services-card__button">Узнать</Button>
+                <Button class="services-card__button" id="uznat_button">Узнать</Button>
             </div>
         </div>
     </div>

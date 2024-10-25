@@ -2,14 +2,15 @@
 import axios from 'axios'
 import { ref, watch } from 'vue'
 
-const modalClosed = ref(false)
-const isThanks = ref(false)
+
 
 // form
 const name = ref('')
 const email = ref('')
 const phone = ref('')
 
+const modalClosed = ref(false)
+const isThanks = ref(false)
 const closeModal = (e) => {
     if (e.target.classList.contains('modal')) {
         modalClosed.value = !modalClosed.value
@@ -17,7 +18,17 @@ const closeModal = (e) => {
     if (!modalClosed.value) {
         document.body.classList.add('overflow-hidden')
     }
+    if (window.location.hash === '#overlay_button') {
+    history.replaceState(null, null, ' ');
+  }
 }
+watch(modalClosed, (newmodalClosed) => {
+    if (newmodalClosed === true) {
+        document.body.classList.add('overflow-hidden')
+    } else {
+        document.body.classList.remove('overflow-hidden')
+    }
+})
 const submitForm = async (name, email, phone) => {
     const form = document.querySelector('form')
     if (!form.checkValidity()) {
@@ -36,13 +47,7 @@ const submitForm = async (name, email, phone) => {
         throw new Error(`Ошибка: ${e.message}`)
     }
 }
-watch(modalClosed, (newmodalClosed) => {
-    if (newmodalClosed === true) {
-        document.body.classList.add('overflow-hidden')
-    } else {
-        document.body.classList.remove('overflow-hidden')
-    }
-})
+
 </script>
 <template>
     <div class="banner">
@@ -72,13 +77,17 @@ watch(modalClosed, (newmodalClosed) => {
                 <span class="banner__form__subtitle"
                     >мы подберём лучшее решение и ответим на все вопросы!</span
                 >
-                <Button @click="modalClosed = !modalClosed">Записаться</Button>
+                <nuxt-link to="#overlay_button">
+                    <Button @click="modalClosed = !modalClosed"
+                        >Записаться</Button
+                    >
+                </nuxt-link>
             </div>
         </div>
 
         <div class="modal" v-if="modalClosed" @click="closeModal">
             <Transition>
-                <div class="modal__wrapper">
+                <div class="modal__wrapper" id="overlay_button">
                     <div class="modal__border_opacity">
                         <div class="modal__border">
                             <div class="modal__inner">
@@ -87,41 +96,45 @@ watch(modalClosed, (newmodalClosed) => {
                                         Заявка на бесплатную консультацию
                                     </h3>
                                     <form class="modal__form" @submit.prevent>
-                                      <div class="modal__form__inputs">
-                                        <div class="modal__form__input">
-                                            <label for="name"
-                                                >Как вас зовут?</label
-                                            >
-                                            <input
-                                                type="text"
-                                                placeholder="Ваше имя"
-                                                id="name"
-                                                v-model="name"
-                                                required
-                                            />
+                                        <div class="modal__form__inputs">
+                                            <div class="modal__form__input">
+                                                <label for="name"
+                                                    >Как вас зовут?</label
+                                                >
+                                                <input
+                                                    type="text"
+                                                    placeholder="Ваше имя"
+                                                    id="name"
+                                                    v-model="name"
+                                                    required
+                                                />
+                                            </div>
+                                            <div class="modal__form__input">
+                                                <label for="email"
+                                                    >Ваш email</label
+                                                >
+                                                <input
+                                                    type="email"
+                                                    placeholder="example@domain.com"
+                                                    id="email"
+                                                    v-model="email"
+                                                    required
+                                                />
+                                            </div>
+                                            <div class="modal__form__input">
+                                                <label for="phone"
+                                                    >Телефон</label
+                                                >
+                                                <input
+                                                    type="text"
+                                                    placeholder="+7 900 900 99-55"
+                                                    id="phone"
+                                                    v-model="phone"
+                                                    required
+                                                />
+                                            </div>
                                         </div>
-                                        <div class="modal__form__input">
-                                            <label for="email">Ваш email</label>
-                                            <input
-                                                type="email"
-                                                placeholder="example@domain.com"
-                                                id="email"
-                                                v-model="email"
-                                                required
-                                            />
-                                        </div>
-                                        <div class="modal__form__input">
-                                            <label for="phone">Телефон</label>
-                                            <input
-                                                type="text"
-                                                placeholder="+7 900 900 99-55"
-                                                id="phone"
-                                                v-model="phone"
-                                                required
-                                            />
-                                        </div>
-                                      </div>
-                                            <Button
+                                        <Button
                                             class="modal__btn"
                                             @click="
                                                 submitForm(name, email, phone)
@@ -131,12 +144,13 @@ watch(modalClosed, (newmodalClosed) => {
                                         <div class="modal__agree">
                                             <span
                                                 >Нажимая на кнопку, я соглашаюсь
-                                                на <span class="modal__agree_underline">обработку персональных
-                                                данных.</span></span
+                                                на <span
+                                                    class="modal__agree_underline"
+                                                    >обработку персональных
+                                                    данных.</span
+                                                ></span
                                             >
                                         </div>
-
-                                     
                                     </form>
                                 </div>
 
@@ -227,7 +241,7 @@ watch(modalClosed, (newmodalClosed) => {
     @media (max-width: 1200px) {
         grid-template-columns: 1fr;
     }
-    @media(max-width: 768px) {
+    @media (max-width: 768px) {
         background-image: none;
     }
     &__title {
@@ -264,7 +278,7 @@ watch(modalClosed, (newmodalClosed) => {
         }
         & > * {
             margin-bottom: 40px;
-            @media(max-width: 360px) {
+            @media (max-width: 360px) {
                 margin-bottom: 0;
             }
         }
@@ -394,16 +408,15 @@ watch(modalClosed, (newmodalClosed) => {
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
         padding: 47px 0;
-    
+
         @media (max-width: 768px) {
             grid-template-columns: 1fr;
             width: 100%;
             padding: 0 !important;
         }
         @media (max-width: 400px) {
-            padding: 0 ;
+            padding: 0;
         }
-       
     }
 }
 
@@ -451,7 +464,7 @@ watch(modalClosed, (newmodalClosed) => {
             border-radius: 80px;
         }
         &_opacity {
-            background: #C7F3E8;
+            background: #c7f3e8;
             position: relative;
             z-index: 0 !important;
             border-radius: 80px;
@@ -484,16 +497,16 @@ watch(modalClosed, (newmodalClosed) => {
         text-align: center;
         margin-bottom: 2.5rem;
         @media (max-width: 768px) {
-                font-size: 28px;
-                font-weight: 500;
-                line-height: 28px;
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 28px;
         }
     }
     &__form {
         display: flex;
         flex-direction: column;
         align-items: center;
-  
+
         @media (max-width: 768px) {
             gap: 20px;
         }
