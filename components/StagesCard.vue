@@ -40,16 +40,9 @@ const styleBackground = computed(() => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // margin: 20px 30px;
     position: relative;
     border-radius: 60px;
     box-shadow: 2px 8px 16px 0px rgba(188, 188, 188, 1);
-
-    //    &__border-morder {
-    //     background-color: red;
-    //     position: relative;
-    //     z-index: 10;
-    //    }
     &__title {
         color: $white;
         padding: 20px;

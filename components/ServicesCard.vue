@@ -5,6 +5,8 @@ const props = defineProps({
     borderColor: String,
     backgroundImage: String,
 })
+
+const { modalClosed } = useModal()
 </script>
 <template>
     <div
@@ -18,7 +20,14 @@ const props = defineProps({
             >
                 <h3 class="services-card__title">{{ title }}</h3>
                 <div class="services-card__desc">{{ desc }}</div>
-                <Button class="services-card__button" id="uznat_button">Узнать</Button>
+                <nuxt-link to="#overlay_button">
+                    <Button
+                        class="services-card__button"
+                        id="uznat_button"
+                        @click="modalClosed = !modalClosed"
+                        >Узнать</Button
+                    >
+                </nuxt-link>
             </div>
         </div>
     </div>
