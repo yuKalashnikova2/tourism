@@ -10,33 +10,31 @@ const props = defineProps({
         type: String,
         default: 'Текст вопроса',
     },
-    expanded: Boolean,
 })
-const emit = defineEmits(['update:expanded'])
-// const expanded = ref(false)
-const contentStyle = computed(() => {
-    return { 'max-height': props.expanded ? '125px' : 0 }
-})
+const expanded = ref(false)
+const contentStyle = computed(() => ({
+    'max-height': expanded.value ? '300px' : 0,
+    overflow: 'hidden',
+}))
 
-const infoStyle = computed(() => {
-    return { opacity: props.expanded ? 1 : 0 }
-})
+const infoStyle = computed(() => ({
+    opacity: expanded.value ? 1 : 0,
+    transition: 'opacity 0.3s ease-out',
+}))
 </script>
 <template>
-    <article
-        class="question"
-        @click="$emit('update:expanded', !props.expanded)"
-    >
+    <article class="question">
         <header>
             <div
                 class="question__arrow"
-                :class="{ 'question__arrow--open': props.expanded }"
+                :class="{ question__arrow__open: expanded }"
+                @click="expanded = !expanded"
             >
                 <img src="/downarrow.svg" alt="" />
             </div>
-            <h4 class="question-title">
+            <h3 class="question-title" @click="expanded = !expanded">
                 {{ title }}
-            </h4>
+            </h3>
         </header>
         <div :style="contentStyle" class="content">
             <p :style="infoStyle" class="info">{{ info }}</p>
@@ -47,10 +45,6 @@ const infoStyle = computed(() => {
 <style lang="scss" scoped>
 .question {
     background-color: $white;
-    // padding: 1.3rem;
-    // border-radius: 2rem !important;
-    padding-top: 22px;
-    padding-bottom: 22px;
 }
 
 .question header {
@@ -69,6 +63,8 @@ const infoStyle = computed(() => {
     font-weight: 700;
     line-height: 56px;
     margin-bottom: 10px;
+    padding-top: 22px;
+    padding-bottom: 22px;
 
     @media (max-width: 768px) {
         font-size: 28px;
@@ -80,11 +76,8 @@ const infoStyle = computed(() => {
 .content {
     max-height: 0;
     transition: max-height 0.2s ease-out;
-    grid-row: 2;
-    grid-column: 1;
 }
 .info {
-    z-index: -1;
     opacity: 0;
     transition: opacity 0.2s ease-out;
     font-size: 28px;
@@ -109,9 +102,9 @@ const infoStyle = computed(() => {
         width: 100%;
         height: 100%;
     }
-    &--open {
+    &__open {
         transform: rotate(180deg);
-        transition: transform 0.3s;
+        transition: transform 0.3s ease-out;
     }
     @media (max-width: 768px) {
         width: 40px;

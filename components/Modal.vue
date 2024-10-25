@@ -12,9 +12,9 @@ const phone = ref('')
 
 </script>
 <template>
-          <div class="modal" v-if="modalClosed" @click="closeModal">
+          <div class="modal" v-if="modalClosed" @click="closeModal" id="overlay_button">
             <Transition>
-                <div class="modal__wrapper" id="overlay_button">
+                <div class="modal__wrapper" >
                     <div class="modal__border_opacity">
                         <div class="modal__border">
                             <div class="modal__inner">
@@ -136,7 +136,7 @@ const phone = ref('')
         </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .modal {
     position: fixed;
     top: 0;
@@ -203,9 +203,9 @@ const phone = ref('')
         justify-content: center;
         position: relative;
 
-        @media (max-width: 768px) {
-            border-radius: 0px;
-        }
+        // @media (max-width: 768px) {
+        //     border-radius: 0px;
+        // }
     }
     &__title {
         font-size: 40px;

@@ -1,5 +1,8 @@
 <script setup>
-const { modalClosed } = useModal()
+import { ref } from 'vue'
+const { modalClosed, closeModal, openModal } = useModal()
+
+// const showPopup = ref(false)
 </script>
 <template>
     <div class="banner">
@@ -29,11 +32,11 @@ const { modalClosed } = useModal()
                 <span class="banner__form__subtitle"
                     >мы подберём лучшее решение и ответим на все вопросы!</span
                 >
-                <nuxt-link to="#overlay_button">
-                    <Button @click="modalClosed = !modalClosed"
+                <!-- <nuxt-link to="#"> -->
+                    <Button @click="openModal"
                         >Записаться</Button
                     >
-                </nuxt-link>
+                <!-- </nuxt-link> -->
             </div>
         </div>
         <Modal />

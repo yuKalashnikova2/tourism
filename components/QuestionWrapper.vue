@@ -36,8 +36,7 @@ const questions = ref([
             :key="question.id"
             :title="question.title"
             :info="question.info"
-            :expanded="question.expanded"
-            @update:expanded="question.expanded = $event"
+
         />
     </div>
     </div>
