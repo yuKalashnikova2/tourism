@@ -34,13 +34,22 @@ const labelColor = computed(() => {
     padding-bottom: 45px;
     padding-left: 35px;
     max-width: 263px;
-    // padding: 35px;
     white-space: nowrap;
     box-shadow: 2px 2px 20px 12px rgba(192, 217, 233, 0.6);
-
+    @media (max-width: 1440px) {
+            max-width: 100%;
+            padding-top: 25px;
+            padding-right: 45px;
+            padding-bottom: 45px;
+            padding-left: 25px; 
+        }
     @media (max-width: 768px) {
         max-width: 100%;
-        padding: 15px;
+        // padding: 15px;
+    }
+    @media (max-width: 400px) {
+        max-width: 100%;
+        padding: 12px;
     }
     &__price {
         font-size: 60px;
@@ -57,8 +66,14 @@ const labelColor = computed(() => {
         }
         }
         @media (max-width: 768px) {
-            font-size: 24px;
-            line-height: 28px;
+                font-size: 40px;
+                font-weight: 700;
+                line-height: 56px;
+        }
+        @media (max-width: 400px) {
+font-size: 20px;
+font-weight: 700;
+line-height: 20px;
         }
     }
     &__text {
@@ -69,6 +84,13 @@ const labelColor = computed(() => {
             font-size: 20px;
             font-weight: 700;
             line-height: 28px;
+        }
+        @media (max-width: 400px) {
+font-size: 16px;
+font-weight: 700;
+line-height: 16px;
+
+
         }
     }
 }

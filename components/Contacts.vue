@@ -6,54 +6,25 @@
                     <h3 class="contacts__title">
                         Остались вопросы? Напишите нам!
                     </h3>
-                    <div class="contacts__subtitle"
-                        >Получите все ответы прямо сейчас!</div
-                    >
+                    <div class="contacts__subtitle">
+                        Получите все ответы прямо сейчас!
+                    </div>
                 </div>
 
-                <div class="try">
-                    <div class="contacts__form">
-                    <!-- <div class="contacts__phone"> -->
-                        <!-- <div class="contacts__phone__wrapper">
-                            <div class="contacts__phone__icon">
-                                <img src="/phone.svg" alt="phone" />
-                            </div>
-                        <div>
-                           
-                                <span class="contacts__phone__subtitle">Телефон:</span>
-                            </div>
-                        <a href="tel:+79254994561" class="contacts__phone__name"
-                            >+7 925 499 45 61</a
-                        >
-                           
-                    
-                        </div>
-                       -->
-                    <!-- </div> -->
-                    <div class="contacts__phone">
-                        <div class="contacts__phone__wrapper">
-                            <div class="contacts__phone__icon">
-                            <img src="/phone.svg" alt="phone" />
-                        </div>
-
-                        <span class="contacts__phone__subtitle">Телефон:</span>
-                        </div>
-                 
-                        <a href="tel:+79254994561" class="contacts__phone__name"
-                            >+7 925 499 45 61</a>
-                    </div>
-                    <div class="contacts__phone">
-                        <div class="contacts__phone__wrapper">
-                            <div class="contacts__phone__icon">
-                            <img src="/email.svg" alt="email" />
-                        </div>
-
-                        <span class="contacts__phone__subtitle">Email:</span>
-                        </div>
-                 
-                        <a href="mailto:zdorovye.turizm@bk.ru" class="contacts__phone__name"
-                            >zdorovye.turizm@bk.ru</a>
-                    </div>
+                <!-- <div class="try"> -->
+                <div class="contacts__form">
+                    <ContactsCard
+                        icon="/phone.svg"
+                        subtitle="Телефон:"
+                        name="+7 925 499 45 61"
+                        href="tel:+79254994561"
+                    />
+                    <ContactsCard
+                        icon="/email.svg"
+                        subtitle="Email:"
+                        name="zdorovye.turizm@bk.ru"
+                        href="mailto:zdorovye.turizm@bk.ru"
+                    />
                 </div>
                 <div class="contacts__wrapper">
                     <nuxt-link to="https://wa.me/79254994561">
@@ -79,9 +50,8 @@
                             <img src="/telegram.svg" alt="telegram" />
                         </div>
                     </nuxt-link>
+                    <!-- </div> -->
                 </div>
-                </div>
-            
 
                 <div class="contacts__image-background"></div>
             </div>
@@ -106,9 +76,22 @@
         #ffffff 0%,
         rgba(255, 255, 255, 0.8) 100%
     );
+    @media (max-width: 768px) {
+    }
+    @media (max-width: 400px) {
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        background: none;
+        box-shadow: none;
+    }
 
     &__border {
         padding: 20px;
+        @media (max-width: 400px) {
+            padding: 0px;
+        }
         &::before {
             content: '';
             position: absolute;
@@ -135,35 +118,38 @@
             opacity: 0.6;
             z-index: -1;
             border-radius: 120px;
+            @media (max-width: 400px) {
+                background: none;
+            }
         }
         &_opacity {
-            background: #C1FAED;
-;
+            background: #c1faed;
             position: relative;
             z-index: 0 !important;
             border-radius: 120px;
+            @media (max-width: 400px) {
+                background: $white;
+            }
         }
     }
     @media (max-width: 992px) {
-        display: flex;
-        padding: 50px;
     }
-    @media (max-width: 605px) {
-        padding: 45px;
-       
-    }
-    // @media (max-width: 400px) {
-    //     padding-left: 30px;
-    // }
+
     &__title {
         font-size: 60px;
         font-weight: 600;
         line-height: 60px;
         margin-bottom: 19px;
         @media (max-width: 768px) {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 32px;
+        }
+        @media (max-width: 400px) {
             font-size: 28px;
-            font-weight: 700;
-            line-height: 39.2px;
+            font-weight: 600;
+            line-height: 28px;
+            margin-bottom: 12px;
         }
     }
     &__subtitle {
@@ -174,8 +160,13 @@
         text-align: left;
         @media (max-width: 768px) {
             font-size: 20px;
-            font-weight: 700;
-            line-height: 28px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+        @media (max-width: 400px) {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.2px;
         }
     }
     &__form {
@@ -183,55 +174,15 @@
         display: flex;
         align-items: center;
         gap: 40px;
-        @media (max-width: 1150px) {
+        @media (max-width: 768px) {
             flex-direction: column;
             justify-content: left;
             align-items: baseline;
+            gap: 26px;
         }
-    }
-    &__phone {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        &__wrapper {
-            display: flex;
+        @media (max-width: 400px) {
+            margin-top: 20px;
             gap: 12px;
-            align-items: center;
-            justify-content: center;
-        }
-        @media (max-width: 535px) {
-            flex-direction: column;
-            align-items: baseline;
-        }
-
-        &__icon {
-            // width: 40px;
-            // height: 40px;
-            flex-shrink: 0;
-            & img {
-                width: 100%;
-                object-fit: cover;
-            }
-            // @media (max-width: 605px) {
-            //     display: none;
-            // }
-        }
-        &__subtitle {
-            font-size: 28px;
-            font-weight: 700;
-            line-height: 28px;
-            text-align: left;
-        }
-        &__name {
-            font-size: 28px;
-            font-weight: 500;
-            line-height: 39.2px;
-            text-align: left;
-            @media (max-width: 768px) {
-                font-size: 20px;
-                font-weight: 700;
-                line-height: 28px;
-            }
         }
     }
     &__wrapper {
@@ -241,30 +192,18 @@
         margin-top: 31px;
         gap: 28px;
         max-width: 1047px;
-        // @media (max-width: 1200px) {
-        //     margin-top: 35px;
-        // }
-        @media (max-width: 768px) {
-            gap: 13px;
+        @media (max-width: 400px) {
+            justify-content: none;
         }
-        // @media (max-width: 605px) {
-        //     justify-content: center;
-        // }
         &__item {
             width: 60px;
             height: 60px;
             cursor: pointer;
             @media (max-width: 768px) {
-                width: 40px;
-                height: 40px;
             }
             & img {
                 width: 100%;
                 object-fit: cover;
-                // position: absolute;
-        // right: 0;
-        // bottom: 0;
-        // z-index: -1;
             }
         }
     }
@@ -280,11 +219,11 @@
         bottom: 0;
         z-index: -1;
         @media (max-width: 992px) {
-            display: none;
+            background-image: url('/logofull-back.png');
+        }
+        @media (max-width: 400px) {
+            background-image: none;
         }
     }
-}
-.try {
-    
 }
 </style>

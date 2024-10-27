@@ -20,6 +20,9 @@ const props = defineProps({
     display: flex;
     align-items: center;
     gap: 20px;
+    @media (max-width: 400px) {
+            gap: 16px;
+        }
     &__image {
         border-radius: 50%;
     box-shadow: 1px 2px 12px #7388a966;
@@ -30,6 +33,10 @@ const props = defineProps({
         & img {
             width: 100%;
         }
+        @media (max-width: 400px) {
+            width: 40px;
+            height: 40px;
+        }   
     }
     &__title {
         font-family: $font-2;
@@ -38,8 +45,12 @@ const props = defineProps({
         line-height: 40px;
         text-align: left;
         @media (max-width: 768px) {
-            font-size: 30px;
-            line-height: 38px;
+            font-size: 28px;
+            line-height: 28px;
+        }
+        @media (max-width: 400px) {
+            font-size: 20px;
+            line-height: 20px;
         }
     }
     &__desc {
@@ -48,8 +59,12 @@ const props = defineProps({
         line-height: 28px;
         text-align: left;
         @media (max-width: 768px) {
+            font-size: 20px;
+            line-height: 20px;
+        }
+        @media (max-width: 400px) {
             font-size: 16px;
-            line-height: 24px;
+            line-height: 16px;
         }
     }
 }

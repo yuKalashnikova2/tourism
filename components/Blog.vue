@@ -10,9 +10,9 @@ onMounted(() => {
 })
 </script>
 <template>
-    <div class="blog" id="blog" v-if="windowWidth >= 768">
-        <TitleSection>Наш блог</TitleSection>
-        <div class="blog__wrapper">
+    <div class="blog" id="blog" v-if="windowWidth >= 1440">
+        <TitleSection v-if="windowWidth >= 1440">Наш блог</TitleSection>
+        <div class="blog__wrapper-d">
             <BlogVideoCard
                 video="https://www.youtube.com/embed/KRRKdk9Jf_s?autoplay=1&mute=1"
             />
@@ -45,17 +45,20 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .blog {
-    &__wrapper {
+    display: flex;
+    flex-direction: column;
+    &__wrapper-d {
         margin-top: 40px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
-        @media (max-width: 1500px) {
-            grid-template-columns: 1fr 1fr;
+        @media (max-width: 1440px) {
+            // grid-template-columns: 1fr 1fr;
+            // margin-top: 0;
         }
-        @media (max-width: 768px) {
-            grid-template-columns: 1fr;
-        }
+        // @media (max-width: 768px) {
+        //     grid-template-columns: 1fr;
+        // }
     }
 }
 </style>

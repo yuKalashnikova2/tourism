@@ -10,18 +10,15 @@
     font-size: 60px;
     line-height: 60px;
     text-align: left;
-    // @media (max-width: 992px) {
-    //     text-align: center;
-    // }
     @media (max-width: 768px) {
         font-size: 40px;
         font-weight: 700;
-        line-height: 56px;
+        line-height: 40px;
     }
-    @media (max-width: 360px) {
-        font-size: 32px;
+    @media (max-width: 400px) {
+        font-size: 28px;
         font-weight: 700;
-        line-height: 44.8px;
+        line-height: 28px;
     }
 }
 </style>

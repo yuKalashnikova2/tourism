@@ -53,30 +53,38 @@ input {
 .container {
     background: $white;
     padding: 0 7.5rem;
-    @media (max-width: 1550px) {
-        padding: 0 4rem;
+    @media (max-width: 1440px) {
+        padding: 0 3.75rem;
+        margin: 0 auto;
     }
-    @media (max-width: 1420px) {
-        padding: 0 2rem;
-    }
-    @media (max-width: 1200px) {
-        padding: 0 2.7rem;
-    }
+    // @media (max-width: 1420px) {
+    //     padding: 0 2rem;
+    // }
+    // @media (max-width: 1200px) {
+    //     padding: 0 2.7rem;
+    // }
 
     @media (max-width: 768px) {
-        padding: 0 1rem;
+        padding: 0 30px;
     }
+    @media (max-width: 340px) {
+        padding: 0 15px;
+    }
+    
+
 }
 .wrapper {
     display: flex;
     flex-direction: column;
     gap: 60px;
-
-    @media (max-width: 992px) {
-        gap: 50px;
+    @media (max-width: 1440px) {
+        gap: 40px;
+    }
+    @media (max-width: 768px) {
+        gap: 40px;
     }
     @media (max-width: 400px) {
-        gap: 40px;
+        gap: 28px;
     }
 }
 .services__text {

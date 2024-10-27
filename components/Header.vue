@@ -1,14 +1,14 @@
 <script setup>
 import { ref } from 'vue'
 
-// const list = ref([
-//     { name: 'О нас', link: '#about' },
-//     { name: 'Услуги', link: '#services' },
-//     { name: 'Этапы', link: '#stages' },
-//     { name: 'Блог', link: '#blog' },
-//     { name: 'Контакты', link: '#contacts' },
-//     { name: 'FAQ', link: '#faq' },
-// ])
+const list = ref([
+    { name: 'О нас', link: '#about' },
+    { name: 'Услуги', link: '#services' },
+    { name: 'Этапы', link: '#stages' },
+    { name: 'Блог', link: '#blog' },
+    { name: 'Контакты', link: '#contacts' },
+    { name: 'FAQ', link: '#faq' },
+])
 
 const isVisible = ref(false)
 </script>
@@ -19,7 +19,7 @@ const isVisible = ref(false)
                 <img src="/logo.svg" alt="logo" />
             </NuxtLink>
         </div>
-        <!-- <div class="burger__wrapper">
+        <div class="burger__wrapper">
             <header class="burger__header">
                 <div
                     class="burger__button"
@@ -31,7 +31,7 @@ const isVisible = ref(false)
                     <span></span>
                 </div>
             </header>
-        </div> -->
+        </div>
         <ul class="header__menu d-none">
             <li class="header__menu-item">
                 <NuxtLink to="#about">О нас</NuxtLink>
@@ -53,7 +53,7 @@ const isVisible = ref(false)
             </li>
         </ul>
 
-        <!-- <Transition>
+        <Transition>
             <nav class="burger__nav" v-show="isVisible">
                 <ul class="burger__list">
                     <li class="burger__item" v-for="lis in list">
@@ -61,7 +61,7 @@ const isVisible = ref(false)
                     </li>
                 </ul>
             </nav>
-        </Transition> -->
+        </Transition>
     </div>
 </template>
 
@@ -69,17 +69,24 @@ const isVisible = ref(false)
 .header {
     display: flex;
     align-items: center;
-    gap: 129px;
-    // justify-content: space-between;
+    // gap: 129px;
     padding: 20px 0;
-
+    justify-content: space-between;
+    @media (max-width: 1440px) {
+           gap: 0;
+           padding-bottom:0 ;
+        }
     &-logo {
         width: 120px;
         height: 108px;
         flex-shrink: 0;
+        @media (max-width: 1280px) {
+            width: 80px;
+            height: 72px;
+        }
         @media (max-width: 400px) {
-            width: 97px;
-            height: 53px;
+            width: 60px;
+            height: 54px;
         }
         & img {
             width: 100%;
@@ -95,12 +102,12 @@ const isVisible = ref(false)
         list-style: none;
         padding: 14px 0;
         margin: 0;
-        @media (max-width: 1200px) {
+        @media (max-width: 1440px) {
+                gap: 20px;
+        }
+        @media (max-width: 992px) {
             display: none;
         }
-        // @media (max-width: 1270px) {
-        //     gap: 10px;
-        // }
         &-item {
             display: flex;
             justify-content: center;
@@ -109,6 +116,9 @@ const isVisible = ref(false)
             pointer-events: auto;
             z-index: 10;
             white-space: nowrap;
+            @media (max-width: 1440px) {
+                padding: 20px 30px;
+        }
             & a {
                 font-size: 28px;
                 font-weight: 500;

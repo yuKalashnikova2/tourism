@@ -21,7 +21,8 @@ const styleBackground = computed(() => {
 <template>
     <div class="stages-card">
         <div class="stages-card__title" :style="{ backgroundColor: color }">
-            <h3>{{ title }}<br />{{ title2 }}</h3>
+            <h3 class="desktop">{{ title }}<br />{{ title2 }}</h3>
+            <h3 class="mobile">{{ title }} {{ title2 }}</h3>
         </div>
 
         <div
@@ -65,6 +66,16 @@ const styleBackground = computed(() => {
 
             pointer-events: none;
         }
+        & .desktop {
+            @media(max-width: 768px) {
+                display: none;
+            }
+        }
+        & .mobile {
+            @media(min-width: 769px) {
+                display: none;
+            }
+        }
         & h3 {
             font-weight: 700;
             font-size: 40px;
@@ -74,6 +85,11 @@ const styleBackground = computed(() => {
                 font-size: 28px;
                 font-weight: 700;
                 line-height: 39.2px;
+            }
+            @media (max-width: 400px) {
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 28px;
             }
         }
     }

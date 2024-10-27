@@ -50,8 +50,14 @@
     border-radius: 120px;
     position: relative;
     z-index: 10;
+    @media (max-width: 400px) {
+        box-shadow: none;
+    }
     &__border {
         padding: 20px;
+        @media (max-width: 400px) {
+            padding: 0;
+        }
         &::before {
             content: '';
             position: absolute;
@@ -78,12 +84,18 @@
             opacity: 0.4;
             z-index: -1;
             border-radius: 120px;
+            @media (max-width: 400px) {
+                background: none;
+            }
         }
         &_opacity {
             background: #c1faed;
             position: relative;
             z-index: 0 !important;
             border-radius: 120px;
+            @media (max-width: 400px) {
+                background: none;
+            }
         }
     }
     @media (max-width: 1150px) {
@@ -94,10 +106,13 @@
     &__block {
         padding: 20px;
         display: flex;
-        @media (max-width: 1150px) {
+        @media (max-width: 992px) {
             flex-direction: column;
             align-items: center;
             justify-content: center;
+        }
+        @media (max-width: 400px) {
+            padding: 0;
         }
     }
     &__message {
@@ -106,6 +121,11 @@
         padding-bottom: 12px;
         padding-left: 40px;
         padding-right: 128px;
+        @media (max-width: 1280px) {
+            padding-left: 10px;
+            text-align: center;
+            padding-right: 0;
+        }
         @media (max-width: 992px) {
             padding-left: 10px;
             text-align: center;
@@ -119,6 +139,11 @@
             @media (max-width: 1500px) {
                 font-size: 30px;
                 line-height: 40px;
+                font-weight: 600;
+            }
+            @media (max-width: 400px) {
+                font-size: 20px;
+                line-height: 28px;
                 font-weight: 600;
             }
         }
@@ -141,6 +166,10 @@
                 width: 60px;
                 height: 60px;
             }
+            @media (max-width: 400px) {
+                width: 40px;
+                height: 40px;
+            }
             & img {
                 width: 100%;
                 object-fit: cover;
@@ -158,10 +187,11 @@
         right: 0;
         bottom: 0;
         // z-index: 1;
-        @media (max-width: 1320px) {
+        @media (max-width: 1280px) {
             z-index: -1;
+            background-position: center;
         }
-        @media (max-width: 550px) {
+        @media (max-width: 400px) {
             display: none;
         }
     }

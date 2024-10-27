@@ -93,6 +93,9 @@ linear-gradient(0deg, rgba(103, 207, 184, 0.6), rgba(103, 207, 184, 0.6));
 
             padding: 20px;
             border-radius: 120px;
+            @media (max-width: 400px) {
+               padding: 8px;
+            }
         }
         @media (max-width: 1200px) {
             margin: 0 auto;

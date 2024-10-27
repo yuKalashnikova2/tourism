@@ -6,7 +6,7 @@ const props = defineProps({
     backgroundImage: String,
 })
 
-const { modalClosed, closeModal, openModal } = useModal()
+const { openModal } = useModal()
 </script>
 <template>
     <div
@@ -62,16 +62,22 @@ const { modalClosed, closeModal, openModal } = useModal()
         background-color: rgba(32, 32, 32, 0.56);
         pointer-events: none;
     }
-    @media (max-width: 1500px) {
-        // height: 302px;
+    @media (max-width: 1440px) {
+        min-height: 100%;
     }
     @media (max-width: 992px) {
         // padding: 90px 23px 50px 15px;
     }
     @media (max-width: 768px) {
-        margin: 0;
-        height: auto;
+        margin: 16px;
+        max-height: 318px;
+        // height: auto;
+        padding: 40px 20px 48px 40px;
     }
+    @media (max-width: 400px) {
+        margin: 12px 8px;
+    }
+
     &__title {
         font-weight: 600;
         font-size: 38px;

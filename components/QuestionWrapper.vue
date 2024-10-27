@@ -49,6 +49,9 @@ const questions = ref([
     grid-template-columns: 1fr;
     grid-gap: 20px;
     margin-top: 40px;
+    @media (max-width: 400px) {
+        margin-top: 20px;
+    }
 }
 
 </style>

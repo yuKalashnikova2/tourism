@@ -1,8 +1,14 @@
 <script setup>
 import { ref } from 'vue'
-const { modalClosed, closeModal, openModal } = useModal()
+const { openModal } = useModal()
+// const windowWidthLabel = ref('')
 
-// const showPopup = ref(false)
+// onMounted(() => {
+//     windowWidthLabel.value = window.innerWidth
+//     window.addEventListener('resize', () => {
+//         windowWidthLabel.value = window.innerWidth
+//     })
+// })
 </script>
 <template>
     <div class="banner">
@@ -12,7 +18,7 @@ const { modalClosed, closeModal, openModal } = useModal()
                 подберём лучшую клинику по вашим критериям
             </div>
 
-            <div class="banner__labels">
+            <div class="banner__labels desktop">
                 <LabelPrice price="0 руб." text="Предоплаты" color="#4245D7" />
                 <LabelPrice
                     price="Онлайн"
@@ -23,7 +29,11 @@ const { modalClosed, closeModal, openModal } = useModal()
                 <LabelPrice price="100%" text="Гарантия" color="#67CFB8" />
             </div>
         </div>
-
+        <div class="banner__labels mobiles">
+            <LabelPrice price="0 руб." text="Предоплаты" color="#4245D7" />
+            <LabelPrice price="Онлайн" text="Поддержка" color="#429FD7" small />
+            <LabelPrice price="100%" text="Гарантия" color="#67CFB8" />
+        </div>
         <div class="banner__form">
             <div class="banner__form__wrapper">
                 <div class="banner__form__title">
@@ -32,10 +42,8 @@ const { modalClosed, closeModal, openModal } = useModal()
                 <span class="banner__form__subtitle"
                     >мы подберём лучшее решение и ответим на все вопросы!</span
                 >
-                <!-- <nuxt-link to="#"> -->
-                    <Button @click="openModal"
-                        >Записаться</Button
-                    >
+                <!-- <nuxt-link to="#overlay_button"> -->
+                <Button @click="openModal">Записаться</Button>
                 <!-- </nuxt-link> -->
             </div>
         </div>
@@ -71,12 +79,14 @@ const { modalClosed, closeModal, openModal } = useModal()
     // @media (max-width: 1500px) {
     //     grid-template-columns: 1fr;
     // }
-    @media (max-width: 1200px) {
+    @media (max-width: 1440px) {
         grid-template-columns: 1fr;
+        background-position: right top;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 400px) {
         background-image: none;
     }
+
     &__title {
         font-family: 'Montserrat Alternates', sans-serif;
         font-size: 80px;
@@ -85,14 +95,15 @@ const { modalClosed, closeModal, openModal } = useModal()
         text-align: left;
         letter-spacing: -4px;
         @media (max-width: 768px) {
-            font-size: 60px;
-            font-weight: 700;
-            line-height: 84px;
-        }
-        @media (max-width: 360px) {
             font-size: 48px;
-            font-weight: 700;
+            font-weight: 600;
             line-height: 67.2px;
+        }
+        @media (max-width: 400px) {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 44.8px;
+letter-spacing: 0;
         }
         // @media (max-width: 1520px) {
         //     font-size: 60px;
@@ -111,7 +122,7 @@ const { modalClosed, closeModal, openModal } = useModal()
         }
         & > * {
             margin-bottom: 40px;
-            @media (max-width: 360px) {
+            @media (max-width: 1440px) {
                 margin-bottom: 0;
             }
         }
@@ -130,15 +141,11 @@ const { modalClosed, closeModal, openModal } = useModal()
                 line-height: 28px;
                 letter-spacing: 0px;
             }
-            @media (max-width: 330px) {
+            @media (max-width: 400px) {
                 font-size: 20px;
-                font-weight: 700;
+                font-weight: 500;
                 line-height: 28px;
             }
-            // @media (max-width: 1520px) {
-            //     font-size: 30px;
-            //     line-height: 38px;
-            // }
         }
         @media (max-width: 768px) {
             max-width: 100%;
@@ -152,6 +159,9 @@ const { modalClosed, closeModal, openModal } = useModal()
         z-index: -1 !important;
         border-radius: 120px;
         @media (max-width: 768px) {
+            padding: 32px 28px;
+        }
+        @media (max-width: 400px) {
             padding: 0;
         }
         &__title {
@@ -160,19 +170,19 @@ const { modalClosed, closeModal, openModal } = useModal()
             line-height: 78.4px;
             margin-bottom: 20px;
 
-            // @media (max-width: 1520px) {
-            //     font-size: 36px;
-            //     line-height: 40px;
-            // }
+            @media (max-width: 1440px) {
+                margin-bottom: 40px;
+            }
             @media (max-width: 768px) {
                 font-size: 40px;
                 font-weight: 700;
                 line-height: 56px;
+                margin-bottom: 12px;
             }
-            @media (max-width: 360px) {
-                font-size: 32px;
-                font-weight: 700;
-                line-height: 44.8px;
+            @media (max-width: 400px) {
+                font-size: 28px;
+                font-weight: 600;
+                line-height: 39.2px;
             }
         }
         &__subtitle {
@@ -181,11 +191,11 @@ const { modalClosed, closeModal, openModal } = useModal()
             font-size: 28px;
             line-height: 33.6px;
             margin-bottom: 40px;
-
+            font-family: $font-3;
             @media (max-width: 768px) {
                 font-size: 20px;
-                font-weight: 700;
-                line-height: 28px;
+                font-weight: 400;
+                line-height: 24px;
             }
             @media (max-width: 360px) {
                 font-size: 20px;
@@ -198,7 +208,7 @@ const { modalClosed, closeModal, openModal } = useModal()
             flex-direction: column;
             background-color: $white;
             border-radius: 120px;
-            padding: 61px 62px 52px 60px;
+            padding: 60px 60px 40px 60px;
             height: 100%;
             justify-content: space-between;
             max-width: 100%;
@@ -231,8 +241,11 @@ const { modalClosed, closeModal, openModal } = useModal()
                 border-radius: 120px;
             }
             @media (max-width: 768px) {
+                padding: 32px;
+                // background-repeat: 80px;
+            }
+            @media (max-width: 400px) {
                 padding: 0;
-                background-repeat: 80px;
             }
         }
     }
@@ -241,204 +254,24 @@ const { modalClosed, closeModal, openModal } = useModal()
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
         padding: 47px 0;
-
-        @media (max-width: 768px) {
-            grid-template-columns: 1fr;
-            width: 100%;
-            padding: 0 !important;
+        @media (max-width: 1440px) {
+            max-width: 100%;
+            padding: 24px 0;
         }
         @media (max-width: 400px) {
-            padding: 0;
+            grid-template-columns: 1fr;
+            padding: 0 !important;
+        }
+        &.desktop {
+            @media (max-width: 1440px) {
+                display: none;
+            }
+        }
+        &.mobiles {
+            @media (min-width: 1441px) {
+                display: none;
+            }
         }
     }
 }
-
-// .modal {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background-color: rgba(0, 0, 0, 0.7);
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     z-index: 9;
-//     &__wrapper {
-//         max-width: 680px;
-//     }
-//     &__border {
-//         padding: 20px;
-//         &::before {
-//             content: '';
-//             position: absolute;
-//             top: 0;
-//             left: 0;
-//             bottom: 0;
-//             right: 0;
-//             background: linear-gradient(
-//                     287.56deg,
-//                     rgba(86, 241, 206, 0) 50%,
-//                     rgba(86, 241, 206, 0.8) 100%
-//                 ),
-//                 linear-gradient(
-//                     252.44deg,
-//                     rgba(66, 159, 215, 0.8) 0%,
-//                     rgba(66, 159, 215, 0) 50%
-//                 ),
-//                 linear-gradient(
-//                     180deg,
-//                     rgba(215, 66, 188, 0) 50%,
-//                     rgba(215, 66, 188, 0.12) 100%
-//                 );
-
-//             opacity: 0.6;
-//             z-index: -1;
-//             border-radius: 80px;
-//         }
-//         &_opacity {
-//             background: #c7f3e8;
-//             position: relative;
-//             z-index: 0 !important;
-//             border-radius: 80px;
-//         }
-//     }
-//     &__inner {
-//         box-shadow: 0px 8px 24px 20px #c0d9e999;
-//         min-width: 300px;
-//         background: linear-gradient(
-//             90deg,
-//             #ffffff 0%,
-//             rgba(255, 255, 255, 0.8) 100%
-//         );
-//         border-radius: 80px;
-//         padding: 60px;
-//         padding-bottom: 40px;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         position: relative;
-
-//         @media (max-width: 768px) {
-//             border-radius: 0px;
-//         }
-//     }
-//     &__title {
-//         font-size: 40px;
-//         font-weight: 700;
-//         line-height: 48px;
-//         text-align: center;
-//         margin-bottom: 2.5rem;
-//         @media (max-width: 768px) {
-//             font-size: 28px;
-//             font-weight: 500;
-//             line-height: 28px;
-//         }
-//     }
-//     &__form {
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-
-//         @media (max-width: 768px) {
-//             gap: 20px;
-//         }
-//         &__inputs {
-//             display: flex;
-//             flex-direction: column;
-//             align-items: center;
-//             width: 100%;
-//             gap: 40px;
-//             margin-bottom: 40px;
-//         }
-//         &__input {
-//             display: flex;
-//             flex-direction: column;
-//             gap: 10px;
-//             width: 100%;
-//             & label {
-//                 font-size: 28px;
-//                 font-weight: 500;
-//                 line-height: 28px;
-//             }
-//             & input {
-//                 width: 100%;
-//                 background-color: #dcdcdc;
-//                 border-radius: 40px;
-//                 font-size: 20px;
-//                 font-weight: 500;
-//                 line-height: 20px;
-//                 padding: 1.25rem;
-//                 @media (max-width: 768px) {
-//                     font-size: 20px;
-//                     font-weight: 700;
-//                     line-height: 28px;
-//                 }
-//             }
-//         }
-//     }
-//     &__show {
-//         padding-top: 3rem;
-//     }
-//     &__btn {
-//         width: 100%;
-//     }
-//     &__agree {
-//         margin-top: 4px;
-//         & span {
-//             font-family: $font-3;
-//             color: $gray;
-//             font-size: 14px;
-//             font-weight: 400;
-//             line-height: 16.8px;
-//             text-align: center;
-//         }
-//         &_underline {
-//             text-decoration: underline;
-//         }
-//     }
-//     &__thanks {
-//         text-align: center;
-//         display: flex;
-//         flex-direction: column;
-//         gap: 40px;
-//         &__title {
-//             font-size: 60px;
-//             font-weight: 700;
-//             line-height: 72px;
-//         }
-//         &__subtitle {
-//             font-size: 40px;
-//             font-weight: 500;
-//             line-height: 48px;
-//         }
-//         &__follow {
-//             font-size: 28px;
-//             font-weight: 600;
-//             line-height: 39.2px;
-//         }
-//     }
-//     &__social {
-//         display: flex;
-//         gap: 40px;
-//         justify-content: center;
-//         &__item {
-//             width: 60px;
-//             height: 60px;
-//             & img {
-//                 width: 100%;
-//                 height: 100%;
-//                 object-fit: cover;
-//             }
-//         }
-//     }
-// }
-// .v-leave-active {
-//     transition: opacity 0.3s ease;
-// }
-
-// .v-enter-from,
-// .v-leave-to {
-//     opacity: 0;
-// }
 </style>

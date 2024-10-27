@@ -7,10 +7,17 @@
     </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .blog__wrapper {
+    // display: flex;
+    // flex-direction: column;
+    // gap: 40px;
     overflow-x: auto;
     overflow-y: hidden;
+
+    @media(max-width: 768px) {
+        gap: 20px;
+    }
 }
 
 .blog__video-container {

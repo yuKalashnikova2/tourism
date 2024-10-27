@@ -75,9 +75,10 @@
         text-align: center;
         padding-bottom: 40px;
         @media (max-width: 768px) {
-            font-size: 40px;
-            font-weight: 700;
-            line-height: 56px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22.4px;
+            text-align: center;
         }
     }
 }

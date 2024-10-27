@@ -49,8 +49,11 @@ const infoStyle = computed(() => ({
 
 .question header {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     align-items: center;
+    @media (max-width: 400px) {
+        gap: 12px;
+    }
 }
 
 .question-title {
@@ -63,13 +66,20 @@ const infoStyle = computed(() => ({
     font-weight: 700;
     line-height: 56px;
     margin-bottom: 10px;
-    padding-top: 22px;
-    padding-bottom: 22px;
+    padding-top: 20px;
+    padding-bottom: 10px;
 
     @media (max-width: 768px) {
         font-size: 28px;
-        font-weight: 700;
         line-height: 39.2px;
+        padding-top: 0px;
+        padding-bottom: 10px;
+    }
+    @media (max-width: 400px) {
+        font-size: 20px;
+        line-height: 28px;
+        padding-top: 20px;
+        padding-bottom: 8px;
     }
 }
 
@@ -87,8 +97,12 @@ const infoStyle = computed(() => ({
 
     @media (max-width: 768px) {
         font-size: 20px;
-        font-weight: 700;
         line-height: 28px;
+    }
+    @media (max-width: 400px) {
+        font-size: 16px;
+        line-height: 22.4px;
+        padding-left: 52px;
     }
 }
 
@@ -106,7 +120,7 @@ const infoStyle = computed(() => ({
         transform: rotate(180deg);
         transition: transform 0.3s ease-out;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 400px) {
         width: 40px;
         height: 40px;
     }
