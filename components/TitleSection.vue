@@ -15,7 +15,7 @@
         font-weight: 700;
         line-height: 40px;
     }
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         font-size: 28px;
         font-weight: 700;
         line-height: 28px;

@@ -21,9 +21,7 @@ const { openModal } = useModal()
                 <h3 class="services-card__title">{{ title }}</h3>
                 <div class="services-card__desc">{{ desc }}</div>
                 <nuxt-link to="#overlay_button">
-                    <Button
-                        class="services-card__button"
-                        @click="openModal"
+                    <Button class="services-card__button" @click="openModal"
                         >Узнать</Button
                     >
                 </nuxt-link>
@@ -74,7 +72,7 @@ const { openModal } = useModal()
         // height: auto;
         padding: 40px 20px 48px 40px;
     }
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         margin: 12px 8px;
     }
 

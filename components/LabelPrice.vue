@@ -4,7 +4,7 @@ const props = defineProps({
     price: String,
     text: String,
     color: String,
-    small: Boolean
+    small: Boolean,
 })
 
 const labelColor = computed(() => {
@@ -14,8 +14,11 @@ const labelColor = computed(() => {
 
 <template>
     <div class="label" :style="{ backgroundColor: labelColor }">
-        <span class="label__price"
-        :class="[small ? 'label__price_small-size' : '']">{{ price }}</span>
+        <span
+            class="label__price"
+            :class="[small ? 'label__price_small-size' : '']"
+            >{{ price }}</span
+        >
         <span class="label__text">{{ text }}</span>
     </div>
 </template>
@@ -37,17 +40,17 @@ const labelColor = computed(() => {
     white-space: nowrap;
     box-shadow: 2px 2px 20px 12px rgba(192, 217, 233, 0.6);
     @media (max-width: 1440px) {
-            max-width: 100%;
-            padding-top: 25px;
-            padding-right: 45px;
-            padding-bottom: 45px;
-            padding-left: 25px; 
-        }
+        max-width: 100%;
+        padding-top: 25px;
+        padding-right: 45px;
+        padding-bottom: 45px;
+        padding-left: 25px;
+    }
     @media (max-width: 768px) {
         max-width: 100%;
         // padding: 15px;
     }
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         max-width: 100%;
         padding: 12px;
     }
@@ -61,36 +64,34 @@ const labelColor = computed(() => {
             font-weight: 700;
             line-height: 72.8px;
             @media (max-width: 768px) {
-            font-size: 24px;
-            line-height: 28px;
-        }
+                font-size: 24px;
+                line-height: 28px;
+            }
         }
         @media (max-width: 768px) {
-                font-size: 40px;
-                font-weight: 700;
-                line-height: 56px;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 56px;
         }
-        @media (max-width: 400px) {
-font-size: 20px;
-font-weight: 700;
-line-height: 20px;
+        @media (max-width: 500px) {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 20px;
         }
     }
     &__text {
         font-size: 28px;
         font-weight: 700;
         line-height: 39.2px;
-        @media(max-width: 768px) {
+        @media (max-width: 768px) {
             font-size: 20px;
             font-weight: 700;
             line-height: 28px;
         }
-        @media (max-width: 400px) {
-font-size: 16px;
-font-weight: 700;
-line-height: 16px;
-
-
+        @media (max-width: 500px) {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 16px;
         }
     }
 }

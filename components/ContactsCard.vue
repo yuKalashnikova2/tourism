@@ -3,7 +3,7 @@ const props = defineProps({
     icon: String,
     subtitle: String,
     name: String,
-    href: String
+    href: String,
 })
 </script>
 
@@ -15,9 +15,7 @@ const props = defineProps({
         <div class="contacts__phone__wrapper">
             <span class="contacts__phone__subtitle">{{ subtitle }}</span>
 
-            <a :href="href" class="contacts__phone__name">{{
-                name
-            }}</a>
+            <a :href="href" class="contacts__phone__name">{{ name }}</a>
         </div>
     </div>
 </template>
@@ -27,18 +25,17 @@ const props = defineProps({
     display: flex;
     align-items: center;
     gap: 12px;
- 
+
     &__wrapper {
         display: flex;
         gap: 12px;
         align-items: center;
         justify-content: center;
-        @media (max-width: 400px) {
-        flex-direction: column;
-        align-items: baseline;
+        @media (max-width: 992px) {
+            flex-direction: column;
+            align-items: baseline;
+        }
     }
-    }
-   
 
     &__icon {
         width: 40px;
@@ -48,7 +45,6 @@ const props = defineProps({
             width: 100%;
             object-fit: cover;
         }
-      
     }
     &__subtitle {
         font-size: 28px;

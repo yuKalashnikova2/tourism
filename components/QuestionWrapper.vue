@@ -24,23 +24,21 @@ const questions = ref([
         title: 'Сколько времени занимает реабилитация после операций?',
         info: 'Время восстановления после операции варьируется в зависимости от процедуры и индивидуальных факторов. Обычно реабилитация занимает от 1 до 4 недель. Примерные сроки реабилитации вы можете узнать на бесплатной консультации с врачом и консультантом.',
         expanded: false,
-    }
+    },
 ])
 </script>
 <template>
     <div class="question">
         <TitleSection>Популярные вопросы</TitleSection>
         <div class="question__wrapper">
-        <Question
-            v-for="question in questions"
-            :key="question.id"
-            :title="question.title"
-            :info="question.info"
-
-        />
+            <Question
+                v-for="question in questions"
+                :key="question.id"
+                :title="question.title"
+                :info="question.info"
+            />
+        </div>
     </div>
-    </div>
- 
 </template>
 
 <style scoped lang="scss">
@@ -49,9 +47,8 @@ const questions = ref([
     grid-template-columns: 1fr;
     grid-gap: 20px;
     margin-top: 40px;
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         margin-top: 20px;
     }
 }
-
 </style>

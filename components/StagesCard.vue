@@ -67,12 +67,12 @@ const styleBackground = computed(() => {
             pointer-events: none;
         }
         & .desktop {
-            @media(max-width: 768px) {
+            @media (max-width: 768px) {
                 display: none;
             }
         }
         & .mobile {
-            @media(min-width: 769px) {
+            @media (min-width: 769px) {
                 display: none;
             }
         }
@@ -86,7 +86,7 @@ const styleBackground = computed(() => {
                 font-weight: 700;
                 line-height: 39.2px;
             }
-            @media (max-width: 400px) {
+            @media (max-width: 500px) {
                 font-size: 20px;
                 font-weight: 700;
                 line-height: 28px;

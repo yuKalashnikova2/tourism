@@ -83,7 +83,7 @@ const { openModal } = useModal()
         grid-template-columns: 1fr;
         background-position: right top;
     }
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         background-image: none;
     }
 
@@ -99,31 +99,25 @@ const { openModal } = useModal()
             font-weight: 600;
             line-height: 67.2px;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             font-size: 32px;
             font-weight: 600;
             line-height: 44.8px;
-letter-spacing: 0;
+            letter-spacing: 0;
         }
-        // @media (max-width: 1520px) {
-        //     font-size: 60px;
-        //     line-height: 80px;
-        // }
     }
     &__block {
         max-width: 950px;
-        // padding-right: 120px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         @media (max-width: 768px) {
-            // align-items: center;
             justify-content: center;
         }
         & > * {
             margin-bottom: 40px;
-            @media (max-width: 1440px) {
-                margin-bottom: 0;
+            @media (max-width: 768px) {
+                margin-bottom: 12px;
             }
         }
 
@@ -141,7 +135,7 @@ letter-spacing: 0;
                 line-height: 28px;
                 letter-spacing: 0px;
             }
-            @media (max-width: 400px) {
+            @media (max-width: 500px) {
                 font-size: 20px;
                 font-weight: 500;
                 line-height: 28px;
@@ -161,7 +155,7 @@ letter-spacing: 0;
         @media (max-width: 768px) {
             padding: 32px 28px;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             padding: 0;
         }
         &__title {
@@ -175,13 +169,11 @@ letter-spacing: 0;
             }
             @media (max-width: 768px) {
                 font-size: 40px;
-                font-weight: 700;
                 line-height: 56px;
                 margin-bottom: 12px;
             }
-            @media (max-width: 400px) {
+            @media (max-width: 500px) {
                 font-size: 28px;
-                font-weight: 600;
                 line-height: 39.2px;
             }
         }
@@ -244,7 +236,7 @@ letter-spacing: 0;
                 padding: 32px;
                 // background-repeat: 80px;
             }
-            @media (max-width: 400px) {
+            @media (max-width: 500px) {
                 padding: 0;
             }
         }
@@ -258,7 +250,7 @@ letter-spacing: 0;
             max-width: 100%;
             padding: 24px 0;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             grid-template-columns: 1fr;
             padding: 0 !important;
         }

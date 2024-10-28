@@ -51,7 +51,7 @@ const infoStyle = computed(() => ({
     display: flex;
     gap: 20px;
     align-items: center;
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         gap: 12px;
     }
 }
@@ -75,7 +75,7 @@ const infoStyle = computed(() => ({
         padding-top: 0px;
         padding-bottom: 10px;
     }
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         font-size: 20px;
         line-height: 28px;
         padding-top: 20px;
@@ -99,7 +99,7 @@ const infoStyle = computed(() => ({
         font-size: 20px;
         line-height: 28px;
     }
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         font-size: 16px;
         line-height: 22.4px;
         padding-left: 52px;
@@ -120,7 +120,7 @@ const infoStyle = computed(() => ({
         transform: rotate(180deg);
         transition: transform 0.3s ease-out;
     }
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         width: 40px;
         height: 40px;
     }

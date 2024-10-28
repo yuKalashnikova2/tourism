@@ -73,9 +73,9 @@ const isVisible = ref(false)
     padding: 20px 0;
     justify-content: space-between;
     @media (max-width: 1440px) {
-           gap: 0;
-           padding-bottom:0 ;
-        }
+        gap: 0;
+        padding-bottom: 0;
+    }
     &-logo {
         width: 120px;
         height: 108px;
@@ -84,7 +84,7 @@ const isVisible = ref(false)
             width: 80px;
             height: 72px;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             width: 60px;
             height: 54px;
         }
@@ -103,7 +103,7 @@ const isVisible = ref(false)
         padding: 14px 0;
         margin: 0;
         @media (max-width: 1440px) {
-                gap: 20px;
+            gap: 20px;
         }
         @media (max-width: 992px) {
             display: none;
@@ -118,7 +118,7 @@ const isVisible = ref(false)
             white-space: nowrap;
             @media (max-width: 1440px) {
                 padding: 20px 30px;
-        }
+            }
             & a {
                 font-size: 28px;
                 font-weight: 500;

@@ -78,7 +78,7 @@
     );
     @media (max-width: 768px) {
     }
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         padding-top: 0px;
         padding-left: 0px;
         padding-right: 0px;
@@ -89,7 +89,7 @@
 
     &__border {
         padding: 20px;
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             padding: 0px;
         }
         &::before {
@@ -118,7 +118,7 @@
             opacity: 0.6;
             z-index: -1;
             border-radius: 120px;
-            @media (max-width: 400px) {
+            @media (max-width: 500px) {
                 background: none;
             }
         }
@@ -127,7 +127,7 @@
             position: relative;
             z-index: 0 !important;
             border-radius: 120px;
-            @media (max-width: 400px) {
+            @media (max-width: 500px) {
                 background: $white;
             }
         }
@@ -145,7 +145,7 @@
             font-weight: 600;
             line-height: 32px;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             font-size: 28px;
             font-weight: 600;
             line-height: 28px;
@@ -163,7 +163,7 @@
             font-weight: 400;
             line-height: 24px;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             font-size: 16px;
             font-weight: 400;
             line-height: 19.2px;
@@ -180,7 +180,7 @@
             align-items: baseline;
             gap: 26px;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             margin-top: 20px;
             gap: 12px;
         }
@@ -192,7 +192,7 @@
         margin-top: 31px;
         gap: 28px;
         max-width: 1047px;
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             justify-content: none;
         }
         &__item {
@@ -221,7 +221,7 @@
         @media (max-width: 992px) {
             background-image: url('/logofull-back.png');
         }
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             background-image: none;
         }
     }

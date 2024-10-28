@@ -48,10 +48,10 @@
         // flex-wrap: wrap;
         // justify-content: space-between;
         gap: 20px;
-        @media (max-width: 1500px) {
+        @media (max-width: 1440px) {
             grid-template-columns: 1fr 1fr;
         }
-        @media (max-width:400px) {
+        @media (max-width:500px) {
             grid-template-columns: 1fr;
         }
     }

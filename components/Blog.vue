@@ -10,7 +10,7 @@ onMounted(() => {
 })
 </script>
 <template>
-    <div class="blog" id="blog" v-if="windowWidth >= 1440">
+    <div class="blog" id="blog" v-if="windowWidth >= 1460">
         <TitleSection v-if="windowWidth >= 1440">Наш блог</TitleSection>
         <div class="blog__wrapper-d">
             <BlogVideoCard
@@ -52,13 +52,6 @@ onMounted(() => {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
-        @media (max-width: 1440px) {
-            // grid-template-columns: 1fr 1fr;
-            // margin-top: 0;
-        }
-        // @media (max-width: 768px) {
-        //     grid-template-columns: 1fr;
-        // }
     }
 }
 </style>
