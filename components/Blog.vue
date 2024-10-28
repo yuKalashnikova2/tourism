@@ -10,8 +10,8 @@ onMounted(() => {
 })
 </script>
 <template>
+    <TitleSection>Наш блог</TitleSection>
     <div class="blog" id="blog" v-if="windowWidth >= 1460">
-        <TitleSection v-if="windowWidth >= 1440">Наш блог</TitleSection>
         <div class="blog__wrapper-d">
             <BlogVideoCard
                 video="https://www.youtube.com/embed/KRRKdk9Jf_s?autoplay=1&mute=1"
@@ -27,20 +27,7 @@ onMounted(() => {
             />
         </div>
     </div>
-    <BlogMobile v-else>
-        <BlogVideoCard
-            video="https://www.youtube.com/embed/KRRKdk9Jf_s?autoplay=1&mute=1"
-        />
-        <BlogVideoCard
-            video="https://youtube.com/embed/-J48C26AM3I?autoplay=1&mute=1"
-        />
-        <BlogVideoCard
-            video="https://youtube.com/embed/RjtwFyucTR4?autoplay=1&mute=1"
-        />
-        <BlogVideoCard
-            video="https://youtube.com/embed/LxINvpQbYo4?autoplay=1&mute=1"
-        />
-    </BlogMobile>
+    <BlogMobile v-else />
 </template>
 
 <style lang="scss" scoped>

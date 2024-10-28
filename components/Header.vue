@@ -1,16 +1,14 @@
 <script setup>
 import { ref } from 'vue'
 
-const list = ref([
-    { name: 'О нас', link: '#about' },
-    { name: 'Услуги', link: '#services' },
-    { name: 'Этапы', link: '#stages' },
-    { name: 'Блог', link: '#blog' },
-    { name: 'Контакты', link: '#contacts' },
-    { name: 'FAQ', link: '#faq' },
-])
-
 const isVisible = ref(false)
+const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+        isVisible.value = false
+    }
+}
 </script>
 <template>
     <div class="header">
@@ -56,8 +54,29 @@ const isVisible = ref(false)
         <Transition>
             <nav class="burger__nav" v-show="isVisible">
                 <ul class="burger__list">
-                    <li class="burger__item" v-for="lis in list">
-                        <NuxtLink :to="lis.link">{{ lis.name }}</NuxtLink>
+                    <li class="burger__item" @click="scrollToSection('about')">
+                        О нас
+                    </li>
+                    <li
+                        class="burger__item"
+                        @click="scrollToSection('services')"
+                    >
+                        Услуги
+                    </li>
+                    <li class="burger__item" @click="scrollToSection('stages')">
+                        Этапы
+                    </li>
+                    <li class="burger__item" @click="scrollToSection('blog')">
+                        Блог
+                    </li>
+                    <li
+                        class="burger__item"
+                        @click="scrollToSection('contacts')"
+                    >
+                        Контакты
+                    </li>
+                    <li class="burger__item" @click="scrollToSection('faq')">
+                        FAQ
                     </li>
                 </ul>
             </nav>

@@ -165,7 +165,7 @@
     }
     &__text {
         & .desktop {
-            @media (max-width: 1280px) {
+            @media (max-width: 1440px) {
                 display: none;
             }
         }

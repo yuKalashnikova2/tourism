@@ -21,7 +21,7 @@ const { openModal } = useModal()
                 <h3 class="services-card__title">{{ title }}</h3>
                 <div class="services-card__desc">{{ desc }}</div>
                 <nuxt-link to="#overlay_button">
-                    <Button class="services-card__button" @click="openModal"
+                    <Button small class="services-card__button" @click="openModal"
                         >Узнать</Button
                     >
                 </nuxt-link>
@@ -64,31 +64,37 @@ const { openModal } = useModal()
         min-height: 100%;
     }
     @media (max-width: 992px) {
+        margin: 16px;
+        max-height: 315px;
         // padding: 90px 23px 50px 15px;
     }
     @media (max-width: 768px) {
         margin: 16px;
-        max-height: 318px;
-        // height: auto;
+        max-height: 286px;
         padding: 40px 20px 48px 40px;
     }
     @media (max-width: 500px) {
         margin: 12px 8px;
+        padding: 40px 20px 40px 40px;
+        max-height: 218px;
     }
 
     &__title {
         font-weight: 600;
-        font-size: 38px;
-        line-height: 40px;
+        font-size: 40px;
+        line-height: 56px;
         margin-bottom: 8px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: wrap;
         margin-bottom: 8px;
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             font-size: 28px;
-            font-weight: 700;
             line-height: 39.2px;
+        }
+        @media (max-width: 500px) {
+            font-size: 20px;
+            line-height: 28px;
         }
     }
     &__desc {
@@ -97,41 +103,25 @@ const { openModal } = useModal()
         line-height: 33.6px;
         margin-bottom: 20px;
         overflow: hidden;
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             font-size: 20px;
-            font-weight: 700;
-            line-height: 28px;
+            line-height: 24px;
+        }
+        @media (max-width: 768px) {
+            font-size: 16px;
+            line-height: 19.2px;
         }
     }
     &__button {
-        background: $white !important;
-        color: $gray;
-        font-size: 28px;
+        // background: $white !important;
+        // color: $gray;
+        // font-size: 28px;
         margin-top: auto;
         // padding-bottom: 10px;
         min-width: 283px;
         z-index: 100 !important;
-        padding: 0.625rem 5.656rem;
-        &:hover {
-            cursor: pointer;
-            background: linear-gradient(
-                    287.56deg,
-                    rgba(86, 241, 206, 0) 50%,
-                    rgba(66, 159, 215, 0.6) 100%
-                ),
-                linear-gradient(
-                    252.44deg,
-                    rgba(66, 159, 215, 0.6) 0%,
-                    rgba(86, 241, 206, 0) 50%
-                ),
-                linear-gradient(
-                    180deg,
-                    rgba(215, 66, 188, 0) 50%,
-                    rgba(215, 66, 188, 0.12) 100%
-                ),
-                linear-gradient(0deg, #67c7cf, #67c7cf) !important;
-            color: $white;
-        }
+        // padding: 0.625rem 5.656rem;
+      
     }
     &_border {
         min-width: 405px;
