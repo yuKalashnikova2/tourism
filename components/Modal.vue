@@ -2,152 +2,184 @@
 import { ref, watch } from 'vue'
 import { useModal } from '../composables/useModal.js'
 
-
-const { modalClosed, isThanks, closeModal, submitForm } = useModal()
+const {
+    modalClosed,
+    isThanks,
+    closeModal,
+    submitForm,
+    errorName,
+    errorEmail,
+    errorPhone,
+} = useModal()
 
 // form
 const name = ref('')
 const email = ref('')
 const phone = ref('')
-
-
 </script>
 <template>
-          <div class="modal" v-if="modalClosed" @click="closeModal" id="overlay_button">
-            <Transition>
-                <div class="modal__wrapper" >
-                    <div class="modal__border_opacity">
-                        <div class="modal__border">
-                            <div class="modal__inner">
-                                <div v-if="!isThanks">
-                                    <h3 class="modal__title desktop">
+    <div
+        class="modal"
+        v-if="modalClosed"
+        @click="closeModal"
+        id="overlay_button"
+    >
+        <Transition>
+            <div class="modal__wrapper">
+                <div class="modal__border_opacity">
+                    <div class="modal__border">
+                        <div class="modal__inner">
+                            <div v-if="!isThanks">
+                                <h3 class="modal__title desktop">
+                                    Заявка на бесплатную консультацию
+                                </h3>
+                                <div class="mobile">
+                                    <h3 class="modal__title">
                                         Заявка на бесплатную консультацию
                                     </h3>
-                                    <div class="mobile">
-                                        <h3 class="modal__title">
-                                        Заявка на бесплатную консультацию
-                                    </h3>
-                                    <div @click="closeModal" class="modal__closed"  >
+                                    <div
+                                        @click="closeModal"
+                                        class="modal__closed"
+                                    >
                                         &#10005;
                                     </div>
-                                    </div>
-                                  
-                                    <form class="modal__form" @submit.prevent>
-                                        <div class="modal__form__inputs">
-                                            <div class="modal__form__input">
-                                                <label for="name"
-                                                    >Как вас зовут?</label
-                                                >
-                                                <input
-                                                    type="text"
-                                                    placeholder="Ваше имя"
-                                                    id="name"
-                                                    v-model="name"
-                                                    required
-                                                />
-                                            </div>
-                                            <div class="modal__form__input">
-                                                <label for="email"
-                                                    >Ваш email</label
-                                                >
-                                                <input
-                                                    type="email"
-                                                    placeholder="example@domain.com"
-                                                    id="email"
-                                                    v-model="email"
-                                                    required
-                                                />
-                                            </div>
-                                            <div class="modal__form__input">
-                                                <label for="phone"
-                                                    >Телефон</label
-                                                >
-                                                <input
-                                                    type="text"
-                                                    placeholder="+7 900 900 99-55"
-                                                    id="phone"
-                                                    v-model="phone"
-                                                    required
-                                                />
-                                            </div>
-                                        </div>
-                                        <Button
-                                            class="modal__btn"
-                                            @click="
-                                                submitForm(name, email, phone)
-                                            "
-                                            >Отправить</Button
-                                        >
-                                        <div class="modal__agree">
-                                            <span
-                                                >Нажимая на кнопку, я соглашаюсь
-                                                на <span
-                                                    class="modal__agree_underline"
-                                                    >обработку персональных
-                                                    данных.</span
-                                                ></span
-                                            >
-                                        </div>
-                                    </form>
                                 </div>
 
-                                <div class="modal__thanks" v-if="isThanks">
-                                    <h3 class="modal__thanks__title">
-                                        Спасибо!
-                                    </h3>
-                                    <span class="modal__thanks__subtitle"
-                                        >Мы свяжемся с вами в ближайшее
-                                        время!</span
-                                    >
-                                    <span class="modal__thanks__follow"
-                                        >Следите за нами в соц сетях!</span
-                                    >
+                                <form class="modal__form" @submit.prevent>
+                                    <div class="modal__form__inputs">
+                                        <div class="modal__form__input">
+                                            <label for="name"
+                                                >Как вас зовут?
+                                                <span
+                                                    v-if="errorName"
+                                                    style="color: red"
+                                                    >*</span
+                                                ></label
+                                            >
 
-                                    <div class="modal__social">
-                                        <nuxt-link
-                                            to="https://www.youtube.com/@zdorovyeiturizm"
-                                        >
-                                            <div class="modal__social__item">
-                                                <img
-                                                    src="/youtube.svg"
-                                                    alt="youtube"
-                                                />
-                                            </div>
-                                        </nuxt-link>
+                                            <input
+                                                type="text"
+                                                placeholder="Ваше имя"
+                                                id="name"
+                                                v-model="name"
+                                                required
+                                            />
+                                        </div>
+                                        <div class="modal__form__input">
+                                            <label for="email"
+                                                >Ваш email
+                                                <span
+                                                    v-if="errorEmail"
+                                                    style="color: red"
+                                                    >*</span
+                                                ></label
+                                            >
 
-                                        <nuxt-link
-                                            to="https://vk.com/zdorovekrasotaiturizm"
-                                        >
-                                            <div class="modal__social__item">
-                                                <img
-                                                    src="/vkontakte.svg"
-                                                    alt="vk"
-                                                />
-                                            </div>
-                                        </nuxt-link>
-
-                                        <nuxt-link
-                                            to="https://t.me/zdorovekrasotaiturizm"
-                                        >
-                                            <div class="modal__social__item">
-                                                <img
-                                                    src="/telegram.svg"
-                                                    alt="telegram"
-                                                />
-                                            </div>
-                                        </nuxt-link>
+                                            <input
+                                                type="email"
+                                                placeholder="example@domain.com"
+                                                id="email"
+                                                v-model="email"
+                                                required
+                                            />
+                                        </div>
+                                        <div class="modal__form__input">
+                                            <label for="phone"
+                                                >Телефон
+                                                <span
+                                                    v-if="errorValidate"
+                                                    style="color: red"
+                                                    >*</span
+                                                ></label
+                                            >
+                                            <span
+                                                v-if="errorPhone"
+                                                style="color: red"
+                                                >Тeлефон должен быть в формате
+                                                +7 XXX XXX XX XX и не может быть
+                                                пустым</span
+                                            >
+                                            <input
+                                                type="text"
+                                                placeholder="+7 900 900 99-55"
+                                                id="phone"
+                                                v-model="phone"
+                                                required
+                                            />
+                                        </div>
                                     </div>
+                                    <Button
+                                        class="modal__btn"
+                                        @click="submitForm(name, email, phone)"
+                                        >Отправить</Button
+                                    >
+                                    <div class="modal__agree">
+                                        <span
+                                            >Нажимая на кнопку, я соглашаюсь
+                                            на <span
+                                                class="modal__agree_underline"
+                                                >обработку персональных
+                                                данных.</span
+                                            ></span
+                                        >
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="modal__thanks" v-if="isThanks">
+                                <h3 class="modal__thanks__title">Спасибо!</h3>
+                                <span class="modal__thanks__subtitle"
+                                    >Мы свяжемся с вами в ближайшее время!</span
+                                >
+                                <span class="modal__thanks__follow"
+                                    >Следите за нами в соц сетях!</span
+                                >
+
+                                <div class="modal__social">
+                                    <nuxt-link
+                                        to="https://www.youtube.com/@zdorovyeiturizm"
+                                    >
+                                        <div class="modal__social__item">
+                                            <img
+                                                src="/youtube.svg"
+                                                alt="youtube"
+                                            />
+                                        </div>
+                                    </nuxt-link>
+
+                                    <nuxt-link
+                                        to="https://vk.com/zdorovekrasotaiturizm"
+                                    >
+                                        <div class="modal__social__item">
+                                            <img
+                                                src="/vkontakte.svg"
+                                                alt="vk"
+                                            />
+                                        </div>
+                                    </nuxt-link>
+
+                                    <nuxt-link
+                                        to="https://t.me/zdorovekrasotaiturizm"
+                                    >
+                                        <div class="modal__social__item">
+                                            <img
+                                                src="/telegram.svg"
+                                                alt="telegram"
+                                            />
+                                        </div>
+                                    </nuxt-link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </Transition>
-        </div>
+            </div>
+        </Transition>
+    </div>
 </template>
 
 <style lang="scss" scoped>
-    .modal {
+.modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -160,7 +192,7 @@ const phone = ref('')
     z-index: 9;
     &__wrapper {
         // max-width: 680px;
-        @media(max-width: 768px) {
+        @media (max-width: 768px) {
             width: 100%;
         }
     }
@@ -168,33 +200,33 @@ const phone = ref('')
         position: relative;
         z-index: 100 !important;
         background: linear-gradient(
-            287.56deg,
-            rgba(86, 241, 206, 0) 50%,
-            rgba(86, 241, 206, 0.4) 100%
-        ),
-        linear-gradient(
-            252.44deg,
-            rgba(86, 241, 206, 0.4) 0%,
-            rgba(86, 241, 206, 0) 50%
-        ),
-        linear-gradient(
-            180deg,
-            rgba(215, 66, 188, 0) 50%,
-            rgba(215, 66, 188, 0.06) 100%
-        ),
-        linear-gradient(0deg, #67c7cf, #67c7cf);
+                287.56deg,
+                rgba(86, 241, 206, 0) 50%,
+                rgba(86, 241, 206, 0.4) 100%
+            ),
+            linear-gradient(
+                252.44deg,
+                rgba(86, 241, 206, 0.4) 0%,
+                rgba(86, 241, 206, 0) 50%
+            ),
+            linear-gradient(
+                180deg,
+                rgba(215, 66, 188, 0) 50%,
+                rgba(215, 66, 188, 0.06) 100%
+            ),
+            linear-gradient(0deg, #67c7cf, #67c7cf);
 
-    color: $white;
-    font-size: 28px;
-    cursor: pointer;
-    border-radius: 10px;
-    width: 40px;
-    height: 40px;
-    padding: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &:hover {
+        color: $white;
+        font-size: 28px;
+        cursor: pointer;
+        border-radius: 10px;
+        width: 40px;
+        height: 40px;
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
             cursor: pointer;
             background: linear-gradient(
                     287.56deg,
@@ -216,9 +248,8 @@ const phone = ref('')
     }
     &__border {
         padding: 20px;
-        @media(max-width: 500px) {
+        @media (max-width: 500px) {
             padding: 0;
-           
         }
         &::before {
             content: '';
@@ -246,7 +277,7 @@ const phone = ref('')
             opacity: 0.6;
             z-index: -1;
             border-radius: 80px;
-            @media(max-width: 768px) {
+            @media (max-width: 768px) {
                 background: none;
             }
         }
@@ -255,7 +286,7 @@ const phone = ref('')
             position: relative;
             z-index: 0 !important;
             border-radius: 80px;
-            @media(max-width: 768px) {
+            @media (max-width: 768px) {
                 background: $white;
                 border-radius: 0px;
             }
@@ -278,7 +309,6 @@ const phone = ref('')
         position: relative;
         @media (max-width: 1440px) {
             padding: 40px;
-
         }
         @media (max-width: 768px) {
             padding: 20px;
@@ -299,14 +329,14 @@ const phone = ref('')
         margin-bottom: 2.5rem;
         @media (max-width: 1440px) {
             margin-bottom: 1.5rem;
-                font-size: 28px;
-                line-height: 39.2px;
+            font-size: 28px;
+            line-height: 39.2px;
         }
         @media (max-width: 768px) {
-                margin-bottom:0rem;
-                font-size: 28px;
-                line-height: 39.2px;
-                text-align: start;
+            margin-bottom: 0rem;
+            font-size: 28px;
+            line-height: 39.2px;
+            text-align: start;
         }
         @media (max-width: 500px) {
             font-size: 20px;
@@ -328,11 +358,11 @@ const phone = ref('')
             width: 100%;
             gap: 40px;
             margin-bottom: 40px;
-            @media(max-width: 1440px) {
+            @media (max-width: 1440px) {
                 gap: 20px;
                 margin-bottom: 20px;
             }
-            @media(max-width: 768px) {
+            @media (max-width: 768px) {
                 gap: 20px;
                 margin-bottom: 20px;
             }
@@ -346,7 +376,7 @@ const phone = ref('')
                 font-size: 28px;
                 font-weight: 500;
                 line-height: 28px;
-                @media(max-width: 1440px) {
+                @media (max-width: 1440px) {
                     font-size: 20px;
                     font-weight: 400;
                     line-height: 28px;
@@ -373,7 +403,7 @@ const phone = ref('')
     }
     &__btn {
         width: 100%;
-        @media(max-width: 1440px) {
+        @media (max-width: 1440px) {
             font-size: 28px;
             line-height: 39.2px;
         }
@@ -433,12 +463,12 @@ const phone = ref('')
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    @media(min-width: 769px) {
+    @media (min-width: 769px) {
         display: none;
     }
 }
 .desktop {
-    @media(max-width: 768px) {
+    @media (max-width: 768px) {
         display: none;
     }
 }

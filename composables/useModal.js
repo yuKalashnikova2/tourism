@@ -1,11 +1,12 @@
-import { watch } from 'vue'
+import { ref, watch } from 'vue'
 import axios from 'axios'
 
 export const useModal = () => {
 
-  const isThanks = useState('isThanks', () => false);
+  const isThanks = useState('isThanks', () => false)
 
-  const modalClosed = useState('modalClosed', () => false);
+  const modalClosed = useState('modalClosed', () => false)
+
 
   const openModal = () => {
     modalClosed.value = true
@@ -24,13 +25,40 @@ export const useModal = () => {
         history.replaceState(null, null, ' ')
     }
   }
+  const errorName = ref(false)
+  const errorEmail = ref(false)
+  const errorPhone = ref(false)
+  const validateName = (name) => {
+    return name.trim() !== ''
+  }
+  const validateEmail = (email) => {
+    const emailRegPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/
+    return emailRegPattern.test(email)
+  }
+
+
+  const validatePhone = (phone) => {
+    const phonePattern = /^\+7\d{10}$/
+    return phonePattern.test(phone)
+  }
+
 
   const submitForm = async (name, email, phone) => {
-    // const form = document.querySelector('form');
-    // if (!form.checkValidity()) {
-    //   form.reportValidity();
-    //   return;
-    // }
+    const isNameValid = validateName(name)
+    const isEmailValid = validateEmail(email)
+    const isPhoneValid = validatePhone(phone)
+    if(!isNameValid) {
+      errorName.value = true 
+      return
+    } 
+    if(!isEmailValid) {
+      errorEmail.value = true
+      return
+    } 
+    if(!isPhoneValid) {
+      errorPhone.value = true
+      return
+    }
     try {
       const response = await axios.post('https://api.zdorovyeiturizm.ru', {
         name,
@@ -56,5 +84,5 @@ export const useModal = () => {
     }
   });
 
-  return { modalClosed, isThanks, closeModal,openModal, submitForm };
+  return { modalClosed, isThanks, closeModal,openModal, submitForm, errorName, errorEmail, errorPhone };
 };
