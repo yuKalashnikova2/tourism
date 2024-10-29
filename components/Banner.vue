@@ -1,14 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 const { openModal } = useModal()
-// const windowWidthLabel = ref('')
 
-// onMounted(() => {
-//     windowWidthLabel.value = window.innerWidth
-//     window.addEventListener('resize', () => {
-//         windowWidthLabel.value = window.innerWidth
-//     })
-// })
 </script>
 <template>
     <div class="banner">

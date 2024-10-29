@@ -10,6 +10,7 @@ const name = ref('')
 const email = ref('')
 const phone = ref('')
 
+
 </script>
 <template>
           <div class="modal" v-if="modalClosed" @click="closeModal" id="overlay_button">
@@ -19,9 +20,18 @@ const phone = ref('')
                         <div class="modal__border">
                             <div class="modal__inner">
                                 <div v-if="!isThanks">
-                                    <h3 class="modal__title">
+                                    <h3 class="modal__title desktop">
                                         Заявка на бесплатную консультацию
                                     </h3>
+                                    <div class="mobile">
+                                        <h3 class="modal__title">
+                                        Заявка на бесплатную консультацию
+                                    </h3>
+                                    <div @click="closeModal" class="modal__closed"  >
+                                        &#10005;
+                                    </div>
+                                    </div>
+                                  
                                     <form class="modal__form" @submit.prevent>
                                         <div class="modal__form__inputs">
                                             <div class="modal__form__input">
@@ -149,10 +159,67 @@ const phone = ref('')
     align-items: center;
     z-index: 9;
     &__wrapper {
-        max-width: 680px;
+        // max-width: 680px;
+        @media(max-width: 768px) {
+            width: 100%;
+        }
+    }
+    &__closed {
+        position: relative;
+        z-index: 100 !important;
+        background: linear-gradient(
+            287.56deg,
+            rgba(86, 241, 206, 0) 50%,
+            rgba(86, 241, 206, 0.4) 100%
+        ),
+        linear-gradient(
+            252.44deg,
+            rgba(86, 241, 206, 0.4) 0%,
+            rgba(86, 241, 206, 0) 50%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(215, 66, 188, 0) 50%,
+            rgba(215, 66, 188, 0.06) 100%
+        ),
+        linear-gradient(0deg, #67c7cf, #67c7cf);
+
+    color: $white;
+    font-size: 28px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+            cursor: pointer;
+            background: linear-gradient(
+                    287.56deg,
+                    rgba(86, 241, 206, 0) 50%,
+                    rgba(66, 159, 215, 0.6) 100%
+                ),
+                linear-gradient(
+                    252.44deg,
+                    rgba(66, 159, 215, 0.6) 0%,
+                    rgba(86, 241, 206, 0) 50%
+                ),
+                linear-gradient(
+                    180deg,
+                    rgba(215, 66, 188, 0) 50%,
+                    rgba(215, 66, 188, 0.12) 100%
+                ),
+                linear-gradient(0deg, #67c7cf, #67c7cf) !important;
+        }
     }
     &__border {
         padding: 20px;
+        @media(max-width: 500px) {
+            padding: 0;
+           
+        }
         &::before {
             content: '';
             position: absolute;
@@ -179,12 +246,19 @@ const phone = ref('')
             opacity: 0.6;
             z-index: -1;
             border-radius: 80px;
+            @media(max-width: 768px) {
+                background: none;
+            }
         }
         &_opacity {
             background: #c7f3e8;
             position: relative;
             z-index: 0 !important;
             border-radius: 80px;
+            @media(max-width: 768px) {
+                background: $white;
+                border-radius: 0px;
+            }
         }
     }
     &__inner {
@@ -202,9 +276,19 @@ const phone = ref('')
         flex-direction: column;
         justify-content: center;
         position: relative;
+        @media (max-width: 1440px) {
+            padding: 40px;
 
-        // @media (max-width: 768px) {
+        }
+        @media (max-width: 768px) {
+            padding: 20px;
+            min-width: 100%;
+            border-radius: 0px;
+            box-shadow: none;
+        }
+        // @media(max-width: 500px) {
         //     border-radius: 0px;
+        //     box-shadow: none;
         // }
     }
     &__title {
@@ -213,9 +297,19 @@ const phone = ref('')
         line-height: 48px;
         text-align: center;
         margin-bottom: 2.5rem;
+        @media (max-width: 1440px) {
+            margin-bottom: 1.5rem;
+                font-size: 28px;
+                line-height: 39.2px;
+        }
         @media (max-width: 768px) {
-            font-size: 28px;
-            font-weight: 500;
+                margin-bottom:0rem;
+                font-size: 28px;
+                line-height: 39.2px;
+                text-align: start;
+        }
+        @media (max-width: 500px) {
+            font-size: 20px;
             line-height: 28px;
         }
     }
@@ -234,6 +328,14 @@ const phone = ref('')
             width: 100%;
             gap: 40px;
             margin-bottom: 40px;
+            @media(max-width: 1440px) {
+                gap: 20px;
+                margin-bottom: 20px;
+            }
+            @media(max-width: 768px) {
+                gap: 20px;
+                margin-bottom: 20px;
+            }
         }
         &__input {
             display: flex;
@@ -244,6 +346,11 @@ const phone = ref('')
                 font-size: 28px;
                 font-weight: 500;
                 line-height: 28px;
+                @media(max-width: 1440px) {
+                    font-size: 20px;
+                    font-weight: 400;
+                    line-height: 28px;
+                }
             }
             & input {
                 width: 100%;
@@ -255,7 +362,7 @@ const phone = ref('')
                 padding: 1.25rem;
                 @media (max-width: 768px) {
                     font-size: 20px;
-                    font-weight: 700;
+                    font-weight: 400;
                     line-height: 28px;
                 }
             }
@@ -266,6 +373,10 @@ const phone = ref('')
     }
     &__btn {
         width: 100%;
+        @media(max-width: 1440px) {
+            font-size: 28px;
+            line-height: 39.2px;
+        }
     }
     &__agree {
         margin-top: 4px;
@@ -315,6 +426,20 @@ const phone = ref('')
                 object-fit: cover;
             }
         }
+    }
+}
+.mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    @media(min-width: 769px) {
+        display: none;
+    }
+}
+.desktop {
+    @media(max-width: 768px) {
+        display: none;
     }
 }
 .v-leave-active {

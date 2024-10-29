@@ -1,62 +1,64 @@
 <template>
-    <div class="contacts__border_opacity">
-        <div class="contacts__border">
-            <div class="contacts" id="contacts">
-                <div class="contacts__message">
-                    <h3 class="contacts__title">
-                        Остались вопросы? Напишите нам!
-                    </h3>
-                    <div class="contacts__subtitle">
-                        Получите все ответы прямо сейчас!
+        <div class="contacts__border_opacity">
+            <div class="contacts__border">
+                <div class="contacts" id="contacts">
+                    <div class="contacts__message">
+                        <h3 class="contacts__title">
+                            Остались вопросы? Напишите нам!
+                        </h3>
+                        <div class="contacts__subtitle">
+                            Получите все ответы прямо сейчас!
+                        </div>
                     </div>
+
+                    <!-- <div class="try"> -->
+                    <div class="contacts__form">
+                        <ContactsCard
+                            icon="/phone.svg"
+                            subtitle="Телефон:"
+                            name="+7 925 499 45 61"
+                            href="tel:+79254994561"
+                        />
+                        <ContactsCard
+                            icon="/email.svg"
+                            subtitle="Email:"
+                            name="zdorovye.turizm@bk.ru"
+                            href="mailto:zdorovye.turizm@bk.ru"
+                        />
+                    </div>
+                    <div class="contacts__wrapper">
+                        <nuxt-link to="https://wa.me/79254994561">
+                            <div class="contacts__wrapper__item">
+                                <img src="/whats.svg" alt="whats" />
+                            </div>
+                        </nuxt-link>
+
+                        <nuxt-link
+                            to="https://www.youtube.com/@zdorovyeiturizm"
+                        >
+                            <div class="contacts__wrapper__item">
+                                <img src="/youtube.svg" alt="youtube" />
+                            </div>
+                        </nuxt-link>
+
+                        <nuxt-link to="https://vk.com/zdorovekrasotaiturizm">
+                            <div class="contacts__wrapper__item">
+                                <img src="/vkontakte.svg" alt="vk" />
+                            </div>
+                        </nuxt-link>
+
+                        <nuxt-link to="https://t.me/zdorovekrasotaiturizm">
+                            <div class="contacts__wrapper__item">
+                                <img src="/telegram.svg" alt="telegram" />
+                            </div>
+                        </nuxt-link>
+                        <!-- </div> -->
+                    </div>
+
+                    <div class="contacts__image-background"></div>
                 </div>
-
-                <!-- <div class="try"> -->
-                <div class="contacts__form">
-                    <ContactsCard
-                        icon="/phone.svg"
-                        subtitle="Телефон:"
-                        name="+7 925 499 45 61"
-                        href="tel:+79254994561"
-                    />
-                    <ContactsCard
-                        icon="/email.svg"
-                        subtitle="Email:"
-                        name="zdorovye.turizm@bk.ru"
-                        href="mailto:zdorovye.turizm@bk.ru"
-                    />
-                </div>
-                <div class="contacts__wrapper">
-                    <nuxt-link to="https://wa.me/79254994561">
-                        <div class="contacts__wrapper__item">
-                            <img src="/whats.svg" alt="whats" />
-                        </div>
-                    </nuxt-link>
-
-                    <nuxt-link to="https://www.youtube.com/@zdorovyeiturizm">
-                        <div class="contacts__wrapper__item">
-                            <img src="/youtube.svg" alt="youtube" />
-                        </div>
-                    </nuxt-link>
-
-                    <nuxt-link to="https://vk.com/zdorovekrasotaiturizm">
-                        <div class="contacts__wrapper__item">
-                            <img src="/vkontakte.svg" alt="vk" />
-                        </div>
-                    </nuxt-link>
-
-                    <nuxt-link to="https://t.me/zdorovekrasotaiturizm">
-                        <div class="contacts__wrapper__item">
-                            <img src="/telegram.svg" alt="telegram" />
-                        </div>
-                    </nuxt-link>
-                    <!-- </div> -->
-                </div>
-
-                <div class="contacts__image-background"></div>
             </div>
         </div>
-    </div>
 </template>
 
 <style lang="scss" scoped>

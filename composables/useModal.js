@@ -18,7 +18,7 @@ export const useModal = () => {
               }
   }
   const closeModal = (e) => {
-    if (e.target.classList.contains('modal')) {
+    if (e.target.classList.contains('modal') || e.target.classList.contains('modal__closed')) {
         modalClosed.value = false
         document.body.classList.remove('overflow-hidden')
         history.replaceState(null, null, ' ')
@@ -26,11 +26,11 @@ export const useModal = () => {
   }
 
   const submitForm = async (name, email, phone) => {
-    const form = document.querySelector('form');
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return;
-    }
+    // const form = document.querySelector('form');
+    // if (!form.checkValidity()) {
+    //   form.reportValidity();
+    //   return;
+    // }
     try {
       const response = await axios.post('https://api.zdorovyeiturizm.ru', {
         name,
