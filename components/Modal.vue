@@ -189,7 +189,7 @@ const phone = ref('')
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9;
+    z-index: 1000 !important;
     &__wrapper {
         // max-width: 680px;
         @media (max-width: 768px) {

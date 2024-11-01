@@ -1,7 +1,15 @@
 <script setup>
 import { ref } from 'vue'
 
+const { modalClosed } = useModal()
 const isVisible = ref(false)
+
+const toggleBurgerMenu = () => {
+    if(modalClosed.value == false   ) {
+        isVisible.value = !isVisible.value
+    }
+   
+}
 const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -22,7 +30,7 @@ const scrollToSection = (sectionId) => {
                 <div
                     class="burger__button"
                     :class="{ open: isVisible }"
-                    @click="isVisible = !isVisible"
+                    @click="toggleBurgerMenu()"
                 >
                     <span></span>
                     <span></span>
@@ -172,6 +180,8 @@ const scrollToSection = (sectionId) => {
 // }
 
 .burger {
+    position: relative;
+    z-index: 9;
     &__wrapper {
         overflow-y: hidden;
         border-radius: 8px;
@@ -185,6 +195,9 @@ const scrollToSection = (sectionId) => {
         z-index: 5;
         overflow-y: hidden;
         position: relative;
+        @media(max-width: 500px) {
+            z-index: 1;
+        }
     }
     &__nav {
         background-color: rgba(255, 255, 255, 0.9);
@@ -198,7 +211,7 @@ const scrollToSection = (sectionId) => {
         padding: 20px;
         height: auto;
         border-radius: 30px;
-        z-index: 10;
+        z-index: 9;
         @media (min-width: 993px) {
             display: none;
         }
