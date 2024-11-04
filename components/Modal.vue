@@ -20,7 +20,7 @@ const phone = ref('')
 <template>
     <div
         class="modal"
-        v-if="modalClosed"
+        v-show="modalClosed"
         @click="closeModal"
         id="overlay_button"
     >
