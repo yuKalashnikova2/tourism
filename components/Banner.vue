@@ -36,7 +36,7 @@ const { openModal } = useModal()
                     >мы подберём лучшее решение и ответим на все вопросы!</span
                 >
                 <!-- <nuxt-link to="#overlay_button"> -->
-                <Button @click="openModal">Записаться</Button>
+                <Button @click="openModal('banner')">Записаться</Button>
                 <!-- </nuxt-link> -->
             </div>
         </div>

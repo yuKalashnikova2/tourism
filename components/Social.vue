@@ -10,19 +10,20 @@
                     <div class="social__wrapper">
                         <nuxt-link
                             to="https://www.youtube.com/@zdorovyeiturizm"
+                            target="_blank"
                         >
                             <div class="social__wrapper__item">
                                 <img src="/youtube.svg" alt="youtube" />
                             </div>
                         </nuxt-link>
 
-                        <nuxt-link to="https://vk.com/zdorovekrasotaiturizm">
+                        <nuxt-link to="https://vk.com/zdorovekrasotaiturizm" target="_blank">
                             <div class="social__wrapper__item">
                                 <img src="/vkontakte.svg" alt="vk" />
                             </div>
                         </nuxt-link>
 
-                        <nuxt-link to="https://t.me/zdorovekrasotaiturizm">
+                        <nuxt-link to="https://t.me/zdorovekrasotaiturizm" target="_blank">
                             <div class="social__wrapper__item">
                                 <img src="/telegram.svg" alt="telegram" />
                             </div>

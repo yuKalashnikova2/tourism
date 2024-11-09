@@ -87,7 +87,7 @@ const phone = ref('')
                                             <label for="phone"
                                                 >Телефон
                                                 <span
-                                                    v-if="errorValidate"
+                                                    v-if="errorPhone"
                                                     style="color: red"
                                                     >*</span
                                                 ></label
@@ -138,6 +138,7 @@ const phone = ref('')
                                 <div class="modal__social">
                                     <nuxt-link
                                         to="https://www.youtube.com/@zdorovyeiturizm"
+                                        target="_blank"
                                     >
                                         <div class="modal__social__item">
                                             <img
@@ -149,6 +150,7 @@ const phone = ref('')
 
                                     <nuxt-link
                                         to="https://vk.com/zdorovekrasotaiturizm"
+                                        target="_blank"
                                     >
                                         <div class="modal__social__item">
                                             <img
@@ -160,6 +162,7 @@ const phone = ref('')
 
                                     <nuxt-link
                                         to="https://t.me/zdorovekrasotaiturizm"
+                                        target="_blank"
                                     >
                                         <div class="modal__social__item">
                                             <img

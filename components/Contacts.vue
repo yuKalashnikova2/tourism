@@ -27,27 +27,27 @@
                         />
                     </div>
                     <div class="contacts__wrapper">
-                        <nuxt-link to="https://wa.me/79254994561">
+                        <nuxt-link to="https://wa.me/79254994561" target="_blank">
                             <div class="contacts__wrapper__item">
                                 <img src="/whats.svg" alt="whats" />
                             </div>
                         </nuxt-link>
 
                         <nuxt-link
-                            to="https://www.youtube.com/@zdorovyeiturizm"
+                            to="https://www.youtube.com/@zdorovyeiturizm" target="_blank"
                         >
                             <div class="contacts__wrapper__item">
                                 <img src="/youtube.svg" alt="youtube" />
                             </div>
                         </nuxt-link>
 
-                        <nuxt-link to="https://vk.com/zdorovekrasotaiturizm">
+                        <nuxt-link to="https://vk.com/zdorovekrasotaiturizm" target="_blank">
                             <div class="contacts__wrapper__item">
                                 <img src="/vkontakte.svg" alt="vk" />
                             </div>
                         </nuxt-link>
 
-                        <nuxt-link to="https://t.me/zdorovekrasotaiturizm">
+                        <nuxt-link to="https://t.me/zdorovekrasotaiturizm" target="_blank">
                             <div class="contacts__wrapper__item">
                                 <img src="/telegram.svg" alt="telegram" />
                             </div>

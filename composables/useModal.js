@@ -6,13 +6,16 @@ export const useModal = () => {
 
     const modalClosed = useState('modalClosed', () => false)
 
-    const openModal = () => {
+    const openModal = (buttonType) => {
         modalClosed.value = true
         window.location.hash = 'overlay_button'
         document.body.classList.add('overflow-hidden')
         if (window.ym) {
-            window.ym(97898876, 'reachGoal', 'banner_button')
-            window.ym(97898876, 'reachGoal', 'uznat_button')
+            if (buttonType === 'banner') {
+                window.ym(97898876, 'reachGoal', 'banner_button')
+            } else if (buttonType === 'card') {
+                window.ym(97898876, 'reachGoal', 'uznat_button')
+            }
         }
     }
     const closeModal = (e) => {
@@ -68,6 +71,7 @@ export const useModal = () => {
                 }
             )
             isThanks.value = true
+            window.location.hash = 'overlay_button'
             if (window.ym) {
                 window.ym(97898876, 'reachGoal', 'overlay_button')
                 console.log('Отправелены метрики ОТПРАВКА')
