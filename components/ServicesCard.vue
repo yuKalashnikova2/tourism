@@ -45,7 +45,7 @@ const { openModal } = useModal()
     background-position: left;
     background-repeat: no-repeat;
     padding: 40px 20px 60px 40px;
-    height: 365px;
+    height: 405px;
     &::before {
         content: '';
         position: absolute;
