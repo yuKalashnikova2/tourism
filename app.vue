@@ -24,6 +24,7 @@ useHead({
 `,
         },
         {
+            hid: 'mail-pixel-script',
             type: 'text/javascript',
             innerHTML: `
       var _tmr = window._tmr || (window._tmr = []);
@@ -47,6 +48,7 @@ _tmr.push({id: "3576505", type: "pageView", start: (new Date()).getTime()});
             body: true,
         },
         {
+            hid: 'mail-pixel-noscript',
             children: `<div><img src="https://top-fwz1.mail.ru/counter?id=3576505;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div>`,
         },
     ],
