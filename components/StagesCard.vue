@@ -36,7 +36,7 @@ const styleBackground = computed(() => {
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 .stages-card {
     display: flex;
     flex-direction: column;

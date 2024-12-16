@@ -40,7 +40,7 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .stages {
     &__wrapper {
         display: grid;

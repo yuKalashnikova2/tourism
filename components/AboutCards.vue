@@ -15,7 +15,7 @@ const props = defineProps({
         </div>
     </div>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
 .about-card {
     display: flex;
     align-items: center;

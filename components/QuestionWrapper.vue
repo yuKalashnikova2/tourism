@@ -41,7 +41,7 @@ const questions = ref([
     </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .question__wrapper {
     display: grid;
     grid-template-columns: 1fr;

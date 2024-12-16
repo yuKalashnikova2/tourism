@@ -38,7 +38,7 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .services {
     &__wrapper {
         margin-top: 40px;

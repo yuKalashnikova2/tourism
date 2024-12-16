@@ -1,8 +1,8 @@
 
 <template>
-    <div class="container">
-        <div class="wrapper">
-            <Header />
+    <!-- <div class="container">
+        <div class="wrapper"> -->
+            <!-- <Header /> -->
             <Banner />
             <Services />
             <About />
@@ -11,7 +11,7 @@
             <Blog />
             <QuestionWrapper />
             <Contacts />
-            <Footer />
-        </div>
-    </div>
+            <!-- <Footer /> -->
+        <!-- </div> -->
+    <!-- </div> -->
 </template>

@@ -78,5 +78,11 @@ _tmr.push({id: "3576505", type: "pageView", start: (new Date()).getTime()});
 </script>
 
 <template>
-    <NuxtPage />
+    <div class="container">
+        <div class="wrapper">
+            <Header />
+            <NuxtPage />
+            <Footer />
+        </div> 
+    </div>
 </template>

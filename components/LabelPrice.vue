@@ -5,6 +5,9 @@ const props = defineProps({
     text: String,
     color: String,
     small: Boolean,
+    whiteShadow: Boolean,
+    colorGray: Boolean,
+    withAuto: Boolean,
 })
 
 const labelColor = computed(() => {
@@ -13,10 +16,18 @@ const labelColor = computed(() => {
 </script>
 
 <template>
-    <div class="label" :style="{ backgroundColor: labelColor }">
+    <div
+        class="label"
+        :style="{ backgroundColor: labelColor }"
+        :class="{
+            'label_shadow-white': whiteShadow,
+            'label_color-gray': colorGray,
+            'label_max-with-auto': withAuto,
+        }"
+    >
         <span
             class="label__price"
-            :class="[small ? 'label__price_small-size' : '']"
+            :class="{ 'label__price_small-size': small }"
             >{{ price }}</span
         >
         <span class="label__text">{{ text }}</span>
@@ -39,6 +50,15 @@ const labelColor = computed(() => {
     max-width: 263px;
     white-space: nowrap;
     box-shadow: 2px 2px 20px 12px rgba(192, 217, 233, 0.6);
+    &_shadow-white {
+        box-shadow: 1px 1px 16px 4px rgba(192, 217, 233, 0.4);
+    }
+    &_color-gray {
+        color: $gray;
+    }
+    &_max-with-auto {
+        max-width: none;
+    }
     @media (max-width: 1440px) {
         max-width: 100%;
         padding-top: 25px;
