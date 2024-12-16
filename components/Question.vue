@@ -7,13 +7,21 @@ const props = defineProps({
         default: 'Тема вопроса',
     },
     info: {
-        type: String,
-        default: 'Текст вопроса',
+        type: Object,
+        default: () => ({
+            description: 'Текст вопроса',
+            titleP: 'Название',
+            paragrath: 'Текст',
+            titleP2: 'Текст вопроса',
+            paragrath2: 'Текст',
+            titlePoints: 'заголовок списка',
+            points: [],
+        }),
     },
 })
 const expanded = ref(false)
 const contentStyle = computed(() => ({
-    'max-height': expanded.value ? '300px' : 0,
+    'max-height': expanded.value ? '350px' : 0,
     overflow: 'hidden',
 }))
 
@@ -37,7 +45,31 @@ const infoStyle = computed(() => ({
             </h3>
         </header>
         <div :style="contentStyle" class="content">
-            <p :style="infoStyle" class="info">{{ info }}</p>
+            <p :style="infoStyle" class="info">{{ info.description }}</p>
+
+            <div class="info__paragrath" v-if="info.titleP || info.paragrath">
+                <div>
+                    <p>{{ info.titleP }}</p>
+                    <div>{{ info.paragrath }}</div>
+                </div>
+                <br />
+                <div>
+                    <p>{{ info.titleP2 }}</p>
+                    <div>{{ info.paragrath2 }}</div>
+                </div>
+            </div>
+            <ul class="info__list" v-if="info.points && info.points.length">
+                {{
+                    info.titlePoints
+                }}
+                <li
+                    class="info__li"
+                    v-for="(point, index) in info.points"
+                    :key="index"
+                >
+                    {{ point }}
+                </li>
+            </ul>
         </div>
     </article>
 </template>
@@ -94,7 +126,29 @@ const infoStyle = computed(() => ({
     font-weight: 400;
     line-height: 39.2px;
     padding-left: 80px;
+    &__list,
+    &__li {
+        & li {
+            list-style-position: inside;
+            list-style-type: disc;
+        }
 
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 39.2px;
+    }
+    &__list {
+        padding-left: 80px;
+    }
+    &__paragrath {
+        display: flex;
+        flex-direction: column;
+        // gap: 60px;
+        padding-left: 80px;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 39.2px;
+    }
     @media (max-width: 768px) {
         font-size: 20px;
         line-height: 28px;
@@ -125,4 +179,8 @@ const infoStyle = computed(() => ({
         height: 40px;
     }
 }
+// .info__list li {
+//   list-style-type: circle !important;
+//   list-style-position: inside;
+// }
 </style>
