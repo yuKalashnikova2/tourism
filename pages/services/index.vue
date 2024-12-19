@@ -2,6 +2,7 @@
 
 <template>
     <div class="services__page">
+  
         <TitleSection>Наши услуги</TitleSection>
         <div class="mt-20">
             <p class="services__text">
@@ -25,6 +26,7 @@
                     desc="Лечение грыжи и болей без операции"
                     borderColor="2"
                     backgroundImage="/p-2.JPG"
+                    link="herniatreatment"
                 />
                 <ServicesCard
                     title="Лечение зубов"

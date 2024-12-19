@@ -65,6 +65,7 @@ const questionsHair = ref([
 </script>
 <template>
     <div class="section-1">
+        <Modal />
         <TitleSection>Пересадка волос в Турции</TitleSection>
         <div class="mt-20">
             <p class="services__text">
@@ -78,7 +79,7 @@ const questionsHair = ref([
         </div>
     </div>
     <div class="section-2">
-        <TitleSection>Этапы лечения в Турции</TitleSection>
+        <TitleSection>Этапы лечения</TitleSection>
 
         <div class="mt-20">
             <p class="services__text">

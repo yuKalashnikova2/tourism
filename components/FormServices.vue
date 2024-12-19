@@ -1,4 +1,5 @@
 <script setup>
+const { openModal } = useModal()
 const props = defineProps({
     backgroundImage: String
 })
@@ -14,7 +15,8 @@ const props = defineProps({
             >мы подберём лучшее решение и ответим на все вопросы!</span
         >
 
-        <Button class="form__services__btn" @click="openModal('banner')"
+        <Button @click="openModal('banner')"
+        class="form__services__btn"  
             >Записаться</Button
         >
         <div class="form__services__labels mobiles">

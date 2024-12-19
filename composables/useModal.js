@@ -7,8 +7,9 @@ export const useModal = () => {
     const modalClosed = useState('modalClosed', () => false)
 
     const openModal = (buttonType) => {
+        console.log(modalClosed.value, 'СОСТОЯНИЕ МОДАЛЬНОГО ОКНА')
         modalClosed.value = true
-        window.location.hash = 'overlay_button'
+        // window.location.hash = 'overlay_button'
         document.body.classList.add('overflow-hidden')
         if (window.ym) {
             if (buttonType === 'banner') {

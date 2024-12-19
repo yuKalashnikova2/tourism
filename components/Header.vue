@@ -52,7 +52,7 @@ const scrollToSection = (sectionId) => {
                 <NuxtLink to="#blog">Блог</NuxtLink>
             </li>
             <li class="header__menu-item">
-                <NuxtLink to="#contacts">Контакты</NuxtLink>
+                <NuxtLink to="/contacts">Контакты</NuxtLink>
             </li>
             <li class="header__menu-item">
                 <NuxtLink to="#faq">FAQ</NuxtLink>
