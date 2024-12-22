@@ -1,13 +1,15 @@
 <script setup>
 const { openModal } = useModal()
 const props = defineProps({
-    backgroundImage: String
+    backgroundImage: String,
 })
 </script>
 
 <template>
-    <div class="form__services"
-    :style="{ backgroundImage: `url(${props.backgroundImage})` }">
+    <div
+        class="form__services"
+        :style="{ backgroundImage: `url(${props.backgroundImage})` }"
+    >
         <div class="form__services__title">
             Запишись на бесплатную консультацию до конца осени!
         </div>
@@ -15,8 +17,7 @@ const props = defineProps({
             >мы подберём лучшее решение и ответим на все вопросы!</span
         >
 
-        <Button @click="openModal('banner')"
-        class="form__services__btn"  
+        <Button @click="openModal('banner')" class="form__services__btn"
             >Записаться</Button
         >
         <div class="form__services__labels mobiles">
@@ -25,7 +26,6 @@ const props = defineProps({
                 colorGray
                 whiteShadow
                 withAuto
-
                 price="0 руб."
                 text="Предоплаты"
                 color="rgba(255, 255, 255, 0.8)
@@ -87,6 +87,17 @@ const props = defineProps({
         font-size: 56px;
         font-weight: 600;
         line-height: 78.4px;
+        @media (max-width: 768px) {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 67.2px;
+        }
+        @media (max-width: 500px) {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 44.8px;
+            letter-spacing: 0;
+        }
     }
     &__subtitle {
         font-family: Manrope;
@@ -94,6 +105,17 @@ const props = defineProps({
         font-weight: 400;
         line-height: 38.4px;
         margin-top: 20px;
+        @media (max-width: 768px) {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+            letter-spacing: 0px;
+        }
+        @media (max-width: 500px) {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 28px;
+        }
     }
     &__btn {
         width: 100%;
@@ -109,7 +131,7 @@ const props = defineProps({
             max-width: 100%;
             padding: 24px 0;
         }
-        @media (max-width: 500px) {
+        @media (max-width: 768px) {
             grid-template-columns: 1fr;
             padding: 0 !important;
         }

@@ -47,15 +47,19 @@ const infoStyle = computed(() => ({
         <div :style="contentStyle" class="content">
             <p :style="infoStyle" class="info">{{ info.description }}</p>
 
-            <div class="info__paragrath" v-if="info.titleP || info.paragrath">
+            <div class="info__paragrath" v-if="info.titleP">
                 <div>
-                    <p>{{ info.titleP }}</p>
-                    <div>{{ info.paragrath }}</div>
+                    <p :style="infoStyle" class="info">{{ info.titleP }}</p>
+                    <div :style="infoStyle" class="info">
+                        {{ info.paragrath }}
+                    </div>
                 </div>
                 <br />
                 <div>
-                    <p>{{ info.titleP2 }}</p>
-                    <div>{{ info.paragrath2 }}</div>
+                    <p :style="infoStyle" class="info">{{ info.titleP2 }}</p>
+                    <div :style="infoStyle" class="info">
+                        {{ info.paragrath2 }}
+                    </div>
                 </div>
             </div>
             <ul class="info__list" v-if="info.points && info.points.length">
@@ -136,6 +140,15 @@ const infoStyle = computed(() => ({
         font-size: 28px;
         font-weight: 400;
         line-height: 39.2px;
+        @media (max-width: 768px) {
+            font-size: 20px;
+            line-height: 28px;
+        }
+        @media (max-width: 500px) {
+            font-size: 16px;
+            line-height: 22.4px;
+            // padding-left: 52px;
+        }
     }
     &__list {
         padding-left: 80px;
@@ -144,7 +157,7 @@ const infoStyle = computed(() => ({
         display: flex;
         flex-direction: column;
         // gap: 60px;
-        padding-left: 80px;
+        // padding-left: 80px;
         font-size: 28px;
         font-weight: 400;
         line-height: 39.2px;
@@ -152,11 +165,12 @@ const infoStyle = computed(() => ({
     @media (max-width: 768px) {
         font-size: 20px;
         line-height: 28px;
+        padding-left: 4px;
     }
     @media (max-width: 500px) {
         font-size: 16px;
         line-height: 22.4px;
-        padding-left: 52px;
+        padding-left: 0;
     }
 }
 

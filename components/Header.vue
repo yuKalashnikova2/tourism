@@ -1,9 +1,21 @@
 <script setup>
-import { ref } from 'vue'
-
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 const { modalClosed } = useModal()
 const isVisible = ref(false)
 
+// onMounted(() => {
+//     console.log('Route object:', route)
+// });
+const route = useRouter()
+// const isActiveClass = ref(false)
+
+
+const isActive = (link) => {
+    return route.currentRoute.value.path.startsWith(link)
+
+ 
+}
 const toggleBurgerMenu = () => {
     if(modalClosed.value == false   ) {
         isVisible.value = !isVisible.value
@@ -42,7 +54,9 @@ const scrollToSection = (sectionId) => {
             <li class="header__menu-item">
                 <NuxtLink to="#about">О нас</NuxtLink>
             </li>
-            <li class="header__menu-item">
+            <li class="header__menu-item"
+        
+            :class="{'header__menu-item_active':isActive('/services') }">
                 <NuxtLink to="/services">Услуги</NuxtLink>
             </li>
             <li class="header__menu-item">
@@ -52,7 +66,9 @@ const scrollToSection = (sectionId) => {
                 <NuxtLink to="#blog">Блог</NuxtLink>
             </li>
             <li class="header__menu-item">
-                <NuxtLink to="/contacts">Контакты</NuxtLink>
+                <NuxtLink to="/contacts"
+        
+                :class="{'header__menu-item_active': isActive('/contacts') }">Контакты</NuxtLink>
             </li>
             <li class="header__menu-item">
                 <NuxtLink to="#faq">FAQ</NuxtLink>
@@ -65,24 +81,30 @@ const scrollToSection = (sectionId) => {
                     <li class="burger__item" @click="scrollToSection('about')">
                         О нас
                     </li>
-                    <li
+                    <NuxtLink to="/services">
+                        <li
                         class="burger__item"
-                        @click="scrollToSection('services')"
+                       
                     >
                         Услуги
                     </li>
+                    </NuxtLink>
+                 
                     <li class="burger__item" @click="scrollToSection('stages')">
                         Этапы
                     </li>
                     <li class="burger__item" @click="scrollToSection('blog')">
                         Блог
                     </li>
-                    <li
+                    <NuxtLink to="/contacts">
+                        <li
                         class="burger__item"
-                        @click="scrollToSection('contacts')"
+                        
                     >
                         Контакты
                     </li>
+                    </NuxtLink>
+                  
                     <li class="burger__item" @click="scrollToSection('faq')">
                         FAQ
                     </li>
@@ -143,18 +165,29 @@ const scrollToSection = (sectionId) => {
             pointer-events: auto;
             z-index: 10;
             white-space: nowrap;
+            font-size: 28px;
+                font-weight: 500;
+                line-height: 39.2px;
+                &_active {
+                    font-weight: 600;  
+                }
             @media (max-width: 1440px) {
                 padding: 20px 30px;
             }
-            & a {
-                font-size: 28px;
-                font-weight: 500;
-                line-height: 39.2px;
-                @media (max-width: 768px) {
+            @media (max-width: 768px) {
                     font-size: 40px;
                     font-weight: 700;
                     line-height: 56px;
                 }
+            & a {
+                // font-size: 28px;
+                // font-weight: 500;
+                // line-height: 39.2px;
+                // @media (max-width: 768px) {
+                //     font-size: 40px;
+                //     font-weight: 700;
+                //     line-height: 56px;
+                // }
                 @media (max-width: 768px) {
                     font-size: 32px;
                     font-weight: 700;

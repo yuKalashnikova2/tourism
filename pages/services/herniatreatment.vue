@@ -49,7 +49,7 @@ const questionsHair = ref([
             </p>
         </div>
         <div class="mt-40">
-            <FormServices backgroundImage="/p-22.jpeg" />
+            <FormServices backgroundImage="/p-2.JPG" />
         </div>
     </div>
     <div class="section-2">
