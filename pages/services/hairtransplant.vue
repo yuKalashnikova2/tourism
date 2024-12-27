@@ -176,7 +176,7 @@ const questionsHair = ref([
         gap: 12px;
     }
     @media (max-width: 500px) {
-        padding-top: 0px;
+        padding-top: 28px;
     }
 }
 </style>

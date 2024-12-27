@@ -4,11 +4,11 @@ import { useRouter } from 'vue-router'
 const { modalClosed } = useModal()
 const isVisible = ref(false)
 
-// onMounted(() => {
-//     console.log('Route object:', route)
-// });
+const closeMenu = () => {
+        isVisible.value = false
+}
 const route = useRouter()
-// const isActiveClass = ref(false)
+
 
 
 const isActive = (link) => {
@@ -28,6 +28,10 @@ const scrollToSection = (sectionId) => {
         element.scrollIntoView({ behavior: 'smooth' })
         isVisible.value = false
     }
+}
+const handleItemClick = (section) => {
+  scrollToSection(section)
+  closeMenu()
 }
 </script>
 <template>
@@ -68,7 +72,8 @@ const scrollToSection = (sectionId) => {
             <li class="header__menu-item">
                 <NuxtLink to="/contacts"
         
-                :class="{'header__menu-item_active': isActive('/contacts') }">Контакты</NuxtLink>
+                :class="{'header__menu-item_active': isActive('/contacts') }"
+                >Контакты</NuxtLink>
             </li>
             <li class="header__menu-item">
                 <NuxtLink to="#faq">FAQ</NuxtLink>
@@ -78,10 +83,10 @@ const scrollToSection = (sectionId) => {
         <Transition>
             <nav class="burger__nav" v-show="isVisible">
                 <ul class="burger__list">
-                    <li class="burger__item" @click="scrollToSection('about')">
+                    <li class="burger__item" @click="handleItemClick('about')">
                         О нас
                     </li>
-                    <NuxtLink to="/services">
+                    <NuxtLink to="/services" @click="closeMenu">
                         <li
                         class="burger__item"
                        
@@ -90,13 +95,14 @@ const scrollToSection = (sectionId) => {
                     </li>
                     </NuxtLink>
                  
-                    <li class="burger__item" @click="scrollToSection('stages')">
+                    <li class="burger__item" @click="handleItemClick('stages')">
                         Этапы
                     </li>
-                    <li class="burger__item" @click="scrollToSection('blog')">
+                    <li class="burger__item" @click="handleItemClick('blog')">
                         Блог
                     </li>
-                    <NuxtLink to="/contacts">
+                    <NuxtLink to="/contacts"
+                    @click="closeMenu">
                         <li
                         class="burger__item"
                         
@@ -105,7 +111,7 @@ const scrollToSection = (sectionId) => {
                     </li>
                     </NuxtLink>
                   
-                    <li class="burger__item" @click="scrollToSection('faq')">
+                    <li class="burger__item" @click="handleItemClick('faq')">
                         FAQ
                     </li>
                 </ul>
@@ -244,7 +250,7 @@ const scrollToSection = (sectionId) => {
         padding: 20px;
         height: auto;
         border-radius: 30px;
-        z-index: 9;
+        z-index: 11;
         @media (min-width: 993px) {
             display: none;
         }
