@@ -21,16 +21,21 @@ const { openModal } = useModal()
             >
                 <h3 class="services-card__title">{{ title }}</h3>
                 <div class="services-card__desc">{{ desc }}</div>
-                <nuxt-link :to="`/services/${link}`">
+                <div v-if="link">
+                    <nuxt-link :to="`/services/${link}`">
                     <Button small class="services-card__button"
                         >Узнать</Button
                     >
                 </nuxt-link>
-                <!-- <nuxt-link to="#overlay_button">
+                </div>
+                <div v-else>
+                    <nuxt-link to="#overlay_button">
                     <Button small class="services-card__button" @click="openModal('card')"
                         >Узнать</Button
                     >
-                </nuxt-link> -->
+                </nuxt-link>
+                </div>
+            
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
 
 <template>
     <div class="services__page">
-  
+        <Modal />
         <TitleSection>Наши услуги</TitleSection>
         <div class="mt-20">
             <p class="services__text">

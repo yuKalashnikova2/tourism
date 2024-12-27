@@ -15,12 +15,14 @@
                 desc="Современные методы Саппфир FUE и DHI"
                 borderColor="1"
                 backgroundImage="/p-1.JPG"
+                link="hairtransplant"
             />
             <ServicesCard
                 title="Неврология и хирургия"
                 desc="Лечение грыжи и болей без операции"
                 borderColor="2"
                 backgroundImage="/p-2.JPG"
+                link="herniatreatment"
             />
             <ServicesCard
                 title="Лечение зубов"
