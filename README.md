@@ -1,75 +1,29 @@
-# Nuxt 3 Minimal Starter
+# 🌿 Здоровье и Туризм
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Веб-приложение, посвящённое здоровому образу жизни, отдыху и туризму. Построено с использованием **Nuxt 3**, **Vue 3** и **Sass**. Проект адаптивный, современный и легко расширяемый.
 
-## Setup
+## 🚀 Технологии
 
-Make sure to install the dependencies:
+- [Nuxt 3](https://nuxt.com) — современный фреймворк на базе Vue для SSR / SSG
+- [Vue 3](https://vuejs.org/) — реактивный JavaScript-фреймворк
+- [Vue Router](https://router.vuejs.org/) — маршрутизация
+- [Axios](https://axios-http.com/) — HTTP-клиент для работы с API
+- [Sass](https://sass-lang.com/) — препроцессор CSS
+- [Yarn](https://classic.yarnpkg.com/) — менеджер пакетов
+
+## 📦 Установка
 
 ```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
+# Установка зависимостей
 yarn install
 
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
+# Запуск в режиме разработки
 yarn dev
 
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
+# Сборка проекта
 yarn build
 
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
+# Предпросмотр продакшен-сборки
 yarn preview
 
-# bun
-bun run preview
-```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
