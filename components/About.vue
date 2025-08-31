@@ -76,14 +76,14 @@
         padding-top: 40px;
         align-items: stretch;
         height: 100%;
-        @media (max-width: 992px) {
+        @media (max-width: 1200px) {
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
             padding-top: 20px;
         }
-        @media (max-width: 500px) {
+        @media (max-width: 913px) {
             grid-template-columns: 1fr;
         }
     }

@@ -52,6 +52,8 @@ input {
 .container {
     background: $white;
     padding: 0 7.5rem;
+     overflow-x: hidden;
+     
     @media (max-width: 1440px) {
         padding: 0 60px;
         margin: 0 auto;

@@ -1,0 +1,3 @@
+<template>
+    <QuestionWrapper />
+</template>
