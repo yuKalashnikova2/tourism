@@ -7,6 +7,7 @@ const isVisible = ref(false);
 const closeMenu = () => {
   isVisible.value = false;
 };
+
 const route = useRouter();
 
 const isActive = (link) => {
@@ -16,17 +17,6 @@ const toggleBurgerMenu = () => {
   if (modalClosed.value == false) {
     isVisible.value = !isVisible.value;
   }
-};
-const scrollToSection = (sectionId) => {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-    isVisible.value = false;
-  }
-};
-const handleItemClick = (section) => {
-  scrollToSection(section);
-  closeMenu();
 };
 </script>
 <template>
@@ -51,7 +41,11 @@ const handleItemClick = (section) => {
     </div>
     <ul class="header__menu d-none">
       <li class="header__menu-item">
-        <NuxtLink to="/about">О нас</NuxtLink>
+        <NuxtLink
+          to="/about"
+          :class="{ 'header__menu-item_active': isActive('/about') }"
+          >О нас</NuxtLink
+        >
       </li>
       <li
         class="header__menu-item"
@@ -60,10 +54,18 @@ const handleItemClick = (section) => {
         <NuxtLink to="/services">Услуги</NuxtLink>
       </li>
       <li class="header__menu-item">
-        <NuxtLink to="/stages">Этапы</NuxtLink>
+        <NuxtLink
+          to="/stages"
+          :class="{ 'header__menu-item_active': isActive('/stages') }"
+          >Этапы</NuxtLink
+        >
       </li>
       <li class="header__menu-item">
-        <NuxtLink to="/blog">Блог</NuxtLink>
+        <NuxtLink
+          to="/blog"
+          :class="{ 'header__menu-item_active': isActive('/blog') }"
+          >Блог</NuxtLink
+        >
       </li>
       <li class="header__menu-item">
         <NuxtLink
@@ -73,7 +75,11 @@ const handleItemClick = (section) => {
         >
       </li>
       <li class="header__menu-item">
-        <NuxtLink to="/faq">FAQ</NuxtLink>
+        <NuxtLink
+          to="/faq"
+          :class="{ 'header__menu-item_active': isActive('/faq') }"
+          >FAQ</NuxtLink
+        >
       </li>
     </ul>
 
@@ -88,9 +94,9 @@ const handleItemClick = (section) => {
             <li class="burger__item">Услуги</li>
           </NuxtLink>
           <NuxtLink to="/stages">
-            <li class="burger__item">Этапы</li>
+            <li class="burger__item" @click="closeMenu">Этапы</li>
           </NuxtLink>
-          <NuxtLink to="/blog">
+          <NuxtLink to="/blog" @click="closeMenu">
             <li class="burger__item">Блог</li>
           </NuxtLink>
 

@@ -35,9 +35,7 @@ const { openModal } = useModal()
                 <span class="banner__form__subtitle"
                     >мы подберём лучшее решение и ответим на все вопросы!</span
                 >
-                <!-- <nuxt-link to="#overlay_button"> -->
                 <Button @click="openModal('banner')">Записаться</Button>
-                <!-- </nuxt-link> -->
             </div>
         </div>
         <Modal />
@@ -243,7 +241,7 @@ const { openModal } = useModal()
             max-width: 100%;
             padding: 24px 0;
         }
-        @media (max-width: 500px) {
+        @media (max-width: 768px) {
             grid-template-columns: 1fr;
             padding: 0 !important;
         }
